@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en" class="invitation-locked">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#76634b">
+<meta name="theme-color" content="#727858">
 <title>Wedding Invitation | Danny &amp; Rudy</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +33,7 @@
 html{
   scroll-behavior:smooth;
   min-height:100%;
-  background:#c8b49a;
+  background:var(--cream);
 }
 
 html.invitation-locked,
@@ -48,25 +49,24 @@ body{
   overflow-x:hidden;
   font-family:'Montserrat',sans-serif;
   color:var(--ink);
-  background:
-    linear-gradient(
-      180deg,
-      #f7efe1 0%,
-      #e8d7bd 8%,
-      #c5b292 15%,
-      #a49d7c 22%,
-      #85896c 29%,
-      #666f52 36%,
-      #535b43 43%,
-      #494b38 49%,
-      #514438 55%,
-      #67503c 61%,
-      #77654a 68%,
-      #8d8b6b 75%,
-      #b2a486 83%,
-      #d9c5a6 92%,
-      #f7efe1 100%
-    );
+  background:linear-gradient(
+    180deg,
+    #f7efe1 0%,
+    #e8d7bd 8%,
+    #c5b292 15%,
+    #a49d7c 22%,
+    #85896c 29%,
+    #666f52 36%,
+    #535b43 43%,
+    #494b38 49%,
+    #514438 55%,
+    #67503c 61%,
+    #77654a 68%,
+    #8d8b6b 75%,
+    #b2a486 83%,
+    #d9c5a6 92%,
+    #f7efe1 100%
+  );
   background-attachment:fixed;
 }
 
@@ -129,6 +129,7 @@ h1,h2,h3,p{margin-top:0}
   margin:22px auto;
 }
 
+/* LANGUAGE SWITCH */
 .lang-switch{
   position:fixed;
   top:12px;
@@ -159,7 +160,7 @@ h1,h2,h3,p{margin-top:0}
   color:#fff5e3;
 }
 
-/* Tiny, delicate white sparkles */
+/* ONLY SMALL GOLDEN TWINKLES ON THE BACKGROUND */
 #sparkCanvas{
   position:fixed;
   inset:0;
@@ -169,8 +170,9 @@ h1,h2,h3,p{margin-top:0}
   z-index:20;
 }
 
-/* OPENING */
+/* OPENING COVER AND VIDEO */
 #opening{
+  position:relative;
   padding:0;
   height:100vh;
   height:100svh;
@@ -183,28 +185,25 @@ h1,h2,h3,p{margin-top:0}
   isolation:isolate;
 }
 
-/*
-  The gradient is a separate overlay.
-  It fades gradually from transparent video into the page's cream tone.
-  No solid horizontal edge.
-*/
+/* A long soft fade instead of a solid strip */
 .opening-gradient{
   position:absolute;
   left:0;
   right:0;
   bottom:-1px;
-  height:35vh;
-  z-index:2;
+  height:42vh;
+  z-index:4;
   pointer-events:none;
   background:linear-gradient(
     to bottom,
     rgba(247,239,225,0) 0%,
-    rgba(247,239,225,.025) 16%,
-    rgba(247,239,225,.07) 31%,
-    rgba(247,239,225,.17) 46%,
-    rgba(247,239,225,.34) 61%,
-    rgba(247,239,225,.60) 77%,
-    rgba(247,239,225,.84) 90%,
+    rgba(247,239,225,.015) 12%,
+    rgba(247,239,225,.045) 25%,
+    rgba(247,239,225,.10) 39%,
+    rgba(247,239,225,.20) 52%,
+    rgba(247,239,225,.37) 65%,
+    rgba(247,239,225,.58) 77%,
+    rgba(247,239,225,.79) 89%,
     #f7efe1 100%
   );
 }
@@ -297,7 +296,7 @@ h1,h2,h3,p{margin-top:0}
   text-shadow:0 1px 3px rgba(255,250,238,.9);
   animation:bob 1.8s ease-in-out infinite;
   pointer-events:none;
-  z-index:5;
+  z-index:6;
 }
 
 #scrollHint span{
@@ -311,7 +310,7 @@ h1,h2,h3,p{margin-top:0}
   50%{transform:translateY(5px)}
 }
 
-/* MUSIC */
+/* MUSIC BUTTON */
 #musicButton{
   display:none;
   position:fixed;
@@ -332,6 +331,7 @@ h1,h2,h3,p{margin-top:0}
   -webkit-tap-highlight-color:transparent;
 }
 
+/* COUNTDOWN */
 #countdown{padding-top:58px}
 
 #countdown .section-title,
@@ -375,54 +375,29 @@ h1,h2,h3,p{margin-top:0}
   margin:0 auto;
 }
 
-/* Decorative botanical stickers */
-.decor-wrap{
+/* LARGE BOTANICAL ARTWORK — NO SCATTERED STICKERS */
+.botanical-wrap{
   position:relative;
-  width:min(100%,300px);
+  width:min(100%,330px);
+  min-height:180px;
   margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.sticker{
-  position:absolute;
-  z-index:2;
-  pointer-events:none;
-  user-select:none;
-  font-family:serif;
-  line-height:1;
-  filter:drop-shadow(0 3px 4px rgba(67,48,29,.12));
-}
-
-.sticker-leaf{
-  color:#777b56;
-  font-size:39px;
-  transform:rotate(-24deg);
-}
-
-.sticker-flower{
-  color:#f8edda;
-  font-size:29px;
-  text-shadow:0 1px 0 #c3a779,0 4px 9px #49382422;
-}
-
-.sticker-spark{
-  color:#f6e5bd;
-  font-size:21px;
+.botanical-image{
+  display:block;
+  width:100%;
+  max-width:300px;
+  max-height:290px;
+  object-fit:contain;
+  margin:0 auto;
+  filter:drop-shadow(0 9px 12px rgba(63,47,30,.13));
 }
 
 #vase{padding:22px 20px 10px}
-
-.decor-image{
-  display:block;
-  object-fit:contain;
-  margin:0 auto;
-  filter:drop-shadow(0 10px 12px rgba(63,47,30,.16));
-}
-
-.vase-image{width:190px;max-height:250px}
-
-.vase-wrap .leaf-left{left:7px;bottom:24px}
-.vase-wrap .flower-right{right:7px;top:28px}
-.vase-wrap .spark-left{left:28px;top:22px}
+.vase-image{width:220px;max-height:270px}
 
 #venue{padding-top:22px}
 
@@ -435,6 +410,7 @@ h1,h2,h3,p{margin-top:0}
 }
 
 .building-wrap{margin-bottom:18px}
+
 .building-sketch{
   display:block;
   width:100%;
@@ -444,9 +420,6 @@ h1,h2,h3,p{margin-top:0}
   margin:0 auto;
   filter:sepia(.10) saturate(.88);
 }
-
-.building-wrap .leaf-left{left:0;bottom:0}
-.building-wrap .flower-right{right:1px;top:4px}
 
 .finca-title{
   font:400 39px 'Great Vibes',cursive;
@@ -577,6 +550,7 @@ h1,h2,h3,p{margin-top:0}
   box-shadow:0 0 0 4px rgba(215,180,125,.18);
 }
 
+/* DRESS CODE */
 #dresscode{padding-top:48px}
 
 .dress-card{
@@ -605,19 +579,22 @@ h1,h2,h3,p{margin-top:0}
   letter-spacing:.3px;
 }
 
-.bow-wrap{margin:0 auto 12px}
-.bow-image{
-  width:140px;
-  max-height:190px;
-  margin:0 auto;
-  display:block;
-  filter:drop-shadow(0 7px 10px rgba(73,51,30,.18));
+/* PRE-WEDDING BOTANICAL DECOR */
+#prewedding{padding-top:10px}
+
+.prewedding-botanical{
+  width:min(100%,280px);
+  margin:0 auto 12px;
 }
 
-.bow-wrap .flower-left{left:10px;top:12px}
-.bow-wrap .leaf-right{right:7px;bottom:13px}
-
-#prewedding{padding-top:10px}
+.prewedding-botanical img{
+  display:block;
+  width:100%;
+  max-height:210px;
+  object-fit:contain;
+  margin:auto;
+  filter:drop-shadow(0 7px 10px rgba(73,51,30,.13));
+}
 
 .intro-copy{
   font:16px/1.9 'Cormorant Garamond',serif;
@@ -656,9 +633,7 @@ h1,h2,h3,p{margin-top:0}
   color:#66503a;
 }
 
-.event-card .sticker-left{left:10px;top:12px}
-.event-card .sticker-right{right:10px;bottom:15px}
-
+/* ACCOMMODATION */
 #accommodation .intro-copy{margin-bottom:22px}
 .hotel-block{padding:8px 0}
 
@@ -686,6 +661,7 @@ h1,h2,h3,p{margin-top:0}
   letter-spacing:1px;
 }
 
+/* AUTOMATIC PICTURE SLIDESHOW */
 #pictures{padding-left:0;padding-right:0}
 .picture-heading{padding:0 20px}
 
@@ -727,6 +703,7 @@ h1,h2,h3,p{margin-top:0}
   to{transform:translateX(-420px)}
 }
 
+/* GIFTS */
 #gift{padding-top:40px}
 
 .gift-subtitle{
@@ -761,47 +738,28 @@ h1,h2,h3,p{margin-top:0}
 
 .bank-detail span{font-weight:600}
 
-/* RSVP stays transparent so the page gradient continues naturally */
+/* RSVP — NO SWAN STICKER */
 #rsvp{
   padding:0 0 45px;
   background:transparent;
 }
 
 .swan-top{
-  padding:30px 20px 26px;
+  padding:20px 20px 12px;
   background:transparent;
 }
 
-.swan-container{
-  position:relative;
-  width:125px;
-  height:125px;
-  border:1px solid #c4a16b;
-  border-radius:50%;
-  background:linear-gradient(145deg,#fff5df,#e2cba6);
+.rsvp-botanical{
+  display:block;
+  width:min(100%,240px);
+  max-height:200px;
+  object-fit:contain;
   margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px;
-  box-shadow:0 8px 25px rgba(55,38,21,.15);
+  filter:drop-shadow(0 8px 12px rgba(55,38,21,.13));
 }
-
-.swan-container:before,
-.swan-container:after{
-  content:"✦";
-  position:absolute;
-  color:#a98352;
-  font-size:17px;
-}
-
-.swan-container:before{top:9px;right:12px}
-.swan-container:after{bottom:10px;left:11px}
-
-.swan-logo{width:100%;height:100%;object-fit:contain}
 
 .rsvp-panel{
-  padding:38px 22px 48px;
+  padding:25px 22px 48px;
   background:transparent;
   position:relative;
 }
@@ -905,6 +863,7 @@ footer a{color:inherit}
 </div>
 
 <main>
+  <!-- OPENING COVER -->
   <section id="opening" aria-label="Open invitation">
     <button id="coverButton" type="button" aria-label="Tap to open invitation">
       <img src="enve.jpg" alt="Wedding invitation cover" fetchpriority="high">
@@ -927,9 +886,11 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- COUNTDOWN -->
   <section id="countdown">
     <div class="section-title" data-en="Countdown" data-fr="Compte à rebours">Countdown</div>
     <p class="kicker" data-en="Until 21 November 2026" data-fr="Jusqu'au 21 novembre 2026">Until 21 November 2026</p>
+
     <div class="countdown-grid" aria-label="Countdown">
       <div class="time-box"><div class="time-value" id="days">00</div><div class="time-label" data-en="Days" data-fr="Jours">Days</div></div>
       <div class="time-divider">|</div>
@@ -941,6 +902,7 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- WELCOME -->
   <section id="welcome">
     <div class="section-title" data-en="Welcome!" data-fr="Bienvenue !">Welcome!</div>
     <p data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people."
@@ -949,38 +911,42 @@ footer a{color:inherit}
     </p>
   </section>
 
+  <!-- BOTANICAL DECORATION -->
   <section id="vase" aria-label="Floral decoration">
-    <div class="decor-wrap vase-wrap">
-      <span class="sticker sticker-leaf leaf-left">❧</span>
-      <span class="sticker sticker-flower flower-right">✿</span>
-      <span class="sticker sticker-spark spark-left">✧</span>
-      <img class="decor-image vase-image" src="vase.PNG" alt="Decorative vase">
+    <div class="botanical-wrap">
+      <img class="botanical-image vase-image" src="dried-flowers.PNG" alt="Elegant dried flowers and botanical arrangement">
     </div>
   </section>
 
+  <!-- VENUE -->
   <section id="venue">
     <p class="kicker" data-en="Where we celebrate" data-fr="Le lieu de célébration">Where we celebrate</p>
     <div class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</div>
+
     <div class="venue-card">
-      <div class="decor-wrap building-wrap">
-        <span class="sticker sticker-leaf leaf-left">❧</span>
-        <span class="sticker sticker-flower flower-right">✿</span>
+      <div class="building-wrap">
         <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Illustration of Finca El Olivar">
       </div>
+
       <div class="finca-title">Finca El Olivar</div>
       <div class="event-datetime" data-en="12 September 2026 · 14:00" data-fr="12 septembre 2026 · 14 h 00">12 September 2026 · 14:00</div>
       <hr class="divider">
+
       <div class="address-text">Camino de los Olivos s/n, Ronda<br>Málaga, 29400 – España</div>
+
       <div class="map-box">
         <iframe title="Map to Finca El Olivar" src="https://maps.google.com/maps?q=Finca+El+Olivar+Ronda+Malaga&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen></iframe>
       </div>
+
       <a class="outline-btn" href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga" target="_blank" rel="noopener" data-en="OPEN IN MAPS" data-fr="OUVRIR LA CARTE">OPEN IN MAPS</a>
     </div>
   </section>
 
+  <!-- TIMELINE -->
   <section id="timeline">
     <div class="section-title" data-en="Day Programme" data-fr="Programme du jour">Day Programme</div>
     <p class="kicker">12 September 2026</p>
+
     <div class="timeline">
       <div class="timeline-item"><div class="event-copy"><div class="event-time">14:00</div><span data-en="Arrival" data-fr="Accueil">Arrival</span></div><div class="timeline-dot"></div><div></div></div>
       <div class="timeline-item"><div></div><div class="timeline-dot"></div><div class="event-copy"><div class="event-time">14:30</div><span data-en="Ceremony" data-fr="Cérémonie">Ceremony</span></div></div>
@@ -991,30 +957,33 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- DRESS CODE -->
   <section id="dresscode">
     <div class="dress-card">
       <div class="section-title" data-en="Dress Code" data-fr="Tenue vestimentaire">Dress Code</div>
+
       <div class="dress-category" data-en="Women" data-fr="Femmes">Women</div>
       <div class="dress-desc" data-en="Cocktail or formal dress" data-fr="Robe de cocktail ou tenue de soirée">Cocktail or formal dress</div>
+
       <hr class="divider">
+
       <div class="dress-category" data-en="Men" data-fr="Hommes">Men</div>
       <div class="dress-desc" data-en="Dark suit and tie" data-fr="Costume sombre et cravate">Dark suit and tie</div>
     </div>
   </section>
 
+  <!-- PRE-WEDDING EVENTS -->
   <section id="prewedding">
-    <div class="decor-wrap bow-wrap">
-      <span class="sticker sticker-flower flower-left">✿</span>
-      <span class="sticker sticker-leaf leaf-right">❧</span>
-      <img class="bow-image" src="bow.PNG" alt="Decorative bow">
+    <div class="prewedding-botanical">
+      <img src="pampas-grass.PNG" alt="Elegant pampas grass and dried botanical arrangement">
     </div>
+
     <p class="kicker" data-en="Pre-Wedding Events" data-fr="Événements avant le mariage">Pre-Wedding Events</p>
     <div class="section-title" data-en="Come Say Hello..." data-fr="Venez nous saluer...">Come Say Hello...</div>
+
     <p class="intro-copy" data-en="These are informal gatherings, so feel free to join us if you're in the area." data-fr="Ces rencontres sont informelles : rejoignez-nous si vous êtes dans les environs.">These are informal gatherings, so feel free to join us if you're in the area.</p>
 
     <div class="event-card">
-      <span class="sticker sticker-flower sticker-left">✿</span>
-      <span class="sticker sticker-leaf sticker-right">❧</span>
       <img class="event-icon" src="https://i.postimg.cc/NGTkGYHz/IMG-8948.png" alt="Cocktail illustration">
       <div class="event-title" data-en="Cocktail Party" data-fr="Cocktail">Cocktail Party</div>
       <div class="event-datetime" data-en="Friday, September 11th, 2026 · 8:00 PM" data-fr="Vendredi 11 septembre 2026 · 20 h 00">Friday, September 11th, 2026 · 8:00 PM</div>
@@ -1023,8 +992,6 @@ footer a{color:inherit}
     </div>
 
     <div class="event-card">
-      <span class="sticker sticker-flower sticker-left">✿</span>
-      <span class="sticker sticker-leaf sticker-right">❧</span>
       <img class="event-icon" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Wedding day illustration">
       <div class="event-title" data-en="Wedding Day" data-fr="Jour du mariage">Wedding Day</div>
       <div class="event-datetime" data-en="Sunday, September 13th, 2026 · 12:00 PM" data-fr="Dimanche 13 septembre 2026 · 12 h 00">Sunday, September 13th, 2026 · 12:00 PM</div>
@@ -1033,8 +1000,10 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- ACCOMMODATION -->
   <section id="accommodation">
     <div class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</div>
+
     <p class="intro-copy" data-en="Finca El Olivar does not offer lodging, but here are some recommended options nearby." data-fr="La Finca El Olivar ne propose pas d’hébergement ; voici quelques options recommandées à proximité.">Finca El Olivar does not offer lodging, but here are some recommended options nearby.</p>
 
     <div class="glass-card">
@@ -1069,11 +1038,13 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- PICTURES -->
   <section id="pictures">
     <div class="picture-heading">
       <div class="section-title" data-en="Our Memories" data-fr="Nos souvenirs">Our Memories</div>
       <p class="kicker" data-en="A few moments to cherish" data-fr="Quelques instants à chérir">A few moments to cherish</p>
     </div>
+
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <div class="slide-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=85" alt="Couple silhouette"></div>
@@ -1086,8 +1057,10 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- GIFTS -->
   <section id="gift">
     <div class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</div>
+
     <p class="gift-subtitle" data-en="Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:" data-fr="Votre présence est notre plus beau cadeau. Si vous souhaitez nous offrir quelque chose, vous trouverez ci-dessous nos coordonnées bancaires :">Your presence is our greatest gift. If you wish to give us something, please find our bank account information below:</p>
 
     <div class="bank-card">
@@ -1103,11 +1076,10 @@ footer a{color:inherit}
     </div>
   </section>
 
+  <!-- RSVP -->
   <section id="rsvp">
     <div class="swan-top">
-      <div class="swan-container">
-        <img src="swan.PNG" alt="Swan illustration" class="swan-logo">
-      </div>
+      <img class="rsvp-botanical" src="dried-flowers.PNG" alt="Elegant dried flower arrangement">
     </div>
 
     <div class="rsvp-panel">
@@ -1175,6 +1147,7 @@ footer a{color:inherit}
   let opened = false;
   let videoFinished = false;
 
+  /* Keep the page locked until the invitation video ends */
   function preventPageScroll(event){
     if(!videoFinished) event.preventDefault();
   }
@@ -1255,14 +1228,16 @@ footer a{color:inherit}
 
       if(musicPromise && typeof musicPromise.then === 'function'){
         musicPromise.then(updateMusicButton).catch(function(error){
-          console.error('Music could not start. Check inwhite.mp3:',error);
+          console.warn('Music could not start. Check inwhite.mp3:',error);
           updateMusicButton();
         });
       }
     }catch(error){
-      console.error('Music playback error:',error);
+      console.warn('Music playback error:',error);
     }
 
+    /* Video is muted so it can start reliably on mobile.
+       Music starts separately from the user's tap. */
     video.muted = true;
     video.playsInline = true;
 
@@ -1294,7 +1269,7 @@ footer a{color:inherit}
 
       if(promise && typeof promise.then === 'function'){
         promise.then(updateMusicButton).catch(function(error){
-          console.error('Could not resume music:',error);
+          console.warn('Could not resume music:',error);
           updateMusicButton();
         });
       }
@@ -1307,9 +1282,13 @@ footer a{color:inherit}
   music.addEventListener('play',updateMusicButton);
   music.addEventListener('pause',updateMusicButton);
 
-  /* Freeze on the last video frame, then unlock scrolling. */
+  /* Freeze the video on its final frame and unlock page scrolling */
   video.addEventListener('ended',function(){
     video.pause();
+    try{
+      video.currentTime = Math.max(0,video.duration - 0.04);
+    }catch(error){}
+
     video.classList.add('video-visible');
     cover.classList.add('fade-out');
     unlockScrolling();
@@ -1394,7 +1373,7 @@ footer a{color:inherit}
     alert(msg);
   });
 
-  /* Small, delicate white sparkles */
+  /* Small, subtle GOLDEN twinkles — no scattered decorative stickers */
   const canvas = document.getElementById('sparkCanvas');
   const ctx = canvas.getContext('2d');
 
@@ -1415,16 +1394,17 @@ footer a{color:inherit}
 
     ctx.setTransform(ratio,0,0,ratio,0,0);
 
-    const count = Math.min(85,Math.max(38,Math.floor(width/6)));
+    /* Fewer and smaller particles for a delicate look */
+    const count = Math.min(48,Math.max(22,Math.floor(width/10)));
 
     sparks = Array.from({length:count},function(){
       return {
         x:Math.random()*width,
         y:Math.random()*height,
-        speed:Math.random()*0.18+0.04,
-        drift:(Math.random()-0.5)*0.12,
+        speed:Math.random()*0.12+0.025,
+        drift:(Math.random()-0.5)*0.08,
         phase:Math.random()*Math.PI*2,
-        size:Math.random()*0.5+0.2
+        size:Math.random()*0.45+0.18
       };
     });
   }
@@ -1435,15 +1415,15 @@ footer a{color:inherit}
 
     for(let i=0;i<sparks.length;i++){
       const s = sparks[i];
-      const twinkle = (Math.sin(time*2.4+s.phase)+1)/2;
-      const alpha = 0.12+twinkle*0.55;
-      const radius = s.size+twinkle*0.25;
+      const twinkle = (Math.sin(time*2.1+s.phase)+1)/2;
+      const alpha = 0.10+twinkle*0.36;
+      const radius = s.size+twinkle*0.20;
 
       ctx.beginPath();
       ctx.arc(s.x,s.y,radius,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(255,253,245,'+alpha+')';
-      ctx.shadowBlur = 1+twinkle*1.6;
-      ctx.shadowColor = '#fffdf5';
+      ctx.fillStyle = 'rgba(220,184,119,'+alpha+')';
+      ctx.shadowBlur = 1+twinkle*1.2;
+      ctx.shadowColor = '#c4a16b';
       ctx.fill();
       ctx.shadowBlur = 0;
 
