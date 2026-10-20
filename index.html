@@ -160,7 +160,7 @@ h1,h2,h3,p{margin-top:0}
   color:#fff5e3;
 }
 
-/* ONLY SMALL GOLDEN TWINKLES ON THE BACKGROUND */
+/* VISIBLE GOLDEN SPARKLES */
 #sparkCanvas{
   position:fixed;
   inset:0;
@@ -185,7 +185,6 @@ h1,h2,h3,p{margin-top:0}
   isolation:isolate;
 }
 
-/* A long soft fade instead of a solid strip */
 .opening-gradient{
   position:absolute;
   left:0;
@@ -375,7 +374,7 @@ h1,h2,h3,p{margin-top:0}
   margin:0 auto;
 }
 
-/* LARGE BOTANICAL ARTWORK — NO SCATTERED STICKERS */
+/* BOTANICAL ARTWORK */
 .botanical-wrap{
   position:relative;
   width:min(100%,330px);
@@ -393,11 +392,11 @@ h1,h2,h3,p{margin-top:0}
   max-height:290px;
   object-fit:contain;
   margin:0 auto;
-  filter:drop-shadow(0 9px 12px rgba(63,47,30,.13));
+  filter:drop-shadow(0 9px 12px rgba(63,47,30,.18));
 }
 
 #vase{padding:22px 20px 10px}
-.vase-image{width:220px;max-height:270px}
+.vase-image{width:250px;max-height:290px}
 
 #venue{padding-top:22px}
 
@@ -579,21 +578,25 @@ h1,h2,h3,p{margin-top:0}
   letter-spacing:.3px;
 }
 
-/* PRE-WEDDING BOTANICAL DECOR */
+/* PRE-WEDDING BOTANICAL */
 #prewedding{padding-top:10px}
 
 .prewedding-botanical{
-  width:min(100%,280px);
+  width:min(100%,300px);
+  min-height:160px;
   margin:0 auto 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .prewedding-botanical img{
   display:block;
   width:100%;
-  max-height:210px;
+  max-height:240px;
   object-fit:contain;
   margin:auto;
-  filter:drop-shadow(0 7px 10px rgba(73,51,30,.13));
+  filter:drop-shadow(0 7px 10px rgba(73,51,30,.17));
 }
 
 .intro-copy{
@@ -738,7 +741,7 @@ h1,h2,h3,p{margin-top:0}
 
 .bank-detail span{font-weight:600}
 
-/* RSVP — NO SWAN STICKER */
+/* RSVP WITH BOTANICAL ILLUSTRATION */
 #rsvp{
   padding:0 0 45px;
   background:transparent;
@@ -751,11 +754,11 @@ h1,h2,h3,p{margin-top:0}
 
 .rsvp-botanical{
   display:block;
-  width:min(100%,240px);
-  max-height:200px;
+  width:min(100%,280px);
+  height:220px;
   object-fit:contain;
   margin:0 auto;
-  filter:drop-shadow(0 8px 12px rgba(55,38,21,.13));
+  filter:drop-shadow(0 8px 12px rgba(55,38,21,.16));
 }
 
 .rsvp-panel{
@@ -863,7 +866,6 @@ footer a{color:inherit}
 </div>
 
 <main>
-  <!-- OPENING COVER -->
   <section id="opening" aria-label="Open invitation">
     <button id="coverButton" type="button" aria-label="Tap to open invitation">
       <img src="enve.jpg" alt="Wedding invitation cover" fetchpriority="high">
@@ -886,7 +888,6 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- COUNTDOWN -->
   <section id="countdown">
     <div class="section-title" data-en="Countdown" data-fr="Compte à rebours">Countdown</div>
     <p class="kicker" data-en="Until 21 November 2026" data-fr="Jusqu'au 21 novembre 2026">Until 21 November 2026</p>
@@ -902,7 +903,6 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- WELCOME -->
   <section id="welcome">
     <div class="section-title" data-en="Welcome!" data-fr="Bienvenue !">Welcome!</div>
     <p data-en="We warmly invite you to celebrate our wedding day with us in the beautiful town of Ronda, Andalusia. We look forward to sharing this unforgettable moment with our most special people."
@@ -911,14 +911,16 @@ footer a{color:inherit}
     </p>
   </section>
 
-  <!-- BOTANICAL DECORATION -->
-  <section id="vase" aria-label="Floral decoration">
+  <!-- BOW LOCATION: DRIED FLOWERS AND BEIGE BOTANICALS -->
+  <section id="vase" aria-label="Dried botanical decoration">
     <div class="botanical-wrap">
-      <img class="botanical-image vase-image" src="dried-flowers.PNG" alt="Elegant dried flowers and botanical arrangement">
+      <img class="botanical-image vase-image"
+           src="dried-flowers.PNG"
+           alt="Elegant beige dried leaves and pampas grass"
+           loading="lazy">
     </div>
   </section>
 
-  <!-- VENUE -->
   <section id="venue">
     <p class="kicker" data-en="Where we celebrate" data-fr="Le lieu de célébration">Where we celebrate</p>
     <div class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</div>
@@ -942,7 +944,6 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- TIMELINE -->
   <section id="timeline">
     <div class="section-title" data-en="Day Programme" data-fr="Programme du jour">Day Programme</div>
     <p class="kicker">12 September 2026</p>
@@ -957,25 +958,23 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- DRESS CODE -->
   <section id="dresscode">
     <div class="dress-card">
       <div class="section-title" data-en="Dress Code" data-fr="Tenue vestimentaire">Dress Code</div>
-
       <div class="dress-category" data-en="Women" data-fr="Femmes">Women</div>
       <div class="dress-desc" data-en="Cocktail or formal dress" data-fr="Robe de cocktail ou tenue de soirée">Cocktail or formal dress</div>
-
       <hr class="divider">
-
       <div class="dress-category" data-en="Men" data-fr="Hommes">Men</div>
       <div class="dress-desc" data-en="Dark suit and tie" data-fr="Costume sombre et cravate">Dark suit and tie</div>
     </div>
   </section>
 
-  <!-- PRE-WEDDING EVENTS -->
+  <!-- PRE-WEDDING DECORATION: PAMPAS GRASS -->
   <section id="prewedding">
     <div class="prewedding-botanical">
-      <img src="pampas-grass.PNG" alt="Elegant pampas grass and dried botanical arrangement">
+      <img src="pampas-grass.PNG"
+           alt="Elegant pampas grass and dried botanical arrangement"
+           loading="lazy">
     </div>
 
     <p class="kicker" data-en="Pre-Wedding Events" data-fr="Événements avant le mariage">Pre-Wedding Events</p>
@@ -1000,7 +999,6 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- ACCOMMODATION -->
   <section id="accommodation">
     <div class="section-title" data-en="Accommodation" data-fr="Hébergement">Accommodation</div>
 
@@ -1038,7 +1036,6 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- PICTURES -->
   <section id="pictures">
     <div class="picture-heading">
       <div class="section-title" data-en="Our Memories" data-fr="Nos souvenirs">Our Memories</div>
@@ -1057,7 +1054,6 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- GIFTS -->
   <section id="gift">
     <div class="section-title" data-en="Gifts" data-fr="Cadeaux">Gifts</div>
 
@@ -1076,10 +1072,13 @@ footer a{color:inherit}
     </div>
   </section>
 
-  <!-- RSVP -->
+  <!-- SWAN LOCATION: GREEN BOTANICAL BRANCH -->
   <section id="rsvp">
     <div class="swan-top">
-      <img class="rsvp-botanical" src="dried-flowers.PNG" alt="Elegant dried flower arrangement">
+      <img class="rsvp-botanical"
+           src="botanical-branch.PNG"
+           alt="Elegant olive-green botanical branches"
+           loading="lazy">
     </div>
 
     <div class="rsvp-panel">
@@ -1147,7 +1146,6 @@ footer a{color:inherit}
   let opened = false;
   let videoFinished = false;
 
-  /* Keep the page locked until the invitation video ends */
   function preventPageScroll(event){
     if(!videoFinished) event.preventDefault();
   }
@@ -1236,8 +1234,6 @@ footer a{color:inherit}
       console.warn('Music playback error:',error);
     }
 
-    /* Video is muted so it can start reliably on mobile.
-       Music starts separately from the user's tap. */
     video.muted = true;
     video.playsInline = true;
 
@@ -1282,9 +1278,10 @@ footer a{color:inherit}
   music.addEventListener('play',updateMusicButton);
   music.addEventListener('pause',updateMusicButton);
 
-  /* Freeze the video on its final frame and unlock page scrolling */
+  /* Freeze on the final frame and unlock scrolling */
   video.addEventListener('ended',function(){
     video.pause();
+
     try{
       video.currentTime = Math.max(0,video.duration - 0.04);
     }catch(error){}
@@ -1361,7 +1358,7 @@ footer a{color:inherit}
     guestCount.textContent = guests;
   });
 
-  /* Demo RSVP: responses are not saved online */
+  /* Demo RSVP — responses are not saved online */
   document.getElementById('rsvpForm').addEventListener('submit',function(e){
     e.preventDefault();
 
@@ -1373,7 +1370,7 @@ footer a{color:inherit}
     alert(msg);
   });
 
-  /* Small, subtle GOLDEN twinkles — no scattered decorative stickers */
+  /* Larger, brighter golden sparkles */
   const canvas = document.getElementById('sparkCanvas');
   const ctx = canvas.getContext('2d');
 
@@ -1394,17 +1391,16 @@ footer a{color:inherit}
 
     ctx.setTransform(ratio,0,0,ratio,0,0);
 
-    /* Fewer and smaller particles for a delicate look */
-    const count = Math.min(48,Math.max(22,Math.floor(width/10)));
+    const count = Math.min(75,Math.max(35,Math.floor(width/6)));
 
     sparks = Array.from({length:count},function(){
       return {
         x:Math.random()*width,
         y:Math.random()*height,
-        speed:Math.random()*0.12+0.025,
-        drift:(Math.random()-0.5)*0.08,
+        speed:Math.random()*0.18+0.035,
+        drift:(Math.random()-0.5)*0.12,
         phase:Math.random()*Math.PI*2,
-        size:Math.random()*0.45+0.18
+        size:Math.random()*1.15+0.65
       };
     });
   }
@@ -1415,28 +1411,55 @@ footer a{color:inherit}
 
     for(let i=0;i<sparks.length;i++){
       const s = sparks[i];
-      const twinkle = (Math.sin(time*2.1+s.phase)+1)/2;
-      const alpha = 0.10+twinkle*0.36;
-      const radius = s.size+twinkle*0.20;
+      const twinkle = (Math.sin(time*2.5+s.phase)+1)/2;
+      const alpha = 0.35+twinkle*0.60;
+      const radius = s.size+twinkle*0.8;
 
+      /* Soft golden glow */
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,radius*2.5,0,Math.PI*2);
+      ctx.fillStyle = 'rgba(218,174,91,'+(alpha*0.20)+')';
+      ctx.shadowBlur = 9;
+      ctx.shadowColor = '#e8c77f';
+      ctx.fill();
+
+      /* Bright central sparkle */
       ctx.beginPath();
       ctx.arc(s.x,s.y,radius,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(220,184,119,'+alpha+')';
-      ctx.shadowBlur = 1+twinkle*1.2;
-      ctx.shadowColor = '#c4a16b';
+      ctx.fillStyle = 'rgba(255,225,163,'+alpha+')';
+      ctx.shadowBlur = 7;
+      ctx.shadowColor = '#f1cc7b';
       ctx.fill();
+
+      /* Occasional four-point glint */
+      if(twinkle>0.82){
+        const arm = radius*2.8;
+
+        ctx.beginPath();
+        ctx.moveTo(s.x-arm,s.y);
+        ctx.lineTo(s.x+arm,s.y);
+        ctx.moveTo(s.x,s.y-arm);
+        ctx.lineTo(s.x,s.y+arm);
+
+        ctx.strokeStyle = 'rgba(255,231,181,'+(twinkle*0.8)+')';
+        ctx.lineWidth = 0.8;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = '#e9c77e';
+        ctx.stroke();
+      }
+
       ctx.shadowBlur = 0;
 
       s.y += s.speed;
       s.x += s.drift;
 
-      if(s.y > height+3){
-        s.y = -3;
-        s.x = Math.random()*width;
+      if(s.y>height+5){
+        s.y=-5;
+        s.x=Math.random()*width;
       }
 
-      if(s.x < -3) s.x = width+3;
-      if(s.x > width+3) s.x = -3;
+      if(s.x < -5) s.x=width+5;
+      if(s.x > width+5) s.x=-5;
     }
 
     requestAnimationFrame(animateSparks);
