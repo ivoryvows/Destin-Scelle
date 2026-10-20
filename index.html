@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#20291e">
+<meta name="theme-color" content="#76634b">
 <title>Wedding Invitation | Danny &amp; Rudy</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,18 +12,19 @@
 
 <style>
 :root{
-  --navy:#263326;
-  --deep-blue:#182219;
-  --blue:#40533b;
-  --pale:#f1e7d6;
+  --olive:#727858;
+  --deep-olive:#454b37;
+  --forest:#343a2c;
+  --brown:#80634a;
+  --deep-brown:#57402f;
+  --caramel:#b58c5d;
+  --gold:#c4a16b;
+  --cream:#f7efe1;
+  --beige:#e7d5b9;
+  --taupe:#c2ad91;
+  --ink:#44372b;
   --white:#fffaf0;
-  --ink:#302a20;
-  --glass:rgba(250,243,229,.96);
-  --line:rgba(213,181,119,.6);
-  --gold:#c5a15f;
-  --dark-brown:#38261b;
-  --olive:#526345;
-  --beige:#e6d5b8;
+  --line:rgba(196,161,107,.65);
 }
 
 *{box-sizing:border-box}
@@ -31,7 +32,7 @@
 html{
   scroll-behavior:smooth;
   min-height:100%;
-  background:#20291e;
+  background:#c8b49a;
 }
 
 html.invitation-locked,
@@ -50,18 +51,21 @@ body{
   background:
     linear-gradient(
       180deg,
-      #f1e7d6 0%,
-      #d7c5a5 8%,
-      #8e9270 17%,
-      #586747 27%,
-      #344431 37%,
-      #20291e 48%,
-      #302d21 56%,
-      #3e4c32 65%,
-      #596647 74%,
-      #8c9070 84%,
-      #c4ad86 93%,
-      #f1e7d6 100%
+      #f7efe1 0%,
+      #e8d7bd 8%,
+      #c5b292 15%,
+      #a49d7c 22%,
+      #85896c 29%,
+      #666f52 36%,
+      #535b43 43%,
+      #494b38 49%,
+      #514438 55%,
+      #67503c 61%,
+      #77654a 68%,
+      #8d8b6b 75%,
+      #b2a486 83%,
+      #d9c5a6 92%,
+      #f7efe1 100%
     );
   background-attachment:fixed;
 }
@@ -93,8 +97,8 @@ h1,h2,h3,p{margin-top:0}
 
 .section-title{
   font:400 47px/1.12 'Great Vibes',cursive;
-  color:#fff2d5;
-  text-shadow:0 2px 12px rgba(0,0,0,.3);
+  color:#fff4df;
+  text-shadow:0 2px 12px rgba(42,31,20,.23);
   margin:0 0 12px;
 }
 
@@ -102,26 +106,26 @@ h1,h2,h3,p{margin-top:0}
   font:500 10px/1.8 'Cinzel',serif;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:#ead4a7;
+  color:#f1d9b4;
   margin:0 0 12px;
 }
 
 .subtle{font-size:12px;line-height:1.8;color:#f5ead3}
 
 .glass-card{
-  background:rgba(247,239,223,.96);
-  border:1px solid rgba(197,161,95,.75);
-  border-radius:14px;
+  background:rgba(250,243,230,.97);
+  border:1px solid rgba(196,161,107,.7);
+  border-radius:16px;
   padding:26px 20px;
-  box-shadow:0 14px 36px rgba(13,21,14,.22);
+  box-shadow:0 14px 36px rgba(55,39,24,.15);
   backdrop-filter:blur(8px);
 }
 
 .divider{
-  width:62px;
+  width:70px;
   height:1px;
   border:0;
-  background:linear-gradient(90deg,transparent,#b28b4e,transparent);
+  background:linear-gradient(90deg,transparent,#b58c5d,transparent);
   margin:22px auto;
 }
 
@@ -133,16 +137,16 @@ h1,h2,h3,p{margin-top:0}
   display:flex;
   gap:2px;
   padding:4px;
-  border:1px solid #c5a15f;
+  border:1px solid #c4a16b;
   border-radius:24px;
-  background:rgba(246,237,219,.97);
-  box-shadow:0 4px 18px #0003;
+  background:rgba(250,243,230,.97);
+  box-shadow:0 4px 18px #0002;
 }
 
 .lang-switch button{
   border:0;
   background:transparent;
-  color:#34412d;
+  color:#5c4a36;
   border-radius:18px;
   padding:7px 10px;
   font-size:10px;
@@ -151,11 +155,11 @@ h1,h2,h3,p{margin-top:0}
 }
 
 .lang-switch button.active{
-  background:#293829;
-  color:#fff1d4;
+  background:#62503b;
+  color:#fff5e3;
 }
 
-/* Fine white twinkling sparkles */
+/* Tiny, delicate white sparkles */
 #sparkCanvas{
   position:fixed;
   inset:0;
@@ -165,13 +169,13 @@ h1,h2,h3,p{margin-top:0}
   z-index:20;
 }
 
-/* OPENING COVER */
+/* OPENING */
 #opening{
   padding:0;
   height:100vh;
   height:100svh;
   min-height:100svh;
-  background:#20291e;
+  background:#c5b49a;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -179,23 +183,29 @@ h1,h2,h3,p{margin-top:0}
   isolation:isolate;
 }
 
-/* Smoothly blend video into the earthy page gradient */
-#opening::after{
-  content:"";
+/*
+  The gradient is a separate overlay.
+  It fades gradually from transparent video into the page's cream tone.
+  No solid horizontal edge.
+*/
+.opening-gradient{
   position:absolute;
   left:0;
   right:0;
-  bottom:0;
-  height:23vh;
-  z-index:4;
+  bottom:-1px;
+  height:35vh;
+  z-index:2;
   pointer-events:none;
   background:linear-gradient(
     to bottom,
-    rgba(241,231,214,0) 0%,
-    rgba(241,231,214,.04) 20%,
-    rgba(241,231,214,.22) 43%,
-    rgba(241,231,214,.62) 72%,
-    #f1e7d6 100%
+    rgba(247,239,225,0) 0%,
+    rgba(247,239,225,.025) 16%,
+    rgba(247,239,225,.07) 31%,
+    rgba(247,239,225,.17) 46%,
+    rgba(247,239,225,.34) 61%,
+    rgba(247,239,225,.60) 77%,
+    rgba(247,239,225,.84) 90%,
+    #f7efe1 100%
   );
 }
 
@@ -206,11 +216,11 @@ h1,h2,h3,p{margin-top:0}
   height:100%;
   padding:0;
   border:0;
-  background:#20291e;
+  background:#c5b49a;
   cursor:pointer;
   z-index:3;
   opacity:1;
-  transition:opacity .5s ease;
+  transition:opacity .55s ease;
   -webkit-tap-highlight-color:transparent;
   touch-action:manipulation;
 }
@@ -232,16 +242,16 @@ h1,h2,h3,p{margin-top:0}
   inset:0;
   background:linear-gradient(
     180deg,
-    rgba(20,29,20,.06),
-    rgba(20,29,20,.15) 45%,
-    rgba(20,29,20,.72)
+    rgba(52,42,30,.03) 0%,
+    rgba(52,42,30,.06) 42%,
+    rgba(52,42,30,.52) 100%
   );
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
   align-items:center;
   padding:0 20px 11vh;
-  color:#fff1d4;
+  color:#fff3dc;
   pointer-events:none;
 }
 
@@ -254,8 +264,8 @@ h1,h2,h3,p{margin-top:0}
 .tap-label{
   font:400 42px 'Great Vibes',cursive;
   margin-top:10px;
-  color:#f7e5bf;
-  text-shadow:0 2px 14px #0009;
+  color:#fff0d2;
+  text-shadow:0 2px 14px #30201488;
 }
 
 #openingVideo{
@@ -266,7 +276,7 @@ h1,h2,h3,p{margin-top:0}
   height:100%;
   max-width:none;
   object-fit:cover;
-  background:#20291e;
+  background:#c5b49a;
   z-index:1;
   opacity:0;
   transition:opacity .5s ease;
@@ -280,11 +290,11 @@ h1,h2,h3,p{margin-top:0}
   bottom:27px;
   left:0;
   right:0;
-  color:#fff9e9;
+  color:#66503a;
   font:10px 'Cinzel',serif;
   letter-spacing:2px;
   text-transform:uppercase;
-  text-shadow:0 1px 7px #000;
+  text-shadow:0 1px 3px rgba(255,250,238,.9);
   animation:bob 1.8s ease-in-out infinite;
   pointer-events:none;
   z-index:5;
@@ -301,7 +311,7 @@ h1,h2,h3,p{margin-top:0}
   50%{transform:translateY(5px)}
 }
 
-/* MUSIC BUTTON */
+/* MUSIC */
 #musicButton{
   display:none;
   position:fixed;
@@ -311,14 +321,14 @@ h1,h2,h3,p{margin-top:0}
   height:44px;
   align-items:center;
   justify-content:center;
-  border:1px solid #c5a15f;
+  border:1px solid #c4a16b;
   border-radius:50%;
-  background:rgba(32,41,30,.96);
-  color:#f8e9c9;
+  background:rgba(83,67,48,.95);
+  color:#fff1d4;
   font-size:18px;
   cursor:pointer;
   z-index:60;
-  box-shadow:0 4px 16px #0004;
+  box-shadow:0 4px 16px #0003;
   -webkit-tap-highlight-color:transparent;
 }
 
@@ -329,7 +339,7 @@ h1,h2,h3,p{margin-top:0}
 #countdown .time-value,
 #countdown .time-label,
 #countdown .time-divider{
-  color:#34412d;
+  color:#62503a;
   text-shadow:none;
 }
 
@@ -355,72 +365,113 @@ h1,h2,h3,p{margin-top:0}
 /* WELCOME */
 #welcome .section-title,
 #welcome p{
-  color:#f7ecd6;
-  text-shadow:0 2px 8px rgba(0,0,0,.2);
+  color:#fff6e5;
+  text-shadow:0 2px 8px rgba(60,41,24,.18);
 }
 
 #welcome p{
-  font:14px/1.9 'Cormorant Garamond',serif;
-  font-size:17px;
+  font:17px/1.9 'Cormorant Garamond',serif;
   max-width:390px;
   margin:0 auto;
 }
 
-#vase{padding:22px 20px 6px}
+/* Decorative botanical stickers */
+.decor-wrap{
+  position:relative;
+  width:min(100%,300px);
+  margin:0 auto;
+}
+
+.sticker{
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+  font-family:serif;
+  line-height:1;
+  filter:drop-shadow(0 3px 4px rgba(67,48,29,.12));
+}
+
+.sticker-leaf{
+  color:#777b56;
+  font-size:39px;
+  transform:rotate(-24deg);
+}
+
+.sticker-flower{
+  color:#f8edda;
+  font-size:29px;
+  text-shadow:0 1px 0 #c3a779,0 4px 9px #49382422;
+}
+
+.sticker-spark{
+  color:#f6e5bd;
+  font-size:21px;
+}
+
+#vase{padding:22px 20px 10px}
 
 .decor-image{
   display:block;
   object-fit:contain;
   margin:0 auto;
-  filter:drop-shadow(0 10px 12px rgba(18,27,17,.18));
+  filter:drop-shadow(0 10px 12px rgba(63,47,30,.16));
 }
 
 .vase-image{width:190px;max-height:250px}
 
+.vase-wrap .leaf-left{left:7px;bottom:24px}
+.vase-wrap .flower-right{right:7px;top:28px}
+.vase-wrap .spark-left{left:28px;top:22px}
+
 #venue{padding-top:22px}
 
 .venue-card{
-  background:linear-gradient(145deg,#fbf4e6,#e9dbc1);
-  border:1px solid #c5a15f;
-  border-radius:14px;
+  background:linear-gradient(145deg,#fff8e9 0%,#f0e1c8 55%,#e4cfad 100%);
+  border:1px solid #c4a16b;
+  border-radius:17px;
   padding:26px 20px;
-  box-shadow:0 15px 36px rgba(15,24,15,.25);
+  box-shadow:0 15px 36px rgba(70,49,28,.18);
 }
 
+.building-wrap{margin-bottom:18px}
 .building-sketch{
   display:block;
   width:100%;
   max-width:270px;
   max-height:180px;
   object-fit:contain;
-  margin:0 auto 18px;
+  margin:0 auto;
+  filter:sepia(.10) saturate(.88);
 }
+
+.building-wrap .leaf-left{left:0;bottom:0}
+.building-wrap .flower-right{right:1px;top:4px}
 
 .finca-title{
   font:400 39px 'Great Vibes',cursive;
-  color:#34412d;
+  color:#68513a;
   margin-bottom:12px;
 }
 
 .event-datetime{
   font:12px/1.8 'Cinzel',serif;
   letter-spacing:.5px;
-  color:#67513a;
+  color:#806346;
   margin-bottom:18px;
 }
 
 .address-text{
-  font:12px/1.8 'Cormorant Garamond',serif;
-  font-size:15px;
-  color:#49382a;
+  font:15px/1.8 'Cormorant Garamond',serif;
+  color:#574332;
   margin-bottom:18px;
 }
 
 .map-box{
   height:180px;
-  border-radius:9px;
+  border-radius:11px;
   overflow:hidden;
-  border:1px solid #c5a15f;
+  border:1px solid #c4a16b;
   margin-bottom:18px;
 }
 
@@ -429,7 +480,7 @@ h1,h2,h3,p{margin-top:0}
 .outline-btn,.solid-btn{
   display:inline-block;
   text-decoration:none;
-  border-radius:22px;
+  border-radius:24px;
   padding:11px 18px;
   font:500 10px 'Cinzel',serif;
   letter-spacing:1.3px;
@@ -438,32 +489,32 @@ h1,h2,h3,p{margin-top:0}
 }
 
 .outline-btn{
-  border:1px solid #34412d;
-  color:#34412d;
-  background:transparent;
+  border:1px solid #756044;
+  color:#665039;
+  background:rgba(255,250,239,.45);
 }
 
 .outline-btn:hover{
-  background:#34412d;
-  color:#fff1d4;
+  background:#756044;
+  color:#fff4df;
 }
 
 .solid-btn{
-  border:1px solid #c5a15f;
-  background:linear-gradient(135deg,#40533b,#20291e);
-  color:#fff1d4;
-  box-shadow:0 5px 14px #20291e26;
+  border:1px solid #bd9864;
+  background:linear-gradient(135deg,#897052,#574433);
+  color:#fff5e3;
+  box-shadow:0 5px 14px #57443324;
 }
 
-/* DAY PROGRAMME */
+/* TIMELINE */
 #timeline{padding-top:50px}
 
 #timeline .section-title,
 #timeline .kicker,
 #timeline .event-copy,
 #timeline .event-time{
-  color:#fff1d4;
-  text-shadow:0 2px 7px rgba(0,0,0,.3);
+  color:#fff2dc;
+  text-shadow:0 2px 7px rgba(54,37,22,.24);
 }
 
 .timeline{
@@ -482,9 +533,9 @@ h1,h2,h3,p{margin-top:0}
   background:linear-gradient(
     to bottom,
     transparent,
-    #c5a15f 10%,
-    #ead3a1 50%,
-    #c5a15f 90%,
+    #c9a775 10%,
+    #f3dfb9 50%,
+    #c9a775 90%,
     transparent
   );
   transform:translateX(-50%);
@@ -519,31 +570,31 @@ h1,h2,h3,p{margin-top:0}
   width:8px;
   height:8px;
   border-radius:50%;
-  background:#d2ae6a;
-  border:1px solid #fff0ce;
+  background:#d7b47d;
+  border:1px solid #fff0d0;
   justify-self:center;
   z-index:1;
-  box-shadow:0 0 0 4px rgba(197,161,95,.18);
+  box-shadow:0 0 0 4px rgba(215,180,125,.18);
 }
 
 #dresscode{padding-top:48px}
 
 .dress-card{
-  background:linear-gradient(145deg,rgba(250,243,229,.98),rgba(225,211,184,.98));
-  border:1px solid #c5a15f;
-  border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,248,234,.99),rgba(232,215,188,.98));
+  border:1px solid #c4a16b;
+  border-radius:20px;
   padding:34px 22px;
-  box-shadow:0 14px 35px rgba(16,24,15,.24);
+  box-shadow:0 14px 35px rgba(65,46,27,.17);
 }
 
 .dress-card .section-title{
-  color:#34412d;
+  color:#6b5138;
   text-shadow:none;
 }
 
 .dress-category{
   font:400 34px 'Great Vibes',cursive;
-  color:#4a3727;
+  color:#806044;
   margin:18px 0 5px;
 }
 
@@ -554,51 +605,59 @@ h1,h2,h3,p{margin-top:0}
   letter-spacing:.3px;
 }
 
+.bow-wrap{margin:0 auto 12px}
 .bow-image{
   width:140px;
   max-height:190px;
   margin:0 auto;
   display:block;
-  filter:drop-shadow(0 7px 10px rgba(15,23,14,.22));
+  filter:drop-shadow(0 7px 10px rgba(73,51,30,.18));
 }
+
+.bow-wrap .flower-left{left:10px;top:12px}
+.bow-wrap .leaf-right{right:7px;bottom:13px}
 
 #prewedding{padding-top:10px}
 
 .intro-copy{
-  font:13px/1.9 'Cormorant Garamond',serif;
-  font-size:16px;
-  color:#f5ead3;
+  font:16px/1.9 'Cormorant Garamond',serif;
+  color:#fff4df;
   max-width:350px;
   margin:0 auto 25px;
 }
 
 .event-card{
-  background:linear-gradient(145deg,#fbf4e6,#e9dbc1);
-  border:1px solid #c5a15f;
-  border-radius:13px;
+  position:relative;
+  background:linear-gradient(145deg,#fff8e9,#f0e1c8 60%,#e7d2b2);
+  border:1px solid #c4a16b;
+  border-radius:16px;
   padding:28px 18px;
   margin:0 0 20px;
-  box-shadow:0 12px 30px rgba(15,24,15,.24);
+  box-shadow:0 12px 30px rgba(69,48,28,.17);
 }
 
-.event-icon{
+.event-card .event-icon{
   width:85px;
   height:85px;
   object-fit:contain;
   margin:0 auto 12px;
   display:block;
+  filter:sepia(.08) saturate(.88);
 }
 
 .event-title{
   font:400 38px 'Great Vibes',cursive;
-  color:#34412d;
+  color:#74553b;
   margin-bottom:12px;
 }
 
 .event-location{
   font:12px/1.7 'Cinzel',serif;
-  color:#55412e;
+  color:#66503a;
 }
+
+.event-card .sticker-left{left:10px;top:12px}
+.event-card .sticker-right{right:10px;bottom:15px}
 
 #accommodation .intro-copy{margin-bottom:22px}
 .hotel-block{padding:8px 0}
@@ -606,7 +665,7 @@ h1,h2,h3,p{margin-top:0}
 .hotel-name{
   font:600 13px 'Cinzel',serif;
   letter-spacing:1px;
-  color:#34412d;
+  color:#6c543c;
   margin-bottom:7px;
 }
 
@@ -617,12 +676,12 @@ h1,h2,h3,p{margin-top:0}
 }
 
 .hotel-distance{font-style:italic;margin-bottom:8px}
-.hotel-contact a{color:#34412d;overflow-wrap:anywhere}
+.hotel-contact a{color:#695039;overflow-wrap:anywhere}
 
 .website-btn{
   display:inline-block;
   margin-top:8px;
-  color:#34412d;
+  color:#695039;
   font:600 10px 'Cinzel',serif;
   letter-spacing:1px;
 }
@@ -648,10 +707,10 @@ h1,h2,h3,p{margin-top:0}
 .slide-card{
   width:128px;
   height:190px;
-  border-radius:13px;
+  border-radius:15px;
   overflow:hidden;
-  border:1px solid rgba(197,161,95,.55);
-  box-shadow:0 8px 18px rgba(0,0,0,.25);
+  border:1px solid rgba(232,211,175,.75);
+  box-shadow:0 8px 18px rgba(57,39,23,.2);
   flex-shrink:0;
   background:#f4ead8;
 }
@@ -672,27 +731,27 @@ h1,h2,h3,p{margin-top:0}
 
 .gift-subtitle{
   font:italic 18px/1.7 'Cormorant Garamond',serif;
-  color:#f7ecd6;
+  color:#fff3df;
   margin:0 auto 25px;
   max-width:360px;
 }
 
 .bank-card{
-  background:linear-gradient(145deg,#fbf4e6,#e8d9bd);
-  border:1px solid #c5a15f;
-  border-radius:7px;
+  background:linear-gradient(145deg,#fff8e9,#ead8ba);
+  border:1px solid #c4a16b;
+  border-radius:10px;
   padding:20px 15px;
   margin-bottom:15px;
   text-align:left;
-  color:#4c3827;
-  box-shadow:0 8px 22px rgba(0,0,0,.12);
+  color:#57412e;
+  box-shadow:0 8px 22px rgba(58,40,23,.12);
 }
 
 .bank-name{
   font:600 12px 'Cinzel',serif;
   letter-spacing:1px;
   margin-bottom:13px;
-  color:#34412d;
+  color:#6c543b;
 }
 
 .bank-detail{
@@ -702,7 +761,7 @@ h1,h2,h3,p{margin-top:0}
 
 .bank-detail span{font-weight:600}
 
-/* RSVP blends into the same earthy background */
+/* RSVP stays transparent so the page gradient continues naturally */
 #rsvp{
   padding:0 0 45px;
   background:transparent;
@@ -714,18 +773,30 @@ h1,h2,h3,p{margin-top:0}
 }
 
 .swan-container{
+  position:relative;
   width:125px;
   height:125px;
-  border:1px solid #c5a15f;
+  border:1px solid #c4a16b;
   border-radius:50%;
-  background:linear-gradient(145deg,#f8efdc,#d9c39b);
+  background:linear-gradient(145deg,#fff5df,#e2cba6);
   margin:0 auto;
   display:flex;
   align-items:center;
   justify-content:center;
   padding:10px;
-  box-shadow:0 8px 25px rgba(0,0,0,.2);
+  box-shadow:0 8px 25px rgba(55,38,21,.15);
 }
+
+.swan-container:before,
+.swan-container:after{
+  content:"✦";
+  position:absolute;
+  color:#a98352;
+  font-size:17px;
+}
+
+.swan-container:before{top:9px;right:12px}
+.swan-container:after{bottom:10px;left:11px}
 
 .swan-logo{width:100%;height:100%;object-fit:contain}
 
@@ -736,23 +807,23 @@ h1,h2,h3,p{margin-top:0}
 }
 
 .rsvp-panel .section-title{
-  color:#fff1d4;
-  text-shadow:0 2px 10px rgba(0,0,0,.3);
+  color:#fff3dd;
+  text-shadow:0 2px 10px rgba(61,40,22,.24);
 }
 
 .rsvp-subtitle{
   font:italic 18px 'Cormorant Garamond',serif;
-  color:#f7ecd6;
+  color:#fff2df;
   margin-bottom:25px;
 }
 
 .form-card{
-  background:linear-gradient(145deg,#fbf4e6,#eee0c6);
-  border:1px solid #c5a15f;
-  border-radius:8px;
+  background:linear-gradient(145deg,#fff8e9,#f0e1c8);
+  border:1px solid #c4a16b;
+  border-radius:12px;
   padding:25px 18px;
   text-align:left;
-  box-shadow:0 15px 35px #0003;
+  box-shadow:0 15px 35px #3f2b1d22;
 }
 
 .form-group{margin-bottom:20px}
@@ -760,7 +831,7 @@ h1,h2,h3,p{margin-top:0}
 .form-label{
   display:block;
   font:600 15px 'Cormorant Garamond',serif;
-  color:#403126;
+  color:#51402f;
   margin-bottom:10px;
 }
 
@@ -769,19 +840,19 @@ h1,h2,h3,p{margin-top:0}
   gap:8px;
   align-items:center;
   font-size:12px;
-  color:#55412e;
+  color:#66503a;
   margin:10px 0;
 }
 
-.radio-option input{accent-color:#40533b}
+.radio-option input{accent-color:#76664a}
 
 .input-field{
   display:block;
   width:100%;
   padding:12px;
-  border:1px solid #cbb58d;
-  border-radius:4px;
-  background:#fffaf0;
+  border:1px solid #d0b995;
+  border-radius:6px;
+  background:#fffdf7;
   font-size:12px;
   color:#403126;
   margin-top:8px;
@@ -792,10 +863,10 @@ h1,h2,h3,p{margin-top:0}
 .counter-btn{
   width:34px;
   height:34px;
-  border:1px solid #c5a15f;
-  background:#e8d9bd;
-  color:#34412d;
-  border-radius:4px;
+  border:1px solid #c4a16b;
+  background:#ead8ba;
+  color:#665039;
+  border-radius:6px;
   cursor:pointer;
 }
 
@@ -806,15 +877,15 @@ footer{
   text-align:center;
   font-size:10px;
   letter-spacing:1px;
-  color:#f5ead3;
+  color:#fff2dd;
   background:transparent;
 }
 
-footer .serif{color:#e2c48a}
+footer .serif{color:#f1d4a0}
 footer a{color:inherit}
 
 @media(min-width:700px){
-  main{box-shadow:0 0 50px rgba(18,27,17,.15)}
+  main{box-shadow:0 0 50px rgba(66,47,29,.10)}
   .section-title{font-size:52px}
 }
 
@@ -848,6 +919,8 @@ footer a{color:inherit}
       Your browser does not support this video.
     </video>
 
+    <div class="opening-gradient" aria-hidden="true"></div>
+
     <div id="scrollHint">
       <span data-en="Scroll to Discover" data-fr="Faites défiler pour découvrir">Scroll to Discover</span>
       <span>⌄</span>
@@ -877,14 +950,23 @@ footer a{color:inherit}
   </section>
 
   <section id="vase" aria-label="Floral decoration">
-    <img class="decor-image vase-image" src="vase.PNG" alt="Decorative vase">
+    <div class="decor-wrap vase-wrap">
+      <span class="sticker sticker-leaf leaf-left">❧</span>
+      <span class="sticker sticker-flower flower-right">✿</span>
+      <span class="sticker sticker-spark spark-left">✧</span>
+      <img class="decor-image vase-image" src="vase.PNG" alt="Decorative vase">
+    </div>
   </section>
 
   <section id="venue">
     <p class="kicker" data-en="Where we celebrate" data-fr="Le lieu de célébration">Where we celebrate</p>
     <div class="section-title" data-en="The Venue" data-fr="Le lieu">The Venue</div>
     <div class="venue-card">
-      <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Illustration of Finca El Olivar">
+      <div class="decor-wrap building-wrap">
+        <span class="sticker sticker-leaf leaf-left">❧</span>
+        <span class="sticker sticker-flower flower-right">✿</span>
+        <img class="building-sketch" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Illustration of Finca El Olivar">
+      </div>
       <div class="finca-title">Finca El Olivar</div>
       <div class="event-datetime" data-en="12 September 2026 · 14:00" data-fr="12 septembre 2026 · 14 h 00">12 September 2026 · 14:00</div>
       <hr class="divider">
@@ -921,12 +1003,18 @@ footer a{color:inherit}
   </section>
 
   <section id="prewedding">
-    <img class="bow-image" src="bow.PNG" alt="Decorative bow">
+    <div class="decor-wrap bow-wrap">
+      <span class="sticker sticker-flower flower-left">✿</span>
+      <span class="sticker sticker-leaf leaf-right">❧</span>
+      <img class="bow-image" src="bow.PNG" alt="Decorative bow">
+    </div>
     <p class="kicker" data-en="Pre-Wedding Events" data-fr="Événements avant le mariage">Pre-Wedding Events</p>
     <div class="section-title" data-en="Come Say Hello..." data-fr="Venez nous saluer...">Come Say Hello...</div>
     <p class="intro-copy" data-en="These are informal gatherings, so feel free to join us if you're in the area." data-fr="Ces rencontres sont informelles : rejoignez-nous si vous êtes dans les environs.">These are informal gatherings, so feel free to join us if you're in the area.</p>
 
     <div class="event-card">
+      <span class="sticker sticker-flower sticker-left">✿</span>
+      <span class="sticker sticker-leaf sticker-right">❧</span>
       <img class="event-icon" src="https://i.postimg.cc/NGTkGYHz/IMG-8948.png" alt="Cocktail illustration">
       <div class="event-title" data-en="Cocktail Party" data-fr="Cocktail">Cocktail Party</div>
       <div class="event-datetime" data-en="Friday, September 11th, 2026 · 8:00 PM" data-fr="Vendredi 11 septembre 2026 · 20 h 00">Friday, September 11th, 2026 · 8:00 PM</div>
@@ -935,6 +1023,8 @@ footer a{color:inherit}
     </div>
 
     <div class="event-card">
+      <span class="sticker sticker-flower sticker-left">✿</span>
+      <span class="sticker sticker-leaf sticker-right">❧</span>
       <img class="event-icon" src="https://i.postimg.cc/WbG88jbL/IMG-8967.png" alt="Wedding day illustration">
       <div class="event-title" data-en="Wedding Day" data-fr="Jour du mariage">Wedding Day</div>
       <div class="event-datetime" data-en="Sunday, September 13th, 2026 · 12:00 PM" data-fr="Dimanche 13 septembre 2026 · 12 h 00">Sunday, September 13th, 2026 · 12:00 PM</div>
@@ -1054,7 +1144,7 @@ footer a{color:inherit}
 
           <button class="solid-btn" type="submit" style="width:100%;padding:14px" data-en="SEND RSVP" data-fr="ENVOYER LA RÉPONSE">SEND RSVP</button>
 
-          <p style="font-size:10px;line-height:1.6;color:#777;margin:12px 0 0" data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet." data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.</p>
+          <p style="font-size:10px;line-height:1.6;color:#887760;margin:12px 0 0" data-en="Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet." data-fr="À noter : ce formulaire de démonstration affiche une confirmation, mais n’enregistre pas les réponses en ligne tant qu’il n’est pas relié à un service RSVP ou à un tableur.">Please note: this sample form displays a confirmation but does not save responses online until connected to an RSVP service or spreadsheet.</p>
         </form>
       </div>
     </div>
@@ -1217,7 +1307,7 @@ footer a{color:inherit}
   music.addEventListener('play',updateMusicButton);
   music.addEventListener('pause',updateMusicButton);
 
-  /* Freeze on the final video frame, then unlock scrolling. */
+  /* Freeze on the last video frame, then unlock scrolling. */
   video.addEventListener('ended',function(){
     video.pause();
     video.classList.add('video-visible');
@@ -1292,7 +1382,7 @@ footer a{color:inherit}
     guestCount.textContent = guests;
   });
 
-  /* Demo RSVP: this form does not save responses online */
+  /* Demo RSVP: responses are not saved online */
   document.getElementById('rsvpForm').addEventListener('submit',function(e){
     e.preventDefault();
 
@@ -1334,7 +1424,7 @@ footer a{color:inherit}
         speed:Math.random()*0.18+0.04,
         drift:(Math.random()-0.5)*0.12,
         phase:Math.random()*Math.PI*2,
-        size:Math.random()*0.55+0.2
+        size:Math.random()*0.5+0.2
       };
     });
   }
@@ -1346,13 +1436,13 @@ footer a{color:inherit}
     for(let i=0;i<sparks.length;i++){
       const s = sparks[i];
       const twinkle = (Math.sin(time*2.4+s.phase)+1)/2;
-      const alpha = 0.1+twinkle*0.58;
-      const radius = s.size+twinkle*0.35;
+      const alpha = 0.12+twinkle*0.55;
+      const radius = s.size+twinkle*0.25;
 
       ctx.beginPath();
       ctx.arc(s.x,s.y,radius,0,Math.PI*2);
       ctx.fillStyle = 'rgba(255,253,245,'+alpha+')';
-      ctx.shadowBlur = 1+twinkle*2;
+      ctx.shadowBlur = 1+twinkle*1.6;
       ctx.shadowColor = '#fffdf5';
       ctx.fill();
       ctx.shadowBlur = 0;
