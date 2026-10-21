@@ -39,14 +39,9 @@ body.locked{overflow:hidden;height:100%}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 img,video{max-width:100%}
-
-section{
-  position:relative;width:100%;padding:31px 18px;
-  overflow:hidden;isolation:isolate;
-}
+section{position:relative;width:100%;padding:31px 18px;overflow:hidden;isolation:isolate}
 section::before{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  opacity:.2;
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.2;
   background-image:
     radial-gradient(circle at 12% 23%,rgba(225,194,126,.9) 0 1px,transparent 1.8px),
     radial-gradient(circle at 82% 18%,rgba(242,220,171,.85) 0 1px,transparent 1.8px),
@@ -60,54 +55,33 @@ section::before{
 .section-inner{position:relative;width:min(100%,510px);margin:auto;z-index:2}
 .serif{font-family:"Cormorant Garamond",serif}
 .script{font-family:"Great Vibes",cursive}
-.eyebrow{
-  font-size:10px;letter-spacing:3px;line-height:1.8;
-  text-transform:uppercase;color:var(--emerald-dark);margin-bottom:10px;
-}
-.section-title{
-  font-family:"Cormorant Garamond",serif;font-weight:500;
-  font-size:clamp(35px,8vw,49px);line-height:1.08;
-  color:var(--emerald-dark);margin-bottom:14px;
-}
+.eyebrow{font-size:10px;letter-spacing:3px;line-height:1.8;text-transform:uppercase;color:var(--emerald-dark);margin-bottom:10px}
+.section-title{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(35px,8vw,49px);line-height:1.08;color:var(--emerald-dark);margin-bottom:14px}
 .section-copy{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55}
-.olive-frame{
-  position:relative;border:1px solid var(--emerald);
-  outline:1px solid rgba(182,154,100,.75);outline-offset:5px;border-radius:2px;
-}
-.beige-frame{
-  background:linear-gradient(135deg,#fff8eb 0%,#f5ead7 30%,#eee0c8 58%,#e1cfb1 100%);
-  border:1px solid var(--emerald);
-  box-shadow:0 13px 34px rgba(3,38,27,.13);
-}
-.green-frame{
-  background:linear-gradient(135deg,#0b6043 0%,#084c36 28%,#063e2d 58%,#032f22 82%,#06412e 100%);
-  color:var(--cream);border:1px solid var(--dark-beige);
-  box-shadow:0 13px 34px rgba(3,25,18,.22);
-}
+.olive-frame{position:relative;border:1px solid var(--emerald);outline:1px solid rgba(182,154,100,.75);outline-offset:5px;border-radius:2px}
+.beige-frame{background:linear-gradient(135deg,#fff8eb 0%,#f5ead7 30%,#eee0c8 58%,#e1cfb1 100%);border:1px solid var(--emerald);box-shadow:0 13px 34px rgba(3,38,27,.13)}
+.green-frame{background:linear-gradient(135deg,#0b6043 0%,#084c36 28%,#063e2d 58%,#032f22 82%,#06412e 100%);color:var(--cream);border:1px solid var(--dark-beige);box-shadow:0 13px 34px rgba(3,25,18,.22)}
 .frame-padding{padding:26px 20px}
 
-/* Flowers: consistent size, pinned to card corners */
+/* Larger flowers, anchored neatly to corners */
 .decor{
-  position:absolute;width:76px;height:96px;object-fit:contain;
+  position:absolute;width:88px;height:110px;object-fit:contain;
   pointer-events:none;user-select:none;z-index:4;
   animation:flowerFloat 5.5s ease-in-out infinite;
   filter:drop-shadow(0 4px 5px rgba(30,36,22,.18));
 }
 .decor.left{left:-8px;top:-5px}
 .decor.right{right:-8px;bottom:-5px;animation-delay:-2.7s}
-.decor.corner-left{left:-17px;top:-17px;width:88px;height:110px}
-.decor.corner-right{right:-17px;bottom:-17px;width:88px;height:110px;animation-delay:-2s}
-.decor.chapter-top{left:-17px;top:-16px;width:82px;height:100px}
-.decor.chapter-bottom{right:-17px;bottom:-16px;width:82px;height:100px;animation-delay:-2.5s}
-.decor.medium-top{right:-15px;top:-15px;width:82px;height:100px}
-.decor.medium-bottom{left:-15px;bottom:-15px;width:82px;height:100px;animation-delay:-2.5s}
-@keyframes flowerFloat{
-  0%,100%{transform:translateY(0) rotate(-3deg)}
-  50%{transform:translateY(-5px) rotate(3deg)}
-}
+.decor.corner-left{left:-17px;top:-17px;width:96px;height:120px}
+.decor.corner-right{right:-17px;bottom:-17px;width:96px;height:120px;animation-delay:-2s}
+.decor.chapter-top{left:-17px;top:-16px;width:92px;height:114px}
+.decor.chapter-bottom{right:-17px;bottom:-16px;width:92px;height:114px;animation-delay:-2.5s}
+.decor.medium-top{right:-15px;top:-15px;width:90px;height:112px}
+.decor.medium-bottom{left:-15px;bottom:-15px;width:90px;height:112px;animation-delay:-2.5s}
+@keyframes flowerFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(3deg)}}
 #petalCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:20;pointer-events:none}
 
-/* Connected background gradients */
+/* Flowing section gradients */
 #coupleVideoSection{padding:25px 18px 29px;background:linear-gradient(180deg,#e5dac5,#e9dfca 55%,#e3ddc6)}
 #chapter{background:linear-gradient(180deg,#e3ddc6 0%,#ded8c0 45%,#c9ceb0 100%)}
 #scratch{background:linear-gradient(180deg,#c9ceb0 0%,#4c7857 23%,#075039 58%,#063b2b 100%);color:var(--cream)}
@@ -120,67 +94,34 @@ section::before{
 #rsvp{background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 45%,#d0c9ae 100%);padding-bottom:25px}
 
 /* Cover */
-#cover{
-  position:fixed;inset:0;z-index:100;display:flex;align-items:center;
-  justify-content:center;background:#ddd1bb;
-  transition:opacity .9s ease,visibility .9s ease;cursor:pointer;
-}
+#cover{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#ddd1bb;transition:opacity .9s ease,visibility .9s ease;cursor:pointer}
 #cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,21,.04),rgba(20,30,21,.1) 50%,rgba(20,30,21,.3))}
-.cover-open{
-  position:absolute;bottom:11%;left:50%;transform:translateX(-50%);
-  border:0;background:transparent;color:#fff8e9;
-  font-family:"Cormorant Garamond",serif;font-weight:500;
-  font-size:clamp(25px,6vw,32px);letter-spacing:2px;
-  text-shadow:0 2px 14px rgba(15,25,15,.8);padding:14px 10px;white-space:nowrap;
-  animation:openText 2.5s ease-in-out infinite;pointer-events:none;
-}
+.cover-open{position:absolute;bottom:11%;left:50%;transform:translateX(-50%);border:0;background:transparent;color:#fff8e9;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(25px,6vw,32px);letter-spacing:2px;text-shadow:0 2px 14px rgba(15,25,15,.8);padding:14px 10px;white-space:nowrap;animation:openText 2.5s ease-in-out infinite;pointer-events:none}
 .cover-open::after{content:"";display:block;width:46px;height:1px;margin:9px auto 0;background:#eee0bf}
 @keyframes openText{0%,100%{opacity:.82}50%{opacity:1}}
 
 /* Opening video */
-#openingLayer{
-  position:fixed;inset:0;z-index:90;display:none;align-items:center;
-  justify-content:center;background:#d8ceb9;opacity:1;transition:opacity .9s ease;
-}
+#openingLayer{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:#d8ceb9;opacity:1;transition:opacity .9s ease}
 #openingLayer.show{display:flex}
 #openingLayer.fade{opacity:0;pointer-events:none}
 #openingVideo{display:block;width:100%;height:100%;object-fit:contain;background:#d8ceb9}
-.video-card{
-  padding:7px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);
-  border:1px solid var(--emerald);box-shadow:0 12px 35px rgba(3,40,27,.17);
-  opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease;
-}
+.video-card{padding:7px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);border:1px solid var(--emerald);box-shadow:0 12px 35px rgba(3,40,27,.17);opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease}
 #coupleVideoSection.video-ready .video-card{opacity:1;transform:translateY(0)}
 .video-card video{display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;background:#d9d0bd}
 
 /* Chapter */
 .chapter-card{position:relative;padding:37px 24px;text-align:center}
 .chapter-card .chapter-message{font-size:22px;line-height:1.55;margin:16px 0}
-.chapter-names{
-  position:relative;z-index:3;font-family:"Great Vibes",cursive;
-  font-size:49px;line-height:1.25;color:var(--emerald-dark);margin-top:17px;
-}
+.chapter-names{position:relative;z-index:3;font-family:"Great Vibes",cursive;font-size:49px;line-height:1.25;color:var(--emerald-dark);margin-top:17px}
 
-/* Scratch card and inner/outer flower corners */
-.scratch-card{
-  position:relative;padding:31px 20px 26px;text-align:center;overflow:visible;
-  background:linear-gradient(145deg,#fff6e7 0%,#f5e9d4 30%,#ecdfc8 60%,#dfccb0 100%);
-  color:var(--ink);border:1px solid var(--gold);
-  outline:1px solid rgba(248,237,215,.7);outline-offset:5px;
-}
+/* Scratch card */
+.scratch-card{position:relative;padding:31px 20px 26px;text-align:center;overflow:visible;background:linear-gradient(145deg,#fff6e7 0%,#f5e9d4 30%,#ecdfc8 60%,#dfccb0 100%);color:var(--ink);border:1px solid var(--gold);outline:1px solid rgba(248,237,215,.7);outline-offset:5px}
 .scratch-card .section-title{font-size:37px}
 .scratch-instruction{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.4;margin:8px 0 18px}
-.scratch-area{
-  position:relative;width:100%;height:155px;max-width:350px;margin:0 auto 16px;
-  border:1px solid var(--gold);background:linear-gradient(135deg,#e5d8c1,#f7efe1);overflow:hidden;
-}
-.scratch-reveal{
-  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
-  align-items:center;gap:8px;color:var(--emerald-dark);padding:10px;
-  background:radial-gradient(ellipse at 25% 20%,rgba(255,255,255,.55),transparent 55%);
-}
+.scratch-area{position:relative;width:100%;height:155px;max-width:350px;margin:0 auto 16px;border:1px solid var(--gold);background:linear-gradient(135deg,#e5d8c1,#f7efe1);overflow:hidden}
+.scratch-reveal{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;color:var(--emerald-dark);padding:10px;background:radial-gradient(ellipse at 25% 20%,rgba(255,255,255,.55),transparent 55%)}
 .scratch-reveal .date{font-family:"Cormorant Garamond",serif;font-size:clamp(25px,6vw,36px);font-weight:600;letter-spacing:1px}
 .scratch-reveal .small{font-size:10px;letter-spacing:3px}
 #scratchCanvas,#scratchSparkles{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
@@ -188,15 +129,11 @@ section::before{
 #scratchSparkles{z-index:3;pointer-events:none}
 #scratchCanvas.revealed{opacity:0;pointer-events:none}
 .scratch-foot{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--brown)}
-.scratch-decor-outer,.scratch-decor-inner{
-  position:absolute;object-fit:contain;pointer-events:none;
-  animation:flowerFloat 5s ease-in-out infinite;
-  filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));
-}
-.scratch-decor-outer{width:91px;height:115px;z-index:5}
-.scratch-decor-outer.top{top:-26px;left:-23px}
-.scratch-decor-outer.bottom{bottom:-26px;right:-23px;animation-delay:-2.4s}
-.scratch-decor-inner{width:62px;height:79px;z-index:1;opacity:.9}
+.scratch-decor-outer,.scratch-decor-inner{position:absolute;object-fit:contain;pointer-events:none;animation:flowerFloat 5s ease-in-out infinite;filter:drop-shadow(0 3px 5px rgba(54,49,33,.15))}
+.scratch-decor-outer{width:105px;height:130px;z-index:5}
+.scratch-decor-outer.top{top:-29px;left:-25px}
+.scratch-decor-outer.bottom{bottom:-29px;right:-25px;animation-delay:-2.4s}
+.scratch-decor-inner{width:75px;height:94px;z-index:1;opacity:.95}
 .scratch-decor-inner.top{top:2px;right:2px}
 .scratch-decor-inner.bottom{bottom:2px;left:2px;animation-delay:-3s}
 
@@ -208,32 +145,17 @@ section::before{
 .time-label{display:block;margin-top:8px;font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:var(--brown)}
 .countdown-date{font-family:"Cormorant Garamond",serif;font-size:22px;margin-top:20px;color:var(--brown)}
 
-/* Emerald timeline, beige frame and subtle beige-green inner shading */
-.timeline-card{
-  position:relative;padding:32px 20px;text-align:center;
-  background:linear-gradient(135deg,#0a563d 0%,#0a4935 23%,#164f38 42%,#0a3e2d 63%,#17533b 82%,#063724 100%);
-  border:1px solid var(--dark-beige);
-  box-shadow:inset 0 0 0 5px rgba(238,227,207,.22),inset 0 0 34px rgba(238,227,207,.13),0 13px 34px rgba(3,25,18,.2);
-}
+/* Timeline */
+.timeline-card{position:relative;padding:32px 20px;text-align:center;background:linear-gradient(135deg,#0a563d 0%,#0a4935 23%,#164f38 42%,#0a3e2d 63%,#17533b 82%,#063724 100%);border:1px solid var(--dark-beige);box-shadow:inset 0 0 0 5px rgba(238,227,207,.22),inset 0 0 34px rgba(238,227,207,.13),0 13px 34px rgba(3,25,18,.2)}
 #timeline .section-title{color:#fff5e4}
 #timeline .eyebrow{color:#e8d7b7}
 .timeline-list{position:relative;margin-top:21px;padding:3px 0}
-.timeline-list::before{
-  content:"";position:absolute;top:7px;bottom:7px;left:50%;width:1px;transform:translateX(-50%);
-  background:linear-gradient(180deg,transparent,#dfc99e 8%,#dfc99e 92%,transparent);
-}
+.timeline-list::before{content:"";position:absolute;top:7px;bottom:7px;left:50%;width:1px;transform:translateX(-50%);background:linear-gradient(180deg,transparent,#dfc99e 8%,#dfc99e 92%,transparent)}
 .timeline-item{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:22px;min-height:67px;padding:12px 0}
-.timeline-item::before{
-  content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;
-  background:#f1dfb9;border:2px solid #8a9368;box-shadow:0 0 0 3px rgba(230,210,169,.16);
-  transform:translate(-50%,-50%);z-index:2;animation:timelinePulse 2.4s ease-in-out infinite;
-}
+.timeline-item::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:#f1dfb9;border:2px solid #8a9368;box-shadow:0 0 0 3px rgba(230,210,169,.16);transform:translate(-50%,-50%);z-index:2;animation:timelinePulse 2.4s ease-in-out infinite}
 .timeline-item:nth-child(2)::before{animation-delay:.5s}
 .timeline-item:nth-child(3)::before{animation-delay:1s}
-@keyframes timelinePulse{
-  0%,100%{box-shadow:0 0 0 3px rgba(230,210,169,.12);transform:translate(-50%,-50%) scale(1)}
-  50%{box-shadow:0 0 0 7px rgba(230,210,169,.2);transform:translate(-50%,-50%) scale(1.13)}
-}
+@keyframes timelinePulse{0%,100%{box-shadow:0 0 0 3px rgba(230,210,169,.12);transform:translate(-50%,-50%) scale(1)}50%{box-shadow:0 0 0 7px rgba(230,210,169,.2);transform:translate(-50%,-50%) scale(1.13)}}
 .timeline-time{grid-column:1;text-align:right;padding-right:7px;font-family:"Cormorant Garamond",serif;font-size:23px;color:#e9d6b0}
 .timeline-event{grid-column:2;text-align:left;padding-left:7px;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.3;color:#fff9ed}
 
@@ -271,10 +193,7 @@ section::before{
 .rsvp-intro{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.5;text-align:center;margin-bottom:20px}
 .rsvp-form{display:grid;gap:12px}
 .rsvp-form label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--emerald-dark);margin-bottom:7px}
-.rsvp-form input,.rsvp-form select,.rsvp-form textarea{
-  width:100%;padding:12px;border:1px solid #b9b096;border-radius:0;
-  background:rgba(255,252,245,.9);color:var(--ink);outline:none;
-}
+.rsvp-form input,.rsvp-form select,.rsvp-form textarea{width:100%;padding:12px;border:1px solid #b9b096;border-radius:0;background:rgba(255,252,245,.9);color:var(--ink);outline:none}
 .rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{border-color:var(--emerald)}
 .rsvp-form textarea{min-height:80px;resize:vertical}
 .rsvp-submit{padding:14px 18px;background:linear-gradient(135deg,#0b6043,#032f22);border:1px solid var(--emerald);color:#fff7e8;font-size:11px;letter-spacing:2px;text-transform:uppercase}
@@ -286,9 +205,9 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 
 @media(max-width:380px){
   section{padding:28px 15px}
-  .decor{width:65px;height:84px}
-  .decor.corner-left,.decor.corner-right{width:74px;height:94px}
-  .decor.chapter-top,.decor.chapter-bottom{width:73px;height:91px}
+  .decor{width:75px;height:94px}
+  .decor.corner-left,.decor.corner-right{width:82px;height:103px}
+  .decor.chapter-top,.decor.chapter-bottom{width:80px;height:99px}
   .countdown-grid{gap:5px}
   .time-box{padding:13px 2px 10px}
   .time-label{font-size:7px;letter-spacing:1px}
@@ -296,7 +215,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   .timeline-time{font-size:21px}
   .timeline-event{font-size:18px}
   .photo-track img{width:190px;height:260px}
-  .scratch-decor-outer{width:73px;height:94px}
+  .scratch-decor-outer{width:85px;height:105px}
+  .scratch-decor-inner{width:65px;height:82px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -320,7 +240,6 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 <audio id="backgroundMusic" src="inwhite.mp3" loop preload="auto"></audio>
 
 <main id="invitationContent">
-
   <section id="coupleVideoSection">
     <div class="section-inner">
       <div class="video-card">
@@ -332,7 +251,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="chapter">
     <div class="section-inner">
       <div class="chapter-card beige-frame olive-frame">
-        <img class="decor chapter-top" src="olive .png" alt="" aria-hidden="true">
+        <img class="decor chapter-top" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une histoire, un avenir, un amour</p>
         <h1 class="section-title">Un nouveau chapitre</h1>
         <p class="chapter-message section-copy">
@@ -341,7 +260,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
           avec vous le début de ce merveilleux nouveau chapitre.
         </p>
         <p class="chapter-names">Samuel &amp; Divine</p>
-        <img class="decor chapter-bottom" src="olive .png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="olive.png" alt="" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -350,9 +269,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
     <div class="section-inner">
       <div class="scratch-card">
         <img class="scratch-decor-outer top" src="dry.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-outer bottom" src="brown.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-inner top"alt=" aria-hidden="true">
-        <img class="scratch-decor-inner bottom"alt="" aria-hidden="true">
+        <img class="scratch-decor-outer bottom" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Gardez cette date précieusement</p>
         <h2 class="section-title">Une date à découvrir</h2>
         <p class="scratch-instruction">Grattez délicatement la carte<br>pour découvrir notre date spéciale.</p>
@@ -373,8 +290,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="countdown">
     <div class="section-inner">
       <div class="countdown-card beige-frame olive-frame">
-        <img class="decor medium-top" src="olive .png" alt="" aria-hidden="true">
-        <img class="decor medium-bottom" src="olive .png" alt="" aria-hidden="true">
+        <img class="decor medium-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor medium-bottom" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Le compte à rebours a commencé</p>
         <h2 class="section-title">Bientôt ensemble</h2>
         <div class="countdown-grid" aria-label="Compte à rebours">
@@ -392,7 +309,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
     <div class="section-inner">
       <div class="timeline-card">
         <img class="decor corner-left" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor corner-right" src="brown.png" alt="" aria-hidden="true">
+        <img class="decor corner-right" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Le programme de la journée</p>
         <h2 class="section-title">Notre journée</h2>
         <div class="timeline-list">
@@ -446,7 +363,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
     <div class="section-inner">
       <div class="dress-card olive-frame">
         <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor chapter-bottom" src="brown.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Pour notre belle journée</p>
         <h2 class="section-title">Code vestimentaire</h2>
         <p class="dress-main">Élégant &amp; Chic</p>
@@ -461,7 +378,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
     <div class="section-inner">
       <div class="gift-card beige-frame olive-frame">
         <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor chapter-bottom" src="brown.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une délicate attention</p>
         <h2 class="section-title">Cadeaux</h2>
         <p class="gift-message">
@@ -519,7 +436,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 </main>
 
 <script>
-/* Cover: tap anywhere to start the opening video */
+/* Cover: tap anywhere to start */
 const cover=document.getElementById("cover");
 const openingLayer=document.getElementById("openingLayer");
 const openingVideo=document.getElementById("openingVideo");
@@ -532,21 +449,16 @@ async function startInvitation(){
   if(invitationStarted)return;
   invitationStarted=true;
   document.body.classList.add("locked");
-
   backgroundMusic.volume=.65;
   backgroundMusic.play().catch(()=>{});
-
   openingLayer.style.display="flex";
   openingLayer.classList.add("show");
   cover.classList.add("hidden");
-
   try{
     await openingVideo.play();
   }catch(error){
     openingLayer.style.cursor="pointer";
-    openingLayer.addEventListener("click",()=>{
-      openingVideo.play().catch(()=>{});
-    },{once:true});
+    openingLayer.addEventListener("click",()=>openingVideo.play().catch(()=>{}),{once:true});
   }
 }
 cover.addEventListener("click",startInvitation);
@@ -557,14 +469,12 @@ cover.addEventListener("keydown",event=>{
   }
 });
 
-/* When green.mp4 ends, fade into the looping couple video */
+/* Fade into the looping couple video */
 openingVideo.addEventListener("ended",async()=>{
   coupleVideo.muted=true;
   coupleVideo.currentTime=0;
   videoSection.classList.add("video-ready");
-
   try{await coupleVideo.play()}catch(error){}
-
   openingLayer.classList.add("fade");
   window.setTimeout(()=>{
     openingLayer.classList.remove("show","fade");
@@ -574,14 +484,19 @@ openingVideo.addEventListener("ended",async()=>{
   },850);
 });
 
-/* Scratch card */
+/* Scratch card: gold dots + reveal at 50% */
 const scratchCanvas=document.getElementById("scratchCanvas");
 const scratchArea=document.getElementById("scratchArea");
 const scratchContext=scratchCanvas.getContext("2d",{willReadFrequently:true});
 const sparkleCanvas=document.getElementById("scratchSparkles");
 const sparkleContext=sparkleCanvas.getContext("2d");
-let scratching=false,scratchRevealed=false,lastScratchPoint=null;
-let sparkleParticles=[],lastSparkleTime=0;
+
+let scratching=false;
+let scratchRevealed=false;
+let lastScratchPoint=null;
+let sparkleParticles=[];
+let lastSparkleTime=0;
+let lastProgressCheck=0;
 
 function setupScratchCanvas(){
   if(scratchRevealed)return;
@@ -599,52 +514,96 @@ function setupScratchCanvas(){
   scratchContext.setTransform(ratio,0,0,ratio,0,0);
   sparkleContext.setTransform(ratio,0,0,ratio,0,0);
 
-  const gradient=scratchContext.createLinearGradient(0,0,rect.width,rect.height);
+  const w=rect.width,h=rect.height;
+  const gradient=scratchContext.createLinearGradient(0,0,w,h);
   gradient.addColorStop(0,"#126448");
   gradient.addColorStop(.45,"#075039");
   gradient.addColorStop(1,"#032f22");
+
   scratchContext.globalCompositeOperation="source-over";
-  scratchContext.clearRect(0,0,rect.width,rect.height);
+  scratchContext.clearRect(0,0,w,h);
   scratchContext.fillStyle=gradient;
-  scratchContext.fillRect(0,0,rect.width,rect.height);
-  scratchContext.strokeStyle="rgba(232,211,165,.85)";
+  scratchContext.fillRect(0,0,w,h);
+
+  /* Fine gold frame */
+  scratchContext.strokeStyle="rgba(245,218,159,.95)";
+  scratchContext.lineWidth=1.2;
+  scratchContext.strokeRect(9,9,w-18,h-18);
+
+  /* Visible, scattered gold dots on the scratch coating */
+  for(let i=0;i<190;i++){
+    const x=13+Math.random()*(w-26);
+    const y=13+Math.random()*(h-26);
+    const r=Math.random()<.17?1.65:.75+Math.random()*.65;
+    scratchContext.beginPath();
+    scratchContext.arc(x,y,r,0,Math.PI*2);
+    scratchContext.fillStyle=Math.random()<.55
+      ?"rgba(255,226,157,.95)"
+      :"rgba(214,176,91,.85)";
+    scratchContext.shadowColor="rgba(255,218,133,.7)";
+    scratchContext.shadowBlur=3;
+    scratchContext.fill();
+  }
+  scratchContext.shadowBlur=0;
+
+  /* Subtle decorative lines */
+  scratchContext.strokeStyle="rgba(255,232,188,.45)";
   scratchContext.lineWidth=1;
-  scratchContext.strokeRect(9,9,rect.width-18,rect.height-18);
-  scratchContext.fillStyle="#fff3dc";
+  scratchContext.beginPath();
+  scratchContext.moveTo(w/2-53,h/2-28);
+  scratchContext.lineTo(w/2+53,h/2-28);
+  scratchContext.moveTo(w/2-53,h/2+31);
+  scratchContext.lineTo(w/2+53,h/2+31);
+  scratchContext.stroke();
+
+  scratchContext.fillStyle="#fff4d9";
   scratchContext.textAlign="center";
   scratchContext.textBaseline="middle";
   scratchContext.font="10px DM Sans, sans-serif";
-  scratchContext.fillText("GRATTEZ ICI",rect.width/2,rect.height/2-10);
-  scratchContext.font="22px Georgia, serif";
-  scratchContext.fillText("✧",rect.width/2,rect.height/2+19);
+  scratchContext.fillText("GRATTEZ ICI",w/2,h/2-9);
+  scratchContext.font="24px Georgia, serif";
+  scratchContext.fillText("✧",w/2,h/2+16);
 }
 
 function getScratchPosition(event){
   const rect=scratchCanvas.getBoundingClientRect();
   return{x:event.clientX-rect.left,y:event.clientY-rect.top};
 }
-function createGoldSparkles(x,y){
+
+/* Emerald-green sparkle particles are created only while scratching */
+function createGreenSparkles(x,y){
   const now=performance.now();
-  if(now-lastSparkleTime<24)return;
+  if(now-lastSparkleTime<13)return;
   lastSparkleTime=now;
-  for(let i=0;i<4;i++){
+
+  for(let i=0;i<7;i++){
     const angle=Math.random()*Math.PI*2;
-    const speed=.25+Math.random()*.8;
+    const speed=.35+Math.random()*1.35;
     sparkleParticles.push({
-      x:x+(Math.random()-.5)*5,y:y+(Math.random()-.5)*5,
-      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,
-      size:.45+Math.random()*.85,life:.65,decay:.035+Math.random()*.025
+      x:x+(Math.random()-.5)*9,
+      y:y+(Math.random()-.5)*9,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed-.15,
+      size:1+Math.random()*2,
+      life:.7+Math.random()*.3,
+      decay:.018+Math.random()*.018,
+      twinkle:Math.random()
     });
   }
-  if(sparkleParticles.length>110)sparkleParticles=sparkleParticles.slice(-110);
+  if(sparkleParticles.length>180){
+    sparkleParticles=sparkleParticles.slice(-180);
+  }
 }
+
 function scratchAt(point){
-  if(!point)return;
+  if(!point||scratchRevealed)return;
+
   scratchContext.globalCompositeOperation="destination-out";
   scratchContext.lineWidth=42;
   scratchContext.lineCap="round";
   scratchContext.lineJoin="round";
   scratchContext.beginPath();
+
   if(lastScratchPoint){
     scratchContext.moveTo(lastScratchPoint.x,lastScratchPoint.y);
     scratchContext.lineTo(point.x,point.y);
@@ -653,35 +612,66 @@ function scratchAt(point){
     scratchContext.lineTo(point.x+.1,point.y+.1);
   }
   scratchContext.stroke();
-  createGoldSparkles(point.x,point.y);
+
+  createGreenSparkles(point.x,point.y);
   lastScratchPoint=point;
+
+  const now=performance.now();
+  if(now-lastProgressCheck>100){
+    lastProgressCheck=now;
+    checkScratchProgress();
+  }
 }
+
+function revealScratchCard(){
+  if(scratchRevealed)return;
+  scratchRevealed=true;
+  scratching=false;
+  lastScratchPoint=null;
+  scratchCanvas.classList.add("revealed");
+  scratchCanvas.style.transition="opacity .45s ease";
+  scratchCanvas.style.opacity="0";
+  window.setTimeout(()=>{
+    scratchCanvas.style.display="none";
+  },500);
+}
+
 function checkScratchProgress(){
   if(scratchRevealed)return;
-  const ratio=Math.min(window.devicePixelRatio||1,2);
-  const pixels=scratchContext.getImageData(0,0,scratchCanvas.width,scratchCanvas.height).data;
+
+  const width=scratchCanvas.width;
+  const height=scratchCanvas.height;
+  const pixels=scratchContext.getImageData(0,0,width,height).data;
+
+  /* Sample pixels across the canvas to estimate scratched area */
   let transparent=0,total=0;
-  for(let i=3;i<pixels.length;i+=4*20){
+  const step=4*12;
+  for(let i=3;i<pixels.length;i+=step){
     total++;
     if(pixels[i]<80)transparent++;
   }
-  if(total&&transparent/total>.38){
-    scratchRevealed=true;
-    scratchCanvas.classList.add("revealed");
-    setTimeout(()=>{scratchCanvas.style.display="none"},250);
+
+  /* Reveal as soon as at least half the coating is scratched away */
+  if(total&&transparent/total>=.50){
+    revealScratchCard();
   }
 }
+
 scratchCanvas.addEventListener("pointerdown",event=>{
   if(scratchRevealed)return;
+  event.preventDefault();
   scratching=true;
   lastScratchPoint=getScratchPosition(event);
   try{scratchCanvas.setPointerCapture(event.pointerId)}catch(error){}
   scratchAt(lastScratchPoint);
 });
+
 scratchCanvas.addEventListener("pointermove",event=>{
   if(!scratching||scratchRevealed)return;
+  event.preventDefault();
   scratchAt(getScratchPosition(event));
 });
+
 function endScratch(){
   if(!scratching)return;
   scratching=false;
@@ -692,27 +682,55 @@ scratchCanvas.addEventListener("pointerup",endScratch);
 scratchCanvas.addEventListener("pointercancel",endScratch);
 scratchCanvas.addEventListener("lostpointercapture",endScratch);
 
-function animateGoldSparkles(){
+/* Sparkles stay confined to the scratch canvas */
+function animateGreenSparkles(){
   const ratio=Math.min(window.devicePixelRatio||1,2);
-  sparkleContext.clearRect(0,0,sparkleCanvas.width/ratio,sparkleCanvas.height/ratio);
+  const rect=sparkleCanvas.getBoundingClientRect();
+  sparkleContext.clearRect(0,0,rect.width,rect.height);
+
   sparkleParticles=sparkleParticles.filter(p=>p.life>0);
+
   for(const p of sparkleParticles){
-    p.x+=p.vx;p.y+=p.vy;p.life-=p.decay;
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.life-=p.decay;
+
     sparkleContext.save();
-    sparkleContext.globalAlpha=Math.max(0,p.life);
-    sparkleContext.fillStyle="#d7b45f";
+    sparkleContext.globalAlpha=Math.min(1,Math.max(0,p.life));
+    sparkleContext.shadowColor="#35bd79";
+    sparkleContext.shadowBlur=8;
+    sparkleContext.fillStyle=p.twinkle>.5?"#70e6a5":"#168d56";
+
+    /* Tiny four-point sparkle */
+    sparkleContext.translate(p.x,p.y);
+    sparkleContext.rotate(p.life*3);
     sparkleContext.beginPath();
-    sparkleContext.arc(p.x,p.y,p.size,0,Math.PI*2);
+    sparkleContext.moveTo(0,-p.size*2.2);
+    sparkleContext.lineTo(p.size*.55,0);
+    sparkleContext.lineTo(0,p.size*2.2);
+    sparkleContext.lineTo(-p.size*.55,0);
+    sparkleContext.closePath();
+    sparkleContext.fill();
+
+    /* Small glowing center */
+    sparkleContext.beginPath();
+    sparkleContext.arc(0,0,p.size*.55,0,Math.PI*2);
+    sparkleContext.fillStyle="#d8ffe8";
     sparkleContext.fill();
     sparkleContext.restore();
   }
-  requestAnimationFrame(animateGoldSparkles);
-}
-setupScratchCanvas();
-animateGoldSparkles();
-window.addEventListener("resize",()=>{if(!scratchRevealed)setupScratchCanvas()});
 
-/* Countdown: 21 November 2026 */
+  requestAnimationFrame(animateGreenSparkles);
+}
+
+setupScratchCanvas();
+animateGreenSparkles();
+
+window.addEventListener("resize",()=>{
+  if(!scratchRevealed)setupScratchCanvas();
+});
+
+/* Countdown */
 const targetDate=new Date(2026,10,21,12,0,0);
 function updateCountdown(){
   const remaining=targetDate.getTime()-Date.now();
@@ -732,10 +750,11 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-/* Subtle falling olive petals */
+/* Subtle falling olive petals remain across the invitation */
 const petalCanvas=document.getElementById("petalCanvas");
 const petalContext=petalCanvas.getContext("2d");
 let petalWidth=0,petalHeight=0,petals=[];
+
 function resizePetals(){
   const ratio=Math.min(window.devicePixelRatio||1,2);
   petalWidth=window.innerWidth;
@@ -745,21 +764,30 @@ function resizePetals(){
   petalCanvas.style.width=petalWidth+"px";
   petalCanvas.style.height=petalHeight+"px";
   petalContext.setTransform(ratio,0,0,ratio,0,0);
+
   const count=Math.min(24,Math.max(12,Math.round(petalWidth/22)));
   petals=Array.from({length:count},()=>({
-    x:Math.random()*petalWidth,y:Math.random()*petalHeight,
-    size:2+Math.random()*1.8,speed:.2+Math.random()*.45,
-    drift:(Math.random()-.5)*.32,angle:Math.random()*Math.PI*2,
-    rotation:(Math.random()-.5)*.015,opacity:.16+Math.random()*.2
+    x:Math.random()*petalWidth,
+    y:Math.random()*petalHeight,
+    size:2+Math.random()*1.8,
+    speed:.2+Math.random()*.45,
+    drift:(Math.random()-.5)*.32,
+    angle:Math.random()*Math.PI*2,
+    rotation:(Math.random()-.5)*.015,
+    opacity:.16+Math.random()*.2
   }));
 }
+
 function drawPetals(){
   petalContext.clearRect(0,0,petalWidth,petalHeight);
   for(const p of petals){
-    p.y+=p.speed;p.x+=p.drift;p.angle+=p.rotation;
+    p.y+=p.speed;
+    p.x+=p.drift;
+    p.angle+=p.rotation;
     if(p.y>petalHeight+10){p.y=-10;p.x=Math.random()*petalWidth}
     if(p.x<-10)p.x=petalWidth+5;
     if(p.x>petalWidth+10)p.x=-5;
+
     petalContext.save();
     petalContext.translate(p.x,p.y);
     petalContext.rotate(p.angle);
@@ -781,14 +809,17 @@ const rsvpForm=document.getElementById("rsvpForm");
 const rsvpStatus=document.getElementById("rsvpStatus");
 const guestTotal=document.getElementById("guestTotal");
 let totalResponses=0;
+
 rsvpForm.addEventListener("submit",event=>{
   event.preventDefault();
   const name=document.getElementById("guestName").value.trim();
   const attendance=document.getElementById("attendance").value;
+
   if(!name||!attendance){
     rsvpStatus.textContent="Veuillez remplir votre nom et votre réponse.";
     return;
   }
+
   totalResponses++;
   guestTotal.textContent=String(totalResponses);
   rsvpStatus.textContent=attendance==="yes"
