@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#51583b">
+<meta name="theme-color" content="#063b2b">
 <title>Samuel &amp; Divine | Invitation</title>
 <meta name="description" content="Samuel & Divine — célébrons ensemble un nouveau chapitre.">
 
@@ -14,10 +14,11 @@
 
 <style>
 :root{
-  --olive:#656d47;
-  --olive-dark:#3e462d;
-  --olive-mid:#515a39;
-  --olive-light:#929775;
+  --emerald:#064b35;
+  --emerald-dark:#032f22;
+  --emerald-deep:#042b20;
+  --emerald-mid:#0b5b40;
+  --emerald-light:#267052;
   --beige:#eee3cf;
   --beige-light:#fbf5e9;
   --dark-beige:#cfb996;
@@ -26,22 +27,13 @@
   --ink:#494638;
   --cream:#fff8eb;
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:#e9deca}
 body{
-  font-family:"DM Sans",sans-serif;
-  color:var(--ink);
-  background:linear-gradient(180deg,
-    #f2e8d7 0%,#e9deca 9%,#ded8c0 18%,
-    #d9d7be 27%,#c9cdb0 36%,#b7c09d 44%,
-    #a6ae87 51%,#929b75 58%,#858e68 65%,
-    #737d52 72%,#626e43 79%,#515a39 86%,
-    #b5ba98 93%,#e7dcc7 100%);
-  background-attachment:fixed;
-  background-size:100% 100%;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
+  font-family:"DM Sans",sans-serif;color:var(--ink);
+  background:linear-gradient(180deg,#f2e8d7 0%,#e8ddc8 12%,#d9d7bd 22%,#b5c0a0 32%,#537c60 43%,#0d553b 55%,#063d2c 67%,#075039 78%,#8fa187 89%,#e9deca 100%);
+  background-attachment:fixed;background-size:100% 100%;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
 }
 body.locked{overflow:hidden;height:100%}
 button,input,select,textarea{font:inherit}
@@ -49,124 +41,83 @@ button{cursor:pointer}
 img,video{max-width:100%}
 
 section{
-  position:relative;
-  width:100%;
-  padding:37px 18px;
-  overflow:hidden;
-  isolation:isolate;
+  position:relative;width:100%;padding:31px 18px;
+  overflow:hidden;isolation:isolate;
 }
-
-/* Tiny gold dust on every section */
 section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-  opacity:.23;
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  opacity:.2;
   background-image:
-    radial-gradient(circle at 12% 23%,rgba(225,194,126,.85) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 82% 18%,rgba(242,220,171,.8) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 72% 76%,rgba(210,177,104,.7) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 12% 23%,rgba(225,194,126,.9) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 82% 18%,rgba(242,220,171,.85) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 72% 76%,rgba(210,177,104,.8) 0 1px,transparent 1.8px),
     radial-gradient(circle at 24% 84%,rgba(238,214,163,.8) 0 1px,transparent 1.8px),
     radial-gradient(circle at 91% 53%,rgba(232,204,147,.7) 0 1px,transparent 1.8px);
   background-size:230px 220px,280px 270px,250px 260px,300px 240px,210px 280px;
-  animation:goldDust 9s ease-in-out infinite alternate;
+  animation:goldDust 8s ease-in-out infinite alternate;
 }
-@keyframes goldDust{
-  from{opacity:.13;transform:translateY(0)}
-  to{opacity:.3;transform:translateY(-4px)}
-}
-
+@keyframes goldDust{from{opacity:.1}to{opacity:.27}}
 .section-inner{position:relative;width:min(100%,510px);margin:auto;z-index:2}
 .serif{font-family:"Cormorant Garamond",serif}
 .script{font-family:"Great Vibes",cursive}
-
 .eyebrow{
   font-size:10px;letter-spacing:3px;line-height:1.8;
-  text-transform:uppercase;color:var(--olive-dark);margin-bottom:12px;
+  text-transform:uppercase;color:var(--emerald-dark);margin-bottom:10px;
 }
 .section-title{
   font-family:"Cormorant Garamond",serif;font-weight:500;
   font-size:clamp(35px,8vw,49px);line-height:1.08;
-  color:var(--olive-dark);margin-bottom:15px;
+  color:var(--emerald-dark);margin-bottom:14px;
 }
 .section-copy{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55}
-
 .olive-frame{
-  position:relative;border:1px solid var(--olive);
+  position:relative;border:1px solid var(--emerald);
   outline:1px solid rgba(182,154,100,.75);outline-offset:5px;border-radius:2px;
 }
 .beige-frame{
-  background:linear-gradient(135deg,#fff8eb 0%,#f5ead7 28%,#eee0c8 56%,#e1cfb1 100%);
-  border:1px solid var(--olive);
-  box-shadow:0 13px 34px rgba(51,55,35,.11);
+  background:linear-gradient(135deg,#fff8eb 0%,#f5ead7 30%,#eee0c8 58%,#e1cfb1 100%);
+  border:1px solid var(--emerald);
+  box-shadow:0 13px 34px rgba(3,38,27,.13);
 }
 .green-frame{
-  background:linear-gradient(135deg,#717b51 0%,#626d45 30%,#596441 58%,#4c5637 82%,#424b30 100%);
+  background:linear-gradient(135deg,#0b6043 0%,#084c36 28%,#063e2d 58%,#032f22 82%,#06412e 100%);
   color:var(--cream);border:1px solid var(--dark-beige);
-  box-shadow:0 13px 34px rgba(42,46,31,.16);
+  box-shadow:0 13px 34px rgba(3,25,18,.22);
 }
-.frame-padding{padding:28px 21px}
+.frame-padding{padding:26px 20px}
 
-/* Flowers */
+/* Flowers: consistent size, pinned to card corners */
 .decor{
-  position:absolute;width:65px;height:100px;object-fit:contain;
-  pointer-events:none;user-select:none;
+  position:absolute;width:76px;height:96px;object-fit:contain;
+  pointer-events:none;user-select:none;z-index:4;
   animation:flowerFloat 5.5s ease-in-out infinite;
-  z-index:4;filter:drop-shadow(0 4px 5px rgba(52,54,34,.15));
+  filter:drop-shadow(0 4px 5px rgba(30,36,22,.18));
 }
-.decor.left{left:-10px;top:15px}
-.decor.right{right:-10px;bottom:15px;animation-delay:-2.7s}
-.decor.corner-left{left:-15px;top:-13px;width:83px;height:105px}
-.decor.corner-right{right:-15px;bottom:-13px;width:83px;height:105px;animation-delay:-2s}
-.decor.chapter-top{left:-9px;top:-12px;width:58px;height:72px}
-.decor.chapter-bottom{right:-9px;bottom:-12px;width:58px;height:72px;animation-delay:-2.5s}
-.decor.medium-top{right:-8px;top:-10px;width:69px;height:87px}
-.decor.medium-bottom{left:-8px;bottom:-10px;width:69px;height:87px;animation-delay:-2.5s}
+.decor.left{left:-8px;top:-5px}
+.decor.right{right:-8px;bottom:-5px;animation-delay:-2.7s}
+.decor.corner-left{left:-17px;top:-17px;width:88px;height:110px}
+.decor.corner-right{right:-17px;bottom:-17px;width:88px;height:110px;animation-delay:-2s}
+.decor.chapter-top{left:-17px;top:-16px;width:82px;height:100px}
+.decor.chapter-bottom{right:-17px;bottom:-16px;width:82px;height:100px;animation-delay:-2.5s}
+.decor.medium-top{right:-15px;top:-15px;width:82px;height:100px}
+.decor.medium-bottom{left:-15px;bottom:-15px;width:82px;height:100px;animation-delay:-2.5s}
 @keyframes flowerFloat{
   0%,100%{transform:translateY(0) rotate(-3deg)}
-  50%{transform:translateY(-7px) rotate(4deg)}
+  50%{transform:translateY(-5px) rotate(3deg)}
 }
-
 #petalCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:20;pointer-events:none}
 
-/* Smooth section-to-section colour transitions */
-#coupleVideoSection{
-  padding:27px 18px 31px;
-  background:linear-gradient(180deg,#e5dac5 0%,#e9dfca 48%,#e3ddc6 100%);
-}
-#chapter{
-  background:linear-gradient(180deg,#e3ddc6 0%,#ded8c0 20%,#d8d5ba 48%,#d7ceb6 75%,#d9cdb5 100%);
-}
-#scratch{
-  background:linear-gradient(180deg,#d9cdb5 0%,#a7ae88 8%,#7c855b 20%,#737d50 35%,#626e43 66%,#515d3a 87%,#515a39 100%);
-  color:var(--cream);
-}
-#countdown{
-  background:linear-gradient(180deg,#515a39 0%,#737d52 8%,#a7ae88 19%,#c8cbb0 34%,#ded8c0 55%,#e8ddc8 78%,#eee3d0 100%);
-}
-#timeline{
-  background:linear-gradient(180deg,#eee3d0 0%,#a9b08b 8%,#788258 19%,#737d50 37%,#626e43 68%,#4e5937 88%,#4b5636 100%);
-  color:var(--cream);
-}
-#venue{
-  background:linear-gradient(180deg,#4b5636 0%,#768158 8%,#aeb494 21%,#c6c9ad 36%,#d2d2b7 56%,#ded8c0 77%,#e8dfcb 100%);
-}
-#pictures{
-  background:linear-gradient(180deg,#e8dfcb 0%,#eee3d0 18%,#e4dfc6 42%,#dcd8bd 68%,#c2c6a5 100%);
-}
-#dresscode{
-  background:linear-gradient(180deg,#c2c6a5 0%,#a2ac82 9%,#7a8457 22%,#747d52 43%,#626c43 70%,#4b5635 100%);
-  color:var(--cream);
-}
-#gift{
-  background:linear-gradient(180deg,#4b5635 0%,#657047 10%,#858e68 24%,#a6ae87 39%,#b8bd9b 53%,#dcd8bd 75%,#f0e4d0 100%);
-}
-#rsvp{
-  background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 32%,#e4d9c3 62%,#d0c9ae 100%);
-  padding-bottom:30px;
-}
+/* Connected background gradients */
+#coupleVideoSection{padding:25px 18px 29px;background:linear-gradient(180deg,#e5dac5,#e9dfca 55%,#e3ddc6)}
+#chapter{background:linear-gradient(180deg,#e3ddc6 0%,#ded8c0 45%,#c9ceb0 100%)}
+#scratch{background:linear-gradient(180deg,#c9ceb0 0%,#4c7857 23%,#075039 58%,#063b2b 100%);color:var(--cream)}
+#countdown{background:linear-gradient(180deg,#063b2b 0%,#236347 13%,#9ca98b 37%,#ded8c0 70%,#eee3d0 100%)}
+#timeline{background:linear-gradient(180deg,#eee3d0 0%,#658369 20%,#0a4c36 48%,#032f22 83%,#063b2b 100%);color:var(--cream)}
+#venue{background:linear-gradient(180deg,#063b2b 0%,#3d7050 18%,#aeb494 39%,#d2d2b7 65%,#e8dfcb 100%)}
+#pictures{background:linear-gradient(180deg,#e8dfcb 0%,#eee3d0 24%,#e4dfc6 58%,#b9c5a3 100%)}
+#dresscode{background:linear-gradient(180deg,#b9c5a3 0%,#4b7655 18%,#0a5039 47%,#032f22 100%);color:var(--cream)}
+#gift{background:linear-gradient(180deg,#032f22 0%,#356a4b 19%,#85977a 42%,#c4c9ab 70%,#f0e4d0 100%)}
+#rsvp{background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 45%,#d0c9ae 100%);padding-bottom:25px}
 
 /* Cover */
 #cover{
@@ -176,13 +127,13 @@ section::before{
 }
 #cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(39,39,27,.04),rgba(39,39,27,.08) 50%,rgba(39,39,27,.28))}
+.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,21,.04),rgba(20,30,21,.1) 50%,rgba(20,30,21,.3))}
 .cover-open{
   position:absolute;bottom:11%;left:50%;transform:translateX(-50%);
-  border:0;background:transparent;box-shadow:none;color:#fff8e9;
+  border:0;background:transparent;color:#fff8e9;
   font-family:"Cormorant Garamond",serif;font-weight:500;
   font-size:clamp(25px,6vw,32px);letter-spacing:2px;
-  text-shadow:0 2px 14px rgba(35,37,23,.8);padding:14px 10px;white-space:nowrap;
+  text-shadow:0 2px 14px rgba(15,25,15,.8);padding:14px 10px;white-space:nowrap;
   animation:openText 2.5s ease-in-out infinite;pointer-events:none;
 }
 .cover-open::after{content:"";display:block;width:46px;height:1px;margin:9px auto 0;background:#eee0bf}
@@ -191,40 +142,31 @@ section::before{
 /* Opening video */
 #openingLayer{
   position:fixed;inset:0;z-index:90;display:none;align-items:center;
-  justify-content:center;background:#d8ceb9;opacity:1;
-  transition:opacity .9s ease;
+  justify-content:center;background:#d8ceb9;opacity:1;transition:opacity .9s ease;
 }
 #openingLayer.show{display:flex}
 #openingLayer.fade{opacity:0;pointer-events:none}
 #openingVideo{display:block;width:100%;height:100%;object-fit:contain;background:#d8ceb9}
-.video-hint{display:none}
-
-/* Couple video */
 .video-card{
-  padding:8px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);
-  border:1px solid var(--olive);box-shadow:0 12px 35px rgba(53,54,36,.15);
-  opacity:0;transform:translateY(8px);
-  transition:opacity 1s ease,transform 1s ease;
+  padding:7px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);
+  border:1px solid var(--emerald);box-shadow:0 12px 35px rgba(3,40,27,.17);
+  opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease;
 }
 #coupleVideoSection.video-ready .video-card{opacity:1;transform:translateY(0)}
-.video-card video{
-  display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;
-  background:#d9d0bd;
-}
+.video-card video{display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;background:#d9d0bd}
 
 /* Chapter */
-.chapter-card{padding:38px 25px;text-align:center}
-.chapter-card .chapter-message{font-size:22px;line-height:1.55;margin:17px 0}
+.chapter-card{position:relative;padding:37px 24px;text-align:center}
+.chapter-card .chapter-message{font-size:22px;line-height:1.55;margin:16px 0}
 .chapter-names{
-  position:relative;z-index:3;
-  font-family:"Great Vibes",cursive;font-size:45px;line-height:1.25;
-  color:var(--olive-dark);margin-top:17px;
+  position:relative;z-index:3;font-family:"Great Vibes",cursive;
+  font-size:49px;line-height:1.25;color:var(--emerald-dark);margin-top:17px;
 }
 
-/* Scratch card */
+/* Scratch card and inner/outer flower corners */
 .scratch-card{
-  position:relative;padding:32px 20px 27px;text-align:center;overflow:visible;
-  background:linear-gradient(145deg,#fff6e7 0%,#f5e9d4 27%,#ecdfc8 52%,#dfccb0 100%);
+  position:relative;padding:31px 20px 26px;text-align:center;overflow:visible;
+  background:linear-gradient(145deg,#fff6e7 0%,#f5e9d4 30%,#ecdfc8 60%,#dfccb0 100%);
   color:var(--ink);border:1px solid var(--gold);
   outline:1px solid rgba(248,237,215,.7);outline-offset:5px;
 }
@@ -236,7 +178,7 @@ section::before{
 }
 .scratch-reveal{
   position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
-  align-items:center;gap:8px;color:var(--olive-dark);padding:10px;
+  align-items:center;gap:8px;color:var(--emerald-dark);padding:10px;
   background:radial-gradient(ellipse at 25% 20%,rgba(255,255,255,.55),transparent 55%);
 }
 .scratch-reveal .date{font-family:"Cormorant Garamond",serif;font-size:clamp(25px,6vw,36px);font-weight:600;letter-spacing:1px}
@@ -246,44 +188,41 @@ section::before{
 #scratchSparkles{z-index:3;pointer-events:none}
 #scratchCanvas.revealed{opacity:0;pointer-events:none}
 .scratch-foot{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--brown)}
-.scratch-decor-outer{
-  position:absolute;width:83px;height:108px;object-fit:contain;z-index:5;
-  pointer-events:none;animation:flowerFloat 5s ease-in-out infinite;
-  filter:drop-shadow(0 3px 5px rgba(54,49,33,.14));
+.scratch-decor-outer,.scratch-decor-inner{
+  position:absolute;object-fit:contain;pointer-events:none;
+  animation:flowerFloat 5s ease-in-out infinite;
+  filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));
 }
-.scratch-decor-outer.top{top:-25px;left:-23px}
-.scratch-decor-outer.bottom{bottom:-24px;right:-23px;animation-delay:-2.4s}
-.scratch-decor-inner{
-  position:absolute;width:55px;height:73px;object-fit:contain;
-  z-index:1;pointer-events:none;opacity:.85;
-  animation:flowerFloat 6s ease-in-out infinite;
-}
-.scratch-decor-inner.top{top:3px;right:3px}
-.scratch-decor-inner.bottom{bottom:4px;left:2px;animation-delay:-3s}
+.scratch-decor-outer{width:91px;height:115px;z-index:5}
+.scratch-decor-outer.top{top:-26px;left:-23px}
+.scratch-decor-outer.bottom{bottom:-26px;right:-23px;animation-delay:-2.4s}
+.scratch-decor-inner{width:62px;height:79px;z-index:1;opacity:.9}
+.scratch-decor-inner.top{top:2px;right:2px}
+.scratch-decor-inner.bottom{bottom:2px;left:2px;animation-delay:-3s}
 
 /* Countdown */
-.countdown-card{text-align:center;padding:34px 20px}
-.countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:23px}
-.time-box{padding:15px 3px 12px;background:linear-gradient(145deg,rgba(255,251,242,.86),rgba(235,225,205,.72));border:1px solid rgba(101,109,71,.65)}
-.time-number{display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(28px,7vw,40px);color:var(--olive-dark);line-height:1}
+.countdown-card{text-align:center;padding:32px 20px}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:22px}
+.time-box{padding:15px 3px 12px;background:linear-gradient(145deg,rgba(255,251,242,.9),rgba(235,225,205,.76));border:1px solid rgba(6,75,53,.55)}
+.time-number{display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(28px,7vw,40px);color:var(--emerald-dark);line-height:1}
 .time-label{display:block;margin-top:8px;font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:var(--brown)}
-.countdown-date{font-family:"Cormorant Garamond",serif;font-size:22px;margin-top:21px;color:var(--brown)}
+.countdown-date{font-family:"Cormorant Garamond",serif;font-size:22px;margin-top:20px;color:var(--brown)}
 
-/* Timeline: green with beige-green shading inside */
+/* Emerald timeline, beige frame and subtle beige-green inner shading */
 .timeline-card{
-  position:relative;padding:34px 20px;text-align:center;
-  background:linear-gradient(140deg,#75805a 0%,#6b7650 18%,#64704a 35%,#5b6744 54%,#626c48 72%,#747b55 100%);
+  position:relative;padding:32px 20px;text-align:center;
+  background:linear-gradient(135deg,#0a563d 0%,#0a4935 23%,#164f38 42%,#0a3e2d 63%,#17533b 82%,#063724 100%);
   border:1px solid var(--dark-beige);
-  box-shadow:inset 0 0 0 5px rgba(238,227,207,.18),inset 0 0 35px rgba(238,227,207,.12),0 13px 34px rgba(42,46,31,.16);
+  box-shadow:inset 0 0 0 5px rgba(238,227,207,.22),inset 0 0 34px rgba(238,227,207,.13),0 13px 34px rgba(3,25,18,.2);
 }
 #timeline .section-title{color:#fff5e4}
 #timeline .eyebrow{color:#e8d7b7}
-.timeline-list{position:relative;margin-top:23px;padding:3px 0}
+.timeline-list{position:relative;margin-top:21px;padding:3px 0}
 .timeline-list::before{
   content:"";position:absolute;top:7px;bottom:7px;left:50%;width:1px;transform:translateX(-50%);
   background:linear-gradient(180deg,transparent,#dfc99e 8%,#dfc99e 92%,transparent);
 }
-.timeline-item{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:22px;min-height:70px;padding:13px 0}
+.timeline-item{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:22px;min-height:67px;padding:12px 0}
 .timeline-item::before{
   content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;
   background:#f1dfb9;border:2px solid #8a9368;box-shadow:0 0 0 3px rgba(230,210,169,.16);
@@ -299,56 +238,57 @@ section::before{
 .timeline-event{grid-column:2;text-align:left;padding-left:7px;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.3;color:#fff9ed}
 
 /* Venue */
-.venue-card{padding:30px 20px;text-align:center}
-.venue-image{display:block;width:min(100%,330px);max-height:230px;object-fit:contain;margin:4px auto 18px}
-.venue-name{font-family:"Cormorant Garamond",serif;font-size:35px;line-height:1.15;color:var(--olive-dark);margin-bottom:12px}
+.venue-card{padding:28px 20px;text-align:center}
+.venue-image{display:block;width:min(100%,330px);max-height:230px;object-fit:contain;margin:4px auto 17px}
+.venue-name{font-family:"Cormorant Garamond",serif;font-size:35px;line-height:1.15;color:var(--emerald-dark);margin-bottom:12px}
 .venue-address{font-size:13px;line-height:1.8;margin:0 auto 18px;max-width:310px}
-.map-button{display:inline-block;padding:12px 20px;border:1px solid var(--olive);background:linear-gradient(135deg,#727b52,#4d5737);color:#fff8e9;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.map-button{display:inline-block;padding:12px 20px;border:1px solid var(--emerald);background:linear-gradient(135deg,#0b6043,#032f22);color:#fff8e9;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase}
 
 /* Photos */
-.photo-heading{text-align:center;margin-bottom:23px}
-.photo-window{overflow:hidden;width:100%;border:1px solid var(--olive);outline:1px solid rgba(182,154,100,.75);outline-offset:5px;background:#e8ddc8}
+.photo-heading{text-align:center;margin-bottom:22px}
+.photo-window{overflow:hidden;width:100%;border:1px solid var(--emerald);outline:1px solid rgba(182,154,100,.75);outline-offset:5px;background:#e8ddc8}
 .photo-track{display:flex;width:max-content;animation:photoScroll 38s linear infinite}
 .photo-track:hover{animation-play-state:paused}
 .photo-track img{display:block;width:220px;height:300px;object-fit:cover;margin-right:10px;background:#d6c9b4}
 @keyframes photoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.photo-note{text-align:center;margin-top:20px;font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--brown)}
+.photo-note{text-align:center;margin-top:19px;font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--brown)}
 
 /* Dress code */
 #dresscode .section-title{color:#fff4e2}
 #dresscode .eyebrow{color:#e7d6b8}
-.dress-card{position:relative;padding:34px 21px;text-align:center;background:linear-gradient(145deg,#fff5e4,#f0e2cb 52%,#e1d0b4);color:var(--ink)}
-.dress-main{font-family:"Cormorant Garamond",serif;font-size:clamp(35px,8vw,46px);color:var(--olive-dark);line-height:1.15;margin:13px 0 20px}
+.dress-card{position:relative;padding:32px 21px;text-align:center;background:linear-gradient(145deg,#fff5e4,#f0e2cb 52%,#e1d0b4);color:var(--ink)}
+.dress-main{font-family:"Cormorant Garamond",serif;font-size:clamp(35px,8vw,46px);color:var(--emerald-dark);line-height:1.15;margin:12px 0 18px}
 .dress-description{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;margin-bottom:5px}
 
 /* Gifts */
-.gift-card{padding:34px 22px;text-align:center}
-.gift-message{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;margin:17px 0}
-.gift-signature{font-family:"Great Vibes",cursive;font-size:42px;color:var(--olive-dark);margin:16px 0}
+.gift-card{position:relative;padding:32px 22px;text-align:center}
+.gift-message{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;margin:16px 0}
+.gift-signature{font-family:"Great Vibes",cursive;font-size:46px;color:var(--emerald-dark);margin:15px 0}
 .gift-date{font-size:10px;letter-spacing:3px;color:var(--brown)}
 
 /* RSVP */
-.rsvp-card{padding:31px 20px}
-.rsvp-intro{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.5;text-align:center;margin-bottom:21px}
+.rsvp-card{padding:29px 20px}
+.rsvp-intro{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.5;text-align:center;margin-bottom:20px}
 .rsvp-form{display:grid;gap:12px}
-.rsvp-form label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive-dark);margin-bottom:7px}
+.rsvp-form label{display:block;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--emerald-dark);margin-bottom:7px}
 .rsvp-form input,.rsvp-form select,.rsvp-form textarea{
   width:100%;padding:12px;border:1px solid #b9b096;border-radius:0;
-  background:rgba(255,252,245,.85);color:var(--ink);outline:none;
+  background:rgba(255,252,245,.9);color:var(--ink);outline:none;
 }
-.rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{border-color:var(--olive)}
+.rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{border-color:var(--emerald)}
 .rsvp-form textarea{min-height:80px;resize:vertical}
-.rsvp-submit{padding:14px 18px;background:linear-gradient(135deg,#737c52,#4c5637);border:1px solid var(--olive);color:#fff7e8;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.rsvp-submit{padding:14px 18px;background:linear-gradient(135deg,#0b6043,#032f22);border:1px solid var(--emerald);color:#fff7e8;font-size:11px;letter-spacing:2px;text-transform:uppercase}
 .rsvp-status{min-height:18px;text-align:center;font-size:12px;line-height:1.5;margin-top:11px}
-.guest-counter{margin-top:20px;text-align:center;padding-top:16px;border-top:1px solid rgba(101,109,71,.35);color:var(--brown);font-family:"Cormorant Garamond",serif;font-size:19px}
-.guest-counter strong{font-size:26px;color:var(--olive-dark)}
-footer{text-align:center;padding:20px 15px 25px;background:linear-gradient(180deg,#d0c9ae,#e8ddc8);color:var(--brown);font-size:10px;letter-spacing:1.5px}
-footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
+.guest-counter{margin-top:19px;text-align:center;padding-top:15px;border-top:1px solid rgba(6,75,53,.35);color:var(--brown);font-family:"Cormorant Garamond",serif;font-size:19px}
+.guest-counter strong{font-size:26px;color:var(--emerald-dark)}
+footer{text-align:center;padding:19px 15px 23px;background:linear-gradient(180deg,#d0c9ae,#e8ddc8);color:var(--brown);font-size:10px;letter-spacing:1.5px}
+footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 
 @media(max-width:380px){
-  section{padding:33px 15px}
-  .decor{width:49px;height:80px}
-  .decor.corner-left,.decor.corner-right{width:68px;height:88px}
+  section{padding:28px 15px}
+  .decor{width:65px;height:84px}
+  .decor.corner-left,.decor.corner-right{width:74px;height:94px}
+  .decor.chapter-top,.decor.chapter-bottom{width:73px;height:91px}
   .countdown-grid{gap:5px}
   .time-box{padding:13px 2px 10px}
   .time-label{font-size:7px;letter-spacing:1px}
@@ -356,7 +296,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   .timeline-time{font-size:21px}
   .timeline-event{font-size:18px}
   .photo-track img{width:190px;height:260px}
-  .scratch-decor-outer{width:64px;height:86px}
+  .scratch-decor-outer{width:73px;height:94px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -368,23 +308,19 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
 <body class="locked">
 <canvas id="petalCanvas" aria-hidden="true"></canvas>
 
-<!-- COVER: tap anywhere -->
 <div id="cover" role="button" aria-label="Ouvrir l'invitation" tabindex="0">
   <img class="cover-image" src="enve.jpg" alt="Invitation" fetchpriority="high">
   <div class="cover-shade"></div>
   <div class="cover-open" id="openInvitation">Touchez pour ouvrir</div>
 </div>
 
-<!-- OPENING VIDEO -->
 <div id="openingLayer" aria-label="Vidéo d'ouverture">
   <video id="openingVideo" src="green.mp4" playsinline preload="auto" webkit-playsinline></video>
 </div>
-
 <audio id="backgroundMusic" src="inwhite.mp3" loop preload="auto"></audio>
 
 <main id="invitationContent">
 
-  <!-- COUPLE VIDEO -->
   <section id="coupleVideoSection">
     <div class="section-inner">
       <div class="video-card">
@@ -393,11 +329,10 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- CHAPTER -->
   <section id="chapter">
     <div class="section-inner">
       <div class="chapter-card beige-frame olive-frame">
-        <img class="decor chapter-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor chapter-top" src="olive .png" alt="" aria-hidden="true">
         <p class="eyebrow">Une histoire, un avenir, un amour</p>
         <h1 class="section-title">Un nouveau chapitre</h1>
         <p class="chapter-message section-copy">
@@ -411,19 +346,16 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- SCRATCH CARD -->
   <section id="scratch">
     <div class="section-inner">
       <div class="scratch-card">
         <img class="scratch-decor-outer top" src="dry.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-outer bottom" src="dry.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-inner top" src="olive.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-inner bottom" src="dry.png" alt="" aria-hidden="true">
-
+        <img class="scratch-decor-outer bottom" src="brown.png" alt="" aria-hidden="true">
+        <img class="scratch-decor-inner top"alt=" aria-hidden="true">
+        <img class="scratch-decor-inner bottom"alt="" aria-hidden="true">
         <p class="eyebrow">Gardez cette date précieusement</p>
         <h2 class="section-title">Une date à découvrir</h2>
         <p class="scratch-instruction">Grattez délicatement la carte<br>pour découvrir notre date spéciale.</p>
-
         <div class="scratch-area" id="scratchArea">
           <div class="scratch-reveal">
             <span class="small">LE GRAND JOUR</span>
@@ -438,11 +370,10 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- COUNTDOWN -->
   <section id="countdown">
     <div class="section-inner">
       <div class="countdown-card beige-frame olive-frame">
-        <img class="decor medium-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor medium-top" src="olive .png" alt="" aria-hidden="true">
         <img class="decor medium-bottom" src="olive .png" alt="" aria-hidden="true">
         <p class="eyebrow">Le compte à rebours a commencé</p>
         <h2 class="section-title">Bientôt ensemble</h2>
@@ -457,33 +388,22 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- TIMELINE: THREE EVENTS -->
   <section id="timeline">
     <div class="section-inner">
-      <div class="timeline-card green-frame">
+      <div class="timeline-card">
         <img class="decor corner-left" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor corner-right" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor corner-right" src="brown.png" alt="" aria-hidden="true">
         <p class="eyebrow">Le programme de la journée</p>
         <h2 class="section-title">Notre journée</h2>
         <div class="timeline-list">
-          <div class="timeline-item">
-            <span class="timeline-time">14:00</span>
-            <span class="timeline-event">Accueil des invités</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-time">14:30</span>
-            <span class="timeline-event">Cérémonie</span>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-time">18:00</span>
-            <span class="timeline-event">Dîner &amp; célébration</span>
-          </div>
+          <div class="timeline-item"><span class="timeline-time">14:00</span><span class="timeline-event">Accueil des invités</span></div>
+          <div class="timeline-item"><span class="timeline-time">16:00</span><span class="timeline-event">Cérémonie &amp; cocktail</span></div>
+          <div class="timeline-item"><span class="timeline-time">18:00</span><span class="timeline-event">Dîner &amp; célébration</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VENUE -->
   <section id="venue">
     <div class="section-inner">
       <div class="venue-card beige-frame olive-frame">
@@ -496,7 +416,6 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- COUPLE PHOTOS -->
   <section id="pictures">
     <div class="section-inner">
       <div class="photo-heading">
@@ -523,29 +442,26 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- DRESS CODE: NO FLOWERS IN CORNERS -->
   <section id="dresscode">
     <div class="section-inner">
       <div class="dress-card olive-frame">
         <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor chapter-bottom" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="brown.png" alt="" aria-hidden="true">
         <p class="eyebrow">Pour notre belle journée</p>
         <h2 class="section-title">Code vestimentaire</h2>
         <p class="dress-main">Élégant &amp; Chic</p>
         <p class="dress-description">
-          Tenue de cocktail ou de soirée élégante.
-          Costume sombre avec chemise et cravate pour une allure raffinée.
+          Nous vous invitons à célébrer avec nous dans une tenue élégante et raffinée, en harmonie avec l'esprit de cette journée. Une robe de cocktail ou une tenue de soirée raffinée, ou encore un costume sombre avec chemise et cravate, seront parfaitement adaptés.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- GIFTS -->
   <section id="gift">
     <div class="section-inner">
       <div class="gift-card beige-frame olive-frame">
         <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor chapter-bottom" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="brown.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une délicate attention</p>
         <h2 class="section-title">Cadeaux</h2>
         <p class="gift-message">
@@ -558,14 +474,12 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- RSVP: NO DECORATIONS IN CORNERS -->
   <section id="rsvp">
     <div class="section-inner">
       <div class="rsvp-card beige-frame olive-frame">
         <p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
         <h2 class="section-title" style="text-align:center">RSVP</h2>
         <p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
-
         <form class="rsvp-form" id="rsvpForm">
           <div>
             <label for="guestName">Votre nom complet</label>
@@ -605,7 +519,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
 </main>
 
 <script>
-/* COVER: tapping anywhere starts green.mp4 */
+/* Cover: tap anywhere to start the opening video */
 const cover=document.getElementById("cover");
 const openingLayer=document.getElementById("openingLayer");
 const openingVideo=document.getElementById("openingVideo");
@@ -643,16 +557,15 @@ cover.addEventListener("keydown",event=>{
   }
 });
 
-/* Green video ends -> fade into couple video */
+/* When green.mp4 ends, fade into the looping couple video */
 openingVideo.addEventListener("ended",async()=>{
-  videoSection.classList.add("video-ready");
   coupleVideo.muted=true;
   coupleVideo.currentTime=0;
+  videoSection.classList.add("video-ready");
 
   try{await coupleVideo.play()}catch(error){}
 
   openingLayer.classList.add("fade");
-
   window.setTimeout(()=>{
     openingLayer.classList.remove("show","fade");
     openingLayer.style.display="none";
@@ -661,7 +574,7 @@ openingVideo.addEventListener("ended",async()=>{
   },850);
 });
 
-/* SCRATCH CARD AND SMALL GOLD DOTS */
+/* Scratch card */
 const scratchCanvas=document.getElementById("scratchCanvas");
 const scratchArea=document.getElementById("scratchArea");
 const scratchContext=scratchCanvas.getContext("2d",{willReadFrequently:true});
@@ -687,9 +600,9 @@ function setupScratchCanvas(){
   sparkleContext.setTransform(ratio,0,0,ratio,0,0);
 
   const gradient=scratchContext.createLinearGradient(0,0,rect.width,rect.height);
-  gradient.addColorStop(0,"#858d65");
-  gradient.addColorStop(.45,"#657147");
-  gradient.addColorStop(1,"#414b30");
+  gradient.addColorStop(0,"#126448");
+  gradient.addColorStop(.45,"#075039");
+  gradient.addColorStop(1,"#032f22");
   scratchContext.globalCompositeOperation="source-over";
   scratchContext.clearRect(0,0,rect.width,rect.height);
   scratchContext.fillStyle=gradient;
@@ -710,29 +623,21 @@ function getScratchPosition(event){
   const rect=scratchCanvas.getBoundingClientRect();
   return{x:event.clientX-rect.left,y:event.clientY-rect.top};
 }
-
 function createGoldSparkles(x,y){
   const now=performance.now();
   if(now-lastSparkleTime<24)return;
   lastSparkleTime=now;
-
-  /* Tiny gold dots, not large glowing particles */
   for(let i=0;i<4;i++){
     const angle=Math.random()*Math.PI*2;
     const speed=.25+Math.random()*.8;
     sparkleParticles.push({
-      x:x+(Math.random()-.5)*5,
-      y:y+(Math.random()-.5)*5,
-      vx:Math.cos(angle)*speed,
-      vy:Math.sin(angle)*speed,
-      size:.45+Math.random()*.85,
-      life:.65,
-      decay:.035+Math.random()*.025
+      x:x+(Math.random()-.5)*5,y:y+(Math.random()-.5)*5,
+      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,
+      size:.45+Math.random()*.85,life:.65,decay:.035+Math.random()*.025
     });
   }
   if(sparkleParticles.length>110)sparkleParticles=sparkleParticles.slice(-110);
 }
-
 function scratchAt(point){
   if(!point)return;
   scratchContext.globalCompositeOperation="destination-out";
@@ -740,7 +645,6 @@ function scratchAt(point){
   scratchContext.lineCap="round";
   scratchContext.lineJoin="round";
   scratchContext.beginPath();
-
   if(lastScratchPoint){
     scratchContext.moveTo(lastScratchPoint.x,lastScratchPoint.y);
     scratchContext.lineTo(point.x,point.y);
@@ -752,24 +656,21 @@ function scratchAt(point){
   createGoldSparkles(point.x,point.y);
   lastScratchPoint=point;
 }
-
 function checkScratchProgress(){
   if(scratchRevealed)return;
+  const ratio=Math.min(window.devicePixelRatio||1,2);
   const pixels=scratchContext.getImageData(0,0,scratchCanvas.width,scratchCanvas.height).data;
   let transparent=0,total=0;
-
   for(let i=3;i<pixels.length;i+=4*20){
     total++;
     if(pixels[i]<80)transparent++;
   }
-
   if(total&&transparent/total>.38){
     scratchRevealed=true;
     scratchCanvas.classList.add("revealed");
     setTimeout(()=>{scratchCanvas.style.display="none"},250);
   }
 }
-
 scratchCanvas.addEventListener("pointerdown",event=>{
   if(scratchRevealed)return;
   scratching=true;
@@ -777,12 +678,10 @@ scratchCanvas.addEventListener("pointerdown",event=>{
   try{scratchCanvas.setPointerCapture(event.pointerId)}catch(error){}
   scratchAt(lastScratchPoint);
 });
-
 scratchCanvas.addEventListener("pointermove",event=>{
   if(!scratching||scratchRevealed)return;
   scratchAt(getScratchPosition(event));
 });
-
 function endScratch(){
   if(!scratching)return;
   scratching=false;
@@ -797,12 +696,8 @@ function animateGoldSparkles(){
   const ratio=Math.min(window.devicePixelRatio||1,2);
   sparkleContext.clearRect(0,0,sparkleCanvas.width/ratio,sparkleCanvas.height/ratio);
   sparkleParticles=sparkleParticles.filter(p=>p.life>0);
-
   for(const p of sparkleParticles){
-    p.x+=p.vx;
-    p.y+=p.vy;
-    p.life-=p.decay;
-
+    p.x+=p.vx;p.y+=p.vy;p.life-=p.decay;
     sparkleContext.save();
     sparkleContext.globalAlpha=Math.max(0,p.life);
     sparkleContext.fillStyle="#d7b45f";
@@ -813,16 +708,14 @@ function animateGoldSparkles(){
   }
   requestAnimationFrame(animateGoldSparkles);
 }
-
 setupScratchCanvas();
 animateGoldSparkles();
 window.addEventListener("resize",()=>{if(!scratchRevealed)setupScratchCanvas()});
 
-/* COUNTDOWN: 21 NOVEMBER 2026 */
+/* Countdown: 21 November 2026 */
 const targetDate=new Date(2026,10,21,12,0,0);
 function updateCountdown(){
   const remaining=targetDate.getTime()-Date.now();
-
   if(remaining<=0){
     document.getElementById("days").textContent="0";
     document.getElementById("hours").textContent="00";
@@ -830,7 +723,6 @@ function updateCountdown(){
     document.getElementById("seconds").textContent="00";
     return;
   }
-
   const total=Math.floor(remaining/1000);
   document.getElementById("days").textContent=String(Math.floor(total/86400));
   document.getElementById("hours").textContent=String(Math.floor((total%86400)/3600)).padStart(2,"0");
@@ -840,11 +732,10 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-/* SUBTLE FALLING OLIVE PETALS */
+/* Subtle falling olive petals */
 const petalCanvas=document.getElementById("petalCanvas");
 const petalContext=petalCanvas.getContext("2d");
 let petalWidth=0,petalHeight=0,petals=[];
-
 function resizePetals(){
   const ratio=Math.min(window.devicePixelRatio||1,2);
   petalWidth=window.innerWidth;
@@ -854,37 +745,26 @@ function resizePetals(){
   petalCanvas.style.width=petalWidth+"px";
   petalCanvas.style.height=petalHeight+"px";
   petalContext.setTransform(ratio,0,0,ratio,0,0);
-
   const count=Math.min(24,Math.max(12,Math.round(petalWidth/22)));
   petals=Array.from({length:count},()=>({
-    x:Math.random()*petalWidth,
-    y:Math.random()*petalHeight,
-    size:2+Math.random()*1.8,
-    speed:.2+Math.random()*.45,
-    drift:(Math.random()-.5)*.32,
-    angle:Math.random()*Math.PI*2,
-    rotation:(Math.random()-.5)*.015,
-    opacity:.16+Math.random()*.2
+    x:Math.random()*petalWidth,y:Math.random()*petalHeight,
+    size:2+Math.random()*1.8,speed:.2+Math.random()*.45,
+    drift:(Math.random()-.5)*.32,angle:Math.random()*Math.PI*2,
+    rotation:(Math.random()-.5)*.015,opacity:.16+Math.random()*.2
   }));
 }
-
 function drawPetals(){
   petalContext.clearRect(0,0,petalWidth,petalHeight);
-
   for(const p of petals){
-    p.y+=p.speed;
-    p.x+=p.drift;
-    p.angle+=p.rotation;
-
+    p.y+=p.speed;p.x+=p.drift;p.angle+=p.rotation;
     if(p.y>petalHeight+10){p.y=-10;p.x=Math.random()*petalWidth}
     if(p.x<-10)p.x=petalWidth+5;
     if(p.x>petalWidth+10)p.x=-5;
-
     petalContext.save();
     petalContext.translate(p.x,p.y);
     petalContext.rotate(p.angle);
     petalContext.globalAlpha=p.opacity;
-    petalContext.fillStyle="#626b46";
+    petalContext.fillStyle="#286044";
     petalContext.beginPath();
     petalContext.ellipse(0,0,p.size*1.65,p.size*.78,0,0,Math.PI*2);
     petalContext.fill();
@@ -892,35 +772,28 @@ function drawPetals(){
   }
   requestAnimationFrame(drawPetals);
 }
-
 resizePetals();
 drawPetals();
 window.addEventListener("resize",resizePetals);
 
-/* RSVP DEMO: responses are not sent to an online spreadsheet */
+/* RSVP demo: responses stay on this page only */
 const rsvpForm=document.getElementById("rsvpForm");
 const rsvpStatus=document.getElementById("rsvpStatus");
 const guestTotal=document.getElementById("guestTotal");
 let totalResponses=0;
-
 rsvpForm.addEventListener("submit",event=>{
   event.preventDefault();
-
   const name=document.getElementById("guestName").value.trim();
   const attendance=document.getElementById("attendance").value;
-
   if(!name||!attendance){
     rsvpStatus.textContent="Veuillez remplir votre nom et votre réponse.";
     return;
   }
-
   totalResponses++;
   guestTotal.textContent=String(totalResponses);
-
   rsvpStatus.textContent=attendance==="yes"
     ?"Merci, "+name+" ! Votre réponse de démonstration a été prise en compte sur cette page."
     :"Merci de nous avoir prévenus, "+name+". Votre réponse de démonstration a été prise en compte sur cette page.";
-
   rsvpForm.reset();
 });
 </script>
