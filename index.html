@@ -60,63 +60,99 @@ section::before{
 
 /* FLOWER BASE */
 .decor{
-  position:absolute;width:88px;height:110px;object-fit:contain;
-  pointer-events:none;user-select:none;z-index:4;
+  position:absolute;
+  object-fit:contain;
+  pointer-events:none;
+  user-select:none;
+  z-index:4;
   animation:flowerFloat 5.5s ease-in-out infinite;
   filter:drop-shadow(0 4px 5px rgba(30,36,22,.18));
 }
-.decor.left{left:-8px;top:-9px}
-.decor.right{right:-8px;bottom:-9px;animation-delay:-2.7s}
-.decor.corner-left{left:-17px;top:-21px;width:96px;height:120px}
-.decor.corner-right{right:-17px;bottom:-21px;width:96px;height:120px;animation-delay:-2s}
-.decor.chapter-top{left:-20px!important;top:-30px!important;width:85px;height:108px}
-.decor.chapter-bottom{right:-30px!important;bottom:-40px!important;top:auto!important;width:85px;height:108px;animation-delay:-2.5s}
-.decor.medium-top{right:-17px!important;top:-30px!important;width:86px;height:108px}
-.decor.medium-bottom{left:-13px!important;bottom:-33px!important;top:auto!important;width:85px;height:108px;animation-delay:-2.5s}
+.scratch-decor-outer{
+  position:absolute;
+  object-fit:contain;
+  pointer-events:none;
+  user-select:none;
+  animation:flowerFloat 5s ease-in-out infinite;
+  filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));
+  z-index:5;
+}
 @keyframes flowerFloat{
   0%,100%{transform:translateY(0) rotate(-3deg)}
   50%{transform:translateY(-5px) rotate(3deg)}
 }
 
-/* EACH FLOWER IS POSITIONED IN RELATION TO ITS OWN FRAME */
-#chapter .chapter-card,#countdown .countdown-card,
-#timeline .timeline-card,#dresscode .dress-card,
-#gift .gift-card{position:relative}
+/* OLIVE.PNG — CHAPTER FRAME */
+.olive-chapter-top{
+  width:100px;height:120px;
+  left:-15px;top:-18px;
+}
+.olive-chapter-bottom{
+  width:100px;height:120px;
+  right:-15px;bottom:-18px;
+  animation-delay:-2.5s;
+}
 
-#chapter .chapter-card>.decor.chapter-top{
-  left:-13px!important;top:-16px!important;width:88px;height:108px;
+/* DRY.PNG — SCRATCH FRAME */
+.dry-scratch-top{
+  width:108px;height:125px;
+  left:-17px;top:-18px;
 }
-#chapter .chapter-card>.decor.chapter-bottom{
-  right:-13px!important;bottom:-16px!important;top:auto!important;
-  left:auto!important;width:88px;height:108px;
+.dry-scratch-bottom{
+  width:108px;height:125px;
+  right:-17px;bottom:-18px;
+  animation-delay:-2.4s;
 }
-#countdown .countdown-card>.decor.medium-top{
-  right:-11px!important;top:-15px!important;width:76px;height:94px;
+
+/* OLIVE.PNG — COUNTDOWN FRAME */
+.olive-countdown-top{
+  width:88px;height:108px;
+  right:-12px;top:-16px;
 }
-#countdown .countdown-card>.decor.medium-bottom{
-  left:-11px!important;bottom:-15px!important;top:auto!important;
-  right:auto!important;width:76px;height:94px;
+.olive-countdown-bottom{
+  width:88px;height:108px;
+  left:-12px;bottom:-16px;
+  animation-delay:-2.5s;
 }
-#timeline .timeline-card>.decor.corner-left{
-  left:-12px;top:-14px;width:82px;height:102px;
+
+/* DRY.PNG — TIMELINE FRAME */
+.dry-timeline-left{
+  width:94px;height:112px;
+  left:-13px;top:-16px;
 }
-#timeline .timeline-card>.decor.corner-right{
-  right:-12px;bottom:-14px;width:82px;height:102px;
+.dry-timeline-right{
+  width:94px;height:112px;
+  right:-13px;bottom:-16px;
+  animation-delay:-2s;
 }
-#dresscode .dress-card>.decor.chapter-top{
-  left:-10px!important;top:-13px!important;width:76px;height:94px;
+
+/* DRY.PNG — DRESS CODE FRAME */
+.dry-dress-top{
+  width:82px;height:100px;
+  left:-11px;top:-14px;
 }
-#dresscode .dress-card>.decor.chapter-bottom{
-  right:-10px!important;bottom:-13px!important;top:auto!important;
-  left:auto!important;width:76px;height:94px;
+.dry-dress-bottom{
+  width:82px;height:100px;
+  right:-11px;bottom:-14px;
+  animation-delay:-2.5s;
 }
-#gift .gift-card>.decor.chapter-top{
-  left:-12px!important;top:-15px!important;width:80px;height:100px;
+
+/* OLIVE.PNG — GIFT FRAME */
+.olive-gift-top{
+  width:92px;height:110px;
+  left:-13px;top:-16px;
 }
-#gift .gift-card>.decor.chapter-bottom{
-  right:-12px!important;bottom:-15px!important;top:auto!important;
-  left:auto!important;width:80px;height:100px;
+.olive-gift-bottom{
+  width:92px;height:110px;
+  right:-13px;bottom:-16px;
+  animation-delay:-2.5s;
 }
+
+#chapter .chapter-card,
+#countdown .countdown-card,
+#timeline .timeline-card,
+#dresscode .dress-card,
+#gift .gift-card{position:relative}
 
 #petalCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:20;pointer-events:none}
 
@@ -170,11 +206,7 @@ section::before{
 #scratchSparkles{z-index:3;pointer-events:none}
 #scratchCanvas.revealed{opacity:0;pointer-events:none}
 .scratch-foot{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--brown)}
-.scratch-decor-outer,.scratch-decor-inner{position:absolute;object-fit:contain;pointer-events:none;animation:flowerFloat 5s ease-in-out infinite;filter:drop-shadow(0 3px 5px rgba(54,49,33,.15))}
-.scratch-decor-outer{width:94px;height:116px;z-index:5}
-.scratch-decor-outer.top{top:-15px;left:-13px}
-.scratch-decor-outer.bottom{bottom:-15px;right:-13px;animation-delay:-2.4s}
-.scratch-decor-inner{width:75px;height:94px;z-index:1;opacity:.95}
+.scratch-decor-inner{position:absolute;object-fit:contain;pointer-events:none;animation:flowerFloat 5s ease-in-out infinite;filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));width:75px;height:94px;z-index:1;opacity:.95}
 .scratch-decor-inner.top{top:2px;right:2px}
 .scratch-decor-inner.bottom{bottom:2px;left:2px;animation-delay:-3s}
 
@@ -259,21 +291,70 @@ section::before{
 footer{text-align:center;padding:19px 15px 23px;background:linear-gradient(180deg,#d0c9ae,#e8ddc8);color:var(--brown);font-size:10px;letter-spacing:1.5px}
 footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 
-/* MOBILE ADJUSTMENTS */
+/* MOBILE — EACH FLOWER HAS ITS OWN SIZE AND POSITION */
 @media(max-width:380px){
   section{padding:28px 15px}
-  .decor{width:75px;height:94px}
-  .decor.corner-left,.decor.corner-right{width:82px;height:103px}
-  #chapter .chapter-card>.decor.chapter-top{left:-10px!important;top:-12px!important;width:76px;height:94px}
-  #chapter .chapter-card>.decor.chapter-bottom{right:-10px!important;bottom:-12px!important;width:76px;height:94px}
-  #countdown .countdown-card>.decor.medium-top{right:-9px!important;top:-11px!important;width:68px;height:84px}
-  #countdown .countdown-card>.decor.medium-bottom{left:-9px!important;bottom:-11px!important;width:68px;height:84px}
-  #timeline .timeline-card>.decor.corner-left{left:-9px;top:-11px;width:72px;height:90px}
-  #timeline .timeline-card>.decor.corner-right{right:-9px;bottom:-11px;width:72px;height:90px}
-  #dresscode .dress-card>.decor.chapter-top{left:-8px!important;top:-10px!important;width:68px;height:84px}
-  #dresscode .dress-card>.decor.chapter-bottom{right:-8px!important;bottom:-10px!important;width:68px;height:84px}
-  #gift .gift-card>.decor.chapter-top{left:-9px!important;top:-11px!important;width:70px;height:88px}
-  #gift .gift-card>.decor.chapter-bottom{right:-9px!important;bottom:-11px!important;width:70px;height:88px}
+
+  /* Chapter olive */
+  .olive-chapter-top{
+    width:84px;height:102px;
+    left:-11px;top:-13px;
+  }
+  .olive-chapter-bottom{
+    width:84px;height:102px;
+    right:-11px;bottom:-13px;
+  }
+
+  /* Scratch dry */
+  .dry-scratch-top{
+    width:90px;height:105px;
+    left:-12px;top:-13px;
+  }
+  .dry-scratch-bottom{
+    width:90px;height:105px;
+    right:-12px;bottom:-13px;
+  }
+
+  /* Countdown olive */
+  .olive-countdown-top{
+    width:72px;height:88px;
+    right:-9px;top:-11px;
+  }
+  .olive-countdown-bottom{
+    width:72px;height:88px;
+    left:-9px;bottom:-11px;
+  }
+
+  /* Timeline dry */
+  .dry-timeline-left{
+    width:78px;height:94px;
+    left:-10px;top:-11px;
+  }
+  .dry-timeline-right{
+    width:78px;height:94px;
+    right:-10px;bottom:-11px;
+  }
+
+  /* Dress code dry */
+  .dry-dress-top{
+    width:68px;height:83px;
+    left:-8px;top:-9px;
+  }
+  .dry-dress-bottom{
+    width:68px;height:83px;
+    right:-8px;bottom:-9px;
+  }
+
+  /* Gift olive */
+  .olive-gift-top{
+    width:76px;height:92px;
+    left:-10px;top:-12px;
+  }
+  .olive-gift-bottom{
+    width:76px;height:92px;
+    right:-10px;bottom:-12px;
+  }
+
   .countdown-grid{gap:5px}
   .time-box{padding:13px 2px 10px}
   .time-label{font-size:7px;letter-spacing:1px}
@@ -282,13 +363,13 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   .timeline-event{font-size:18px}
   .photo-track{gap:10px}
   .photo-track img{width:100px;height:130px;border-radius:11px}
-  .scratch-decor-outer{width:80px;height:98px}
-  .scratch-decor-outer.top{top:-12px;left:-10px}
-  .scratch-decor-outer.bottom{bottom:-12px;right:-10px}
   .scratch-decor-inner{width:65px;height:82px}
+  .scratch-decor-inner.top{top:2px;right:2px}
+  .scratch-decor-inner.bottom{bottom:2px;left:2px}
   .video-card{border-radius:18px;clip-path:inset(0 round 18px)}
   .video-card video{border-radius:12px}
 }
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -322,12 +403,12 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="chapter">
     <div class="section-inner">
       <div class="chapter-card beige-frame olive-frame">
-        <img class="decor chapter-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor olive-chapter-top" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une histoire, un avenir, un amour</p>
         <h1 class="section-title">Un nouveau chapitre</h1>
         <p class="chapter-message section-copy">Un chemin, une belle histoire qui continue. Avec amour et gratitude, nous serions heureux de partager avec vous le début de ce merveilleux nouveau chapitre.</p>
         <p class="chapter-names">Samuel &amp; Divine</p>
-        <img class="decor chapter-bottom" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor olive-chapter-bottom" src="olive.png" alt="" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -335,8 +416,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="scratch">
     <div class="section-inner">
       <div class="scratch-card">
-        <img class="scratch-decor-outer top" src="dry.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-outer bottom" src="dry.png" alt="" aria-hidden="true">
+        <img class="scratch-decor-outer dry-scratch-top" src="dry.png" alt="" aria-hidden="true">
+        <img class="scratch-decor-outer dry-scratch-bottom" src="dry.png" alt="" aria-hidden="true">
         <p class="eyebrow">Gardez cette date précieusement</p>
         <h2 class="section-title">Une date à découvrir</h2>
         <p class="scratch-instruction">Grattez délicatement la carte<br>pour découvrir notre date spéciale.</p>
@@ -358,8 +439,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="countdown">
     <div class="section-inner">
       <div class="countdown-card beige-frame olive-frame">
-        <img class="decor medium-top" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor medium-bottom" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor olive-countdown-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor olive-countdown-bottom" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Le compte à rebours a commencé</p>
         <h2 class="section-title">Bientôt ensemble</h2>
         <div class="countdown-grid" aria-label="Compte à rebours">
@@ -376,8 +457,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="timeline">
     <div class="section-inner">
       <div class="timeline-card">
-        <img class="decor corner-left" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor corner-right" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor dry-timeline-left" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor dry-timeline-right" src="dry.png" alt="" aria-hidden="true">
         <p class="eyebrow">Le programme de la journée</p>
         <h2 class="section-title">Notre journée</h2>
         <div class="timeline-list">
@@ -430,8 +511,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="dresscode">
     <div class="section-inner">
       <div class="dress-card olive-frame">
-        <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor chapter-bottom" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor dry-dress-top" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor dry-dress-bottom" src="dry.png" alt="" aria-hidden="true">
         <p class="eyebrow">Pour notre belle journée</p>
         <h2 class="section-title">Code vestimentaire</h2>
         <p class="dress-main">Élégant &amp; Chic</p>
@@ -443,8 +524,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   <section id="gift">
     <div class="section-inner">
       <div class="gift-card beige-frame olive-frame">
-        <img class="decor chapter-top" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor chapter-bottom" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor olive-gift-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor olive-gift-bottom" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une délicate attention</p>
         <h2 class="section-title">Cadeaux</h2>
         <p class="gift-message">Pour tous ceux qui souhaitent nous offrir un cadeau,<br>une participation en espèces sera appréciée.</p>
