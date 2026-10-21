@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#727858">
+<meta name="theme-color" content="#51583b">
 
 <title>Samuel &amp; Divine | Invitation</title>
 <meta name="description" content="Samuel & Divine — célébrons ensemble un nouveau chapitre.">
@@ -14,27 +14,24 @@
 
 <style>
 :root{
-  --olive:#727858;
-  --olive-dark:#454b35;
-  --olive-light:#929678;
-  --beige:#eee4d1;
-  --beige-light:#f8f2e7;
-  --dark-beige:#d2bea0;
-  --brown:#79634d;
-  --gold:#b29a6b;
+  --olive:#656d47;
+  --olive-dark:#3e462d;
+  --olive-mid:#515a39;
+  --olive-light:#929775;
+  --beige:#eee3cf;
+  --beige-light:#fbf5e9;
+  --dark-beige:#cfb996;
+  --brown:#786047;
+  --gold:#b69a64;
   --ink:#494638;
-  --cream:#fbf7ee;
+  --cream:#fff8eb;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 html{
   scroll-behavior:smooth;
-  background:var(--beige);
+  background:#e9deca;
 }
 
 body{
@@ -43,32 +40,26 @@ body{
   background:
     linear-gradient(
       180deg,
-      #eee6d7 0%,
-      #e3d7c1 22%,
-      #c9c8ad 48%,
-      #9da083 73%,
-      #747b5d 100%
+      #f2e8d7 0%,
+      #e9deca 11%,
+      #d9d6bd 25%,
+      #c4c8a8 39%,
+      #a6ae87 53%,
+      #858e68 67%,
+      #6c7650 81%,
+      #777d5b 91%,
+      #e7dcc7 100%
     );
+  background-size:100% 100%;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
 
-body.locked{
-  overflow:hidden;
-  height:100%;
-}
+body.locked{overflow:hidden;height:100%}
 
-button,input,select,textarea{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-img,video{
-  max-width:100%;
-}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img,video{max-width:100%}
 
 section{
   position:relative;
@@ -84,17 +75,13 @@ section{
   z-index:2;
 }
 
-.serif{
-  font-family:"Cormorant Garamond",serif;
-}
-
-.script{
-  font-family:"Great Vibes",cursive;
-}
+.serif{font-family:"Cormorant Garamond",serif}
+.script{font-family:"Great Vibes",cursive}
 
 .eyebrow{
   font-size:10px;
-  letter-spacing:4px;
+  letter-spacing:3px;
+  line-height:1.8;
   text-transform:uppercase;
   color:var(--olive-dark);
   margin-bottom:15px;
@@ -118,27 +105,27 @@ section{
 .olive-frame{
   position:relative;
   border:1px solid var(--olive);
-  outline:1px solid rgba(178,154,107,.7);
+  outline:1px solid rgba(182,154,100,.75);
   outline-offset:5px;
   border-radius:2px;
 }
 
 .beige-frame{
-  background:linear-gradient(145deg,#f8f1e5,#e5d5bc);
+  background:linear-gradient(140deg,#fff8eb 0%,#f0e4cf 48%,#e1cfb1 100%);
   border:1px solid var(--olive);
-  box-shadow:0 14px 38px rgba(57,58,39,.09);
+  box-shadow:0 16px 42px rgba(51,55,35,.12);
 }
 
 .green-frame{
-  background:linear-gradient(145deg,#818568,#5b6347);
+  background:linear-gradient(145deg,#717b51 0%,#5b6542 48%,#424b30 100%);
   color:var(--cream);
   border:1px solid var(--dark-beige);
-  box-shadow:0 16px 40px rgba(42,46,31,.13);
+  box-shadow:0 16px 40px rgba(42,46,31,.18);
 }
 
-.frame-padding{
-  padding:34px 24px;
-}
+.frame-padding{padding:34px 24px}
+
+/* Animated flowers */
 
 .decor{
   position:absolute;
@@ -147,42 +134,35 @@ section{
   object-fit:contain;
   pointer-events:none;
   user-select:none;
-  animation:floatDecor 5s ease-in-out infinite;
+  animation:flowerFloat 5.5s ease-in-out infinite;
   z-index:3;
+  filter:drop-shadow(0 4px 5px rgba(52,54,34,.12));
 }
 
-.decor.left{
-  left:-14px;
-  top:18px;
-}
-
-.decor.right{
-  right:-14px;
-  bottom:18px;
-  animation-delay:-2.5s;
-}
+.decor.left{left:-12px;top:18px}
+.decor.right{right:-12px;bottom:18px;animation-delay:-2.7s}
 
 .decor.corner-left{
   left:-8px;
-  top:-10px;
-  width:58px;
-  height:76px;
+  top:-8px;
+  width:65px;
+  height:82px;
 }
 
 .decor.corner-right{
   right:-8px;
-  bottom:-10px;
-  width:58px;
-  height:76px;
+  bottom:-8px;
+  width:65px;
+  height:82px;
   animation-delay:-2s;
 }
 
-@keyframes floatDecor{
-  0%,100%{transform:translateY(0) rotate(-2deg)}
-  50%{transform:translateY(-7px) rotate(2deg)}
+@keyframes flowerFloat{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-10px) rotate(4deg)}
 }
 
-/* Tiny falling olive petals only */
+/* Falling olive petals */
 
 #petalCanvas{
   position:fixed;
@@ -193,7 +173,7 @@ section{
   pointer-events:none;
 }
 
-/* Opening cover */
+/* Cover */
 
 #cover{
   position:fixed;
@@ -225,32 +205,52 @@ section{
   inset:0;
   background:linear-gradient(
     180deg,
-    rgba(39,39,27,.06),
-    rgba(39,39,27,.12) 45%,
-    rgba(39,39,27,.45)
+    rgba(39,39,27,.04),
+    rgba(39,39,27,.08) 50%,
+    rgba(39,39,27,.28)
   );
 }
 
+/* Elegant text — no button box */
+
 .cover-open{
   position:absolute;
-  bottom:12%;
+  bottom:11%;
   left:50%;
   transform:translateX(-50%);
-  min-width:190px;
-  padding:15px 23px;
-  border:1px solid rgba(255,248,229,.9);
-  background:rgba(239,229,208,.86);
-  color:#4e503b;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  color:#fff8e9;
   font-family:"Cormorant Garamond",serif;
-  font-size:21px;
-  letter-spacing:1px;
-  backdrop-filter:blur(8px);
-  transition:background .3s,transform .3s;
+  font-weight:500;
+  font-size:clamp(25px,6vw,32px);
+  letter-spacing:2px;
+  text-shadow:0 2px 14px rgba(35,37,23,.8);
+  padding:14px 10px;
+  white-space:nowrap;
+  animation:openText 2.5s ease-in-out infinite;
 }
 
-.cover-open:active{
-  transform:translateX(-50%) scale(.97);
+.cover-open::after{
+  content:"";
+  display:block;
+  width:46px;
+  height:1px;
+  margin:9px auto 0;
+  background:#eee0bf;
+  transition:width .35s ease;
 }
+
+.cover-open:active{transform:translateX(-50%) scale(.97)}
+.cover-open:active::after{width:75px}
+
+@keyframes openText{
+  0%,100%{opacity:.82}
+  50%{opacity:1}
+}
+
+/* Opening video */
 
 #openingLayer{
   position:fixed;
@@ -264,14 +264,8 @@ section{
   transition:opacity 1s ease;
 }
 
-#openingLayer.show{
-  display:flex;
-}
-
-#openingLayer.fade{
-  opacity:0;
-  pointer-events:none;
-}
+#openingLayer.show{display:flex}
+#openingLayer.fade{opacity:0;pointer-events:none}
 
 #openingVideo{
   display:block;
@@ -296,20 +290,23 @@ section{
   white-space:nowrap;
 }
 
-.video-hint.visible{
-  opacity:1;
-}
+.video-hint.visible{opacity:1}
 
-/* Second video */
+/* Couple video */
 
 #coupleVideoSection{
   padding:54px 18px 62px;
-  background:linear-gradient(180deg,#d8ceb9,#eae0ce 80%,#e3d7c1);
+  background:linear-gradient(
+    180deg,
+    #e5dac5 0%,
+    #eae0ce 45%,
+    #d9d7be 100%
+  );
 }
 
 .video-card{
   padding:9px;
-  background:linear-gradient(145deg,#f6eddc,#d9c6a5);
+  background:linear-gradient(145deg,#fbf3e4,#d9c6a5);
   border:1px solid var(--olive);
   box-shadow:0 16px 45px rgba(53,54,36,.15);
 }
@@ -323,18 +320,15 @@ section{
   background:#d9d0bd;
 }
 
-.video-caption{
-  padding:18px 10px 9px;
-  text-align:center;
-  color:var(--olive-dark);
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-}
-
-/* New chapter */
+/* Chapter */
 
 #chapter{
-  background:linear-gradient(180deg,#e3d7c1,#d4c6ad);
+  background:linear-gradient(
+    180deg,
+    #d9d7be 0%,
+    #d6cbb2 45%,
+    #e7dac4 100%
+  );
 }
 
 .chapter-card{
@@ -359,7 +353,13 @@ section{
 /* Scratch card */
 
 #scratch{
-  background:linear-gradient(160deg,#85896c 0%,#697151 48%,#50583f 100%);
+  background:linear-gradient(
+    145deg,
+    #737d50 0%,
+    #626e43 28%,
+    #4e5a36 62%,
+    #414b2e 100%
+  );
   color:var(--cream);
 }
 
@@ -368,16 +368,14 @@ section{
   padding:34px 21px 30px;
   text-align:center;
   overflow:hidden;
-  background:linear-gradient(145deg,#f5ecdc,#dfcfb5);
+  background:linear-gradient(145deg,#fff6e7 0%,#ecdfc8 52%,#dfccb0 100%);
   color:var(--ink);
   border:1px solid var(--gold);
   outline:1px solid rgba(248,237,215,.7);
   outline-offset:5px;
 }
 
-.scratch-card .section-title{
-  font-size:39px;
-}
+.scratch-card .section-title{font-size:39px}
 
 .scratch-instruction{
   font-family:"Cormorant Garamond",serif;
@@ -389,7 +387,7 @@ section{
 .scratch-area{
   position:relative;
   width:100%;
-  height:155px;
+  height:165px;
   max-width:350px;
   margin:0 auto 18px;
   border:1px solid var(--gold);
@@ -421,14 +419,23 @@ section{
   letter-spacing:3px;
 }
 
-#scratchCanvas{
+#scratchCanvas,
+#scratchSparkles{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   touch-action:none;
+}
+
+#scratchCanvas{
+  z-index:2;
   cursor:crosshair;
-  transition:opacity .6s;
+}
+
+#scratchSparkles{
+  z-index:3;
+  pointer-events:none;
 }
 
 #scratchCanvas.revealed{
@@ -446,7 +453,12 @@ section{
 /* Countdown */
 
 #countdown{
-  background:linear-gradient(180deg,#ddd0b8,#f0e6d4);
+  background:linear-gradient(
+    180deg,
+    #d6cbb2 0%,
+    #e8ddc8 45%,
+    #f1e6d4 100%
+  );
 }
 
 .countdown-card{
@@ -463,8 +475,8 @@ section{
 
 .time-box{
   padding:17px 3px 13px;
-  background:rgba(255,251,242,.65);
-  border:1px solid rgba(114,120,88,.65);
+  background:rgba(255,251,242,.7);
+  border:1px solid rgba(101,109,71,.65);
 }
 
 .time-number{
@@ -491,52 +503,102 @@ section{
   color:var(--brown);
 }
 
-/* Timeline */
+/* Timeline: time left, event right, moving centre dots */
 
 #timeline{
-  background:linear-gradient(155deg,#7e8564,#5a6247);
+  background:linear-gradient(
+    145deg,
+    #737d50 0%,
+    #626e43 35%,
+    #4e5937 72%,
+    #424b30 100%
+  );
   color:var(--cream);
 }
 
-#timeline .section-title{
-  color:#f6eddd;
-}
-
-#timeline .eyebrow{
-  color:#e5d4b6;
-}
+#timeline .section-title{color:#fff5e4}
+#timeline .eyebrow{color:#e8d7b7}
 
 .timeline-card{
-  padding:42px 24px;
+  padding:42px 20px;
   text-align:center;
 }
 
 .timeline-list{
-  margin-top:26px;
-  text-align:left;
+  position:relative;
+  margin-top:30px;
+  padding:4px 0;
+}
+
+.timeline-list::before{
+  content:"";
+  position:absolute;
+  top:7px;
+  bottom:7px;
+  left:50%;
+  width:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(
+    180deg,
+    transparent,
+    #dfc99e 8%,
+    #dfc99e 92%,
+    transparent
+  );
 }
 
 .timeline-item{
+  position:relative;
   display:grid;
-  grid-template-columns:75px 1fr;
-  gap:15px;
-  padding:17px 0;
-  border-bottom:1px solid rgba(241,227,201,.35);
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:25px;
+  min-height:76px;
+  padding:15px 0;
 }
 
-.timeline-item:last-child{
-  border-bottom:0;
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#f1dfb9;
+  border:2px solid #8a9368;
+  box-shadow:0 0 0 3px rgba(230,210,169,.16);
+  transform:translate(-50%,-50%);
+  z-index:2;
+  animation:timelinePulse 2.4s ease-in-out infinite;
+}
+
+.timeline-item:nth-child(2)::before{animation-delay:.3s}
+.timeline-item:nth-child(3)::before{animation-delay:.6s}
+.timeline-item:nth-child(4)::before{animation-delay:.9s}
+.timeline-item:nth-child(5)::before{animation-delay:1.2s}
+.timeline-item:nth-child(6)::before{animation-delay:1.5s}
+
+@keyframes timelinePulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(230,210,169,.12);transform:translate(-50%,-50%) scale(1)}
+  50%{box-shadow:0 0 0 7px rgba(230,210,169,.2);transform:translate(-50%,-50%) scale(1.13)}
 }
 
 .timeline-time{
+  grid-column:1;
+  text-align:right;
+  padding-right:7px;
   font-family:"Cormorant Garamond",serif;
-  font-size:23px;
-  color:#e7d5b3;
+  font-size:24px;
+  color:#e9d6b0;
 }
 
 .timeline-event{
+  grid-column:2;
+  text-align:left;
+  padding-left:7px;
   font-family:"Cormorant Garamond",serif;
-  font-size:22px;
+  font-size:21px;
   line-height:1.3;
   color:#fff9ed;
 }
@@ -544,7 +606,12 @@ section{
 /* Venue */
 
 #venue{
-  background:linear-gradient(180deg,#c5c3a7,#e8ddc8);
+  background:linear-gradient(
+    180deg,
+    #c6c9ad 0%,
+    #ded8c0 50%,
+    #eee3d0 100%
+  );
 }
 
 .venue-card{
@@ -552,10 +619,11 @@ section{
   text-align:center;
 }
 
-.building-art{
+.venue-image{
   display:block;
   width:min(100%,330px);
-  height:auto;
+  max-height:250px;
+  object-fit:contain;
   margin:5px auto 22px;
 }
 
@@ -578,35 +646,35 @@ section{
   display:inline-block;
   padding:12px 20px;
   border:1px solid var(--olive);
-  background:var(--olive);
+  background:linear-gradient(135deg,#727b52,#4d5737);
   color:#fff8e9;
   text-decoration:none;
   font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
-  transition:background .25s;
+  transition:filter .25s;
 }
 
-.map-button:hover{
-  background:var(--olive-dark);
-}
+.map-button:hover{filter:brightness(1.1)}
 
-/* Photos */
+/* Couple photos */
 
 #pictures{
-  background:linear-gradient(180deg,#e8ddc8,#c8c7ac);
+  background:linear-gradient(
+    180deg,
+    #eee3d0 0%,
+    #dcd8bd 48%,
+    #c2c6a5 100%
+  );
 }
 
-.photo-heading{
-  text-align:center;
-  margin-bottom:28px;
-}
+.photo-heading{text-align:center;margin-bottom:28px}
 
 .photo-window{
   overflow:hidden;
   width:100%;
   border:1px solid var(--olive);
-  outline:1px solid rgba(178,154,107,.75);
+  outline:1px solid rgba(182,154,100,.75);
   outline-offset:5px;
   background:#e8ddc8;
 }
@@ -617,9 +685,7 @@ section{
   animation:photoScroll 38s linear infinite;
 }
 
-.photo-track:hover{
-  animation-play-state:paused;
-}
+.photo-track:hover{animation-play-state:paused}
 
 .photo-track img{
   display:block;
@@ -646,28 +712,29 @@ section{
 /* Dress code */
 
 #dresscode{
-  background:linear-gradient(160deg,#85896c,#5c6548);
+  background:linear-gradient(
+    145deg,
+    #747d52 0%,
+    #626c43 42%,
+    #4b5635 100%
+  );
   color:var(--cream);
 }
 
-#dresscode .section-title{
-  color:#f8efdf;
-}
-
-#dresscode .eyebrow{
-  color:#e7d6b8;
-}
+#dresscode .section-title{color:#fff4e2}
+#dresscode .eyebrow{color:#e7d6b8}
 
 .dress-card{
+  position:relative;
   padding:40px 23px;
   text-align:center;
-  background:linear-gradient(145deg,#f4ead8,#e1d0b4);
+  background:linear-gradient(145deg,#fff5e4,#e1d0b4);
   color:var(--ink);
 }
 
 .dress-main{
   font-family:"Cormorant Garamond",serif;
-  font-size:clamp(32px,8vw,43px);
+  font-size:clamp(35px,8vw,46px);
   color:var(--olive-dark);
   line-height:1.15;
   margin:15px 0 23px;
@@ -675,39 +742,22 @@ section{
 
 .dress-description{
   font-family:"Cormorant Garamond",serif;
-  font-size:21px;
-  line-height:1.55;
-  margin-bottom:24px;
-}
-
-.dress-columns{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:20px;
-}
-
-.dress-person{
-  border-top:1px solid var(--gold);
-  padding:17px 7px 0;
-}
-
-.dress-person h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:24px;
-  color:var(--olive-dark);
-  margin-bottom:9px;
-}
-
-.dress-person p{
-  font-size:12px;
-  line-height:1.7;
+  font-size:22px;
+  line-height:1.65;
+  margin-bottom:8px;
 }
 
 /* Gifts */
 
 #gift{
-  background:linear-gradient(180deg,#7a8060 0%,#c9c4a7 50%,#eee3d0 100%);
+  background:linear-gradient(
+    180deg,
+    #4e5937 0%,
+    #77805a 18%,
+    #b8bd9b 40%,
+    #dcd8bd 65%,
+    #f0e4d0 100%
+  );
 }
 
 .gift-card{
@@ -738,13 +788,16 @@ section{
 /* RSVP */
 
 #rsvp{
-  background:linear-gradient(180deg,#eee3d0,#d7ceb8);
+  background:linear-gradient(
+    180deg,
+    #f0e4d0 0%,
+    #e4d9c3 52%,
+    #d0c9ae 100%
+  );
   padding-bottom:55px;
 }
 
-.rsvp-card{
-  padding:37px 22px;
-}
+.rsvp-card{padding:37px 22px}
 
 .rsvp-intro{
   font-family:"Cormorant Garamond",serif;
@@ -754,10 +807,7 @@ section{
   margin-bottom:24px;
 }
 
-.rsvp-form{
-  display:grid;
-  gap:14px;
-}
+.rsvp-form{display:grid;gap:14px}
 
 .rsvp-form label{
   display:block;
@@ -775,25 +825,20 @@ section{
   padding:13px 12px;
   border:1px solid #b9b096;
   border-radius:0;
-  background:rgba(255,252,245,.8);
+  background:rgba(255,252,245,.85);
   color:var(--ink);
   outline:none;
 }
 
 .rsvp-form input:focus,
 .rsvp-form select:focus,
-.rsvp-form textarea:focus{
-  border-color:var(--olive);
-}
+.rsvp-form textarea:focus{border-color:var(--olive)}
 
-.rsvp-form textarea{
-  min-height:90px;
-  resize:vertical;
-}
+.rsvp-form textarea{min-height:90px;resize:vertical}
 
 .rsvp-submit{
   padding:15px 20px;
-  background:var(--olive);
+  background:linear-gradient(135deg,#737c52,#4c5637);
   border:1px solid var(--olive);
   color:#fff7e8;
   font-size:11px;
@@ -801,9 +846,7 @@ section{
   text-transform:uppercase;
 }
 
-.rsvp-submit:active{
-  background:var(--olive-dark);
-}
+.rsvp-submit:active{background:var(--olive-dark)}
 
 .rsvp-status{
   min-height:18px;
@@ -817,21 +860,18 @@ section{
   margin-top:22px;
   text-align:center;
   padding-top:18px;
-  border-top:1px solid rgba(114,120,88,.35);
+  border-top:1px solid rgba(101,109,71,.35);
   color:var(--brown);
   font-family:"Cormorant Garamond",serif;
   font-size:20px;
 }
 
-.guest-counter strong{
-  font-size:27px;
-  color:var(--olive-dark);
-}
+.guest-counter strong{font-size:27px;color:var(--olive-dark)}
 
 footer{
   text-align:center;
   padding:23px 15px 30px;
-  background:#e4d8c4;
+  background:linear-gradient(180deg,#d0c9ae,#e8ddc8);
   color:var(--brown);
   font-size:10px;
   letter-spacing:1.5px;
@@ -845,12 +885,13 @@ footer span{
 
 @media(max-width:380px){
   section{padding:62px 15px}
-  .frame-padding{padding:29px 18px}
   .decor{width:49px;height:80px}
   .countdown-grid{gap:5px}
   .time-box{padding:14px 2px 11px}
   .time-label{font-size:7px;letter-spacing:1px}
-  .timeline-item{grid-template-columns:68px 1fr;gap:9px}
+  .timeline-item{gap:17px}
+  .timeline-time{font-size:21px}
+  .timeline-event{font-size:19px}
   .photo-track img{width:190px;height:270px}
 }
 
@@ -879,7 +920,7 @@ footer span{
   </button>
 </div>
 
-<!-- FIRST VIDEO: SCROLL STAYS LOCKED -->
+<!-- FIRST VIDEO -->
 
 <div id="openingLayer" aria-label="Vidéo d'ouverture">
   <video
@@ -889,14 +930,14 @@ footer span{
     preload="auto"
     webkit-playsinline
   ></video>
-  <div class="video-hint" id="openingHint">Un nouveau chapitre vous attend</div>
+  <div class="video-hint" id="openingHint">Faites défiler pour découvrir la suite</div>
 </div>
 
 <audio id="backgroundMusic" src="inwhite.mp3" loop preload="auto"></audio>
 
 <main id="invitationContent">
 
-  <!-- SECOND VIDEO -->
+  <!-- SECOND VIDEO: AUTOPLAY AFTER THE FIRST VIDEO -->
 
   <section id="coupleVideoSection">
     <div class="section-inner">
@@ -905,10 +946,10 @@ footer span{
           id="coupleVideo"
           src="couple.mp4"
           playsinline
-          controls
+          webkit-playsinline
           preload="metadata"
+          controls
         ></video>
-        <div class="video-caption">Samuel <span class="script">&amp;</span> Divine</div>
       </div>
     </div>
   </section>
@@ -918,20 +959,20 @@ footer span{
   <section id="chapter">
     <div class="section-inner">
       <div class="chapter-card beige-frame olive-frame">
-        <img class="decor left" src="olive.PNG" alt="" aria-hidden="true">
+        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
 
         <p class="eyebrow">Une histoire, un avenir, un amour</p>
         <h1 class="section-title">Un nouveau chapitre</h1>
 
         <p class="chapter-message section-copy">
-          Deux cœurs, deux chemins, une belle histoire qui continue.
+          Deux cœurs, un chemin, une belle histoire qui continue.
           Avec amour et gratitude, nous serions heureux de partager
           avec vous le début de ce merveilleux nouveau chapitre.
         </p>
 
         <p class="chapter-names">Samuel &amp; Divine</p>
 
-        <img class="decor right" src="olive.PNG" alt="" aria-hidden="true">
+        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -941,7 +982,7 @@ footer span{
   <section id="scratch">
     <div class="section-inner">
       <div class="scratch-card">
-        <img class="decor right" src="brown.PNG" alt="" aria-hidden="true">
+        <img class="decor right" src="brown.png" alt="" aria-hidden="true">
 
         <p class="eyebrow">Gardez cette date précieusement</p>
         <h2 class="section-title">Une date à découvrir</h2>
@@ -958,6 +999,7 @@ footer span{
             <span class="small">SAMUEL &amp; DIVINE</span>
           </div>
           <canvas id="scratchCanvas" aria-label="Grattez pour révéler la date"></canvas>
+          <canvas id="scratchSparkles" aria-hidden="true"></canvas>
         </div>
 
         <p class="scratch-foot">Faites glisser votre doigt pour révéler</p>
@@ -970,15 +1012,15 @@ footer span{
   <section id="countdown">
     <div class="section-inner">
       <div class="countdown-card beige-frame olive-frame">
-        <img class="decor left" src="olive.PNG" alt="" aria-hidden="true">
-        <img class="decor right" src="olive.PNG" alt="" aria-hidden="true">
+        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
 
         <p class="eyebrow">Le compte à rebours a commencé</p>
         <h2 class="section-title">Bientôt ensemble</h2>
 
         <div class="countdown-grid" aria-label="Compte à rebours">
           <div class="time-box">
-            <span class="time-number" id="days">000</span>
+            <span class="time-number" id="days">30</span>
             <span class="time-label">Jours</span>
           </div>
           <div class="time-box">
@@ -1005,8 +1047,8 @@ footer span{
   <section id="timeline">
     <div class="section-inner">
       <div class="timeline-card green-frame">
-        <img class="decor corner-left" src="brown.PNG" alt="" aria-hidden="true">
-        <img class="decor corner-right" src="brown.PNG" alt="" aria-hidden="true">
+        <img class="decor corner-left" src="brown.png" alt="" aria-hidden="true">
+        <img class="decor corner-right" src="brown.png" alt="" aria-hidden="true">
 
         <p class="eyebrow">Le programme de la journée</p>
         <h2 class="section-title">Notre journée</h2>
@@ -1047,51 +1089,12 @@ footer span{
     <div class="section-inner">
       <div class="venue-card beige-frame olive-frame">
 
-        <!-- Illustration architecturale couleur brun/olive -->
-        <svg class="building-art" viewBox="0 0 360 225" role="img" aria-label="Illustration d'un bâtiment de style méditerranéen">
-          <defs>
-            <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#c8ad88"/>
-              <stop offset="1" stop-color="#a78763"/>
-            </linearGradient>
-            <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#80644b"/>
-              <stop offset="1" stop-color="#594733"/>
-            </linearGradient>
-          </defs>
-
-          <rect x="18" y="196" width="324" height="3" fill="#85876a"/>
-          <path d="M35 90 L180 25 L325 90 Z" fill="url(#roof)"/>
-          <path d="M48 89 L180 33 L312 89" fill="none" stroke="#b69a74" stroke-width="3"/>
-          <rect x="48" y="89" width="264" height="106" fill="url(#wall)" stroke="#786249" stroke-width="1.5"/>
-          <rect x="38" y="84" width="284" height="9" fill="#796047"/>
-          <rect x="57" y="100" width="246" height="4" fill="#ddc8a7"/>
-
-          <g fill="#64503b" stroke="#e0c8a5" stroke-width="3">
-            <rect x="67" y="115" width="33" height="47" rx="15"/>
-            <rect x="122" y="115" width="33" height="47" rx="15"/>
-            <rect x="205" y="115" width="33" height="47" rx="15"/>
-            <rect x="260" y="115" width="33" height="47" rx="15"/>
-          </g>
-
-          <g stroke="#d9c09a" stroke-width="2">
-            <path d="M83 117 V160 M69 139 H99"/>
-            <path d="M138 117 V160 M124 139 H153"/>
-            <path d="M221 117 V160 M207 139 H236"/>
-            <path d="M276 117 V160 M262 139 H291"/>
-          </g>
-
-          <rect x="160" y="133" width="40" height="62" fill="#604b36" stroke="#ddc6a2" stroke-width="3"/>
-          <circle cx="190" cy="164" r="2" fill="#d6bc8e"/>
-          <rect x="29" y="192" width="302" height="7" fill="#b29a6b"/>
-
-          <g fill="#727858">
-            <path d="M20 195 Q7 167 26 151 Q44 169 32 195Z"/>
-            <path d="M18 194 Q0 181 9 164 Q29 176 28 194Z"/>
-            <path d="M340 195 Q321 168 339 151 Q357 171 350 195Z"/>
-            <path d="M341 195 Q329 177 349 164 Q361 181 351 195Z"/>
-          </g>
-        </svg>
+        <img
+          class="venue-image"
+          src="venue.png"
+          alt="Lieu de célébration"
+          loading="lazy"
+        >
 
         <p class="eyebrow">Le lieu de notre célébration</p>
         <h2 class="venue-name">Finca El Olivar</h2>
@@ -1129,7 +1132,6 @@ footer span{
           <img src="5.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
           <img src="6.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
 
-          <!-- Duplicate images for seamless automatic scrolling -->
           <img src="1.jpg" alt="" aria-hidden="true" loading="lazy">
           <img src="2.jpg" alt="" aria-hidden="true" loading="lazy">
           <img src="3.jpg" alt="" aria-hidden="true" loading="lazy">
@@ -1148,7 +1150,7 @@ footer span{
   <section id="dresscode">
     <div class="section-inner">
       <div class="dress-card olive-frame">
-        <img class="decor right" src="dry.PNG" alt="" aria-hidden="true">
+        <img class="decor right" src="dry.png" alt="" aria-hidden="true">
 
         <p class="eyebrow">Pour notre belle journée</p>
         <h2 class="section-title">Code vestimentaire</h2>
@@ -1158,19 +1160,10 @@ footer span{
         <p class="dress-description">
           Nous vous invitons à célébrer avec nous dans une tenue élégante
           et raffinée, en harmonie avec l'esprit de cette journée.
+          Une robe de cocktail ou une tenue de soirée raffinée,
+          ou encore un costume sombre avec chemise et cravate,
+          seront parfaitement adaptés.
         </p>
-
-        <div class="dress-columns">
-          <div class="dress-person">
-            <h3>Mesdames</h3>
-            <p>Robe de cocktail ou tenue de soirée élégante.</p>
-          </div>
-
-          <div class="dress-person">
-            <h3>Messieurs</h3>
-            <p>Costume sombre avec chemise et cravate.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1180,8 +1173,8 @@ footer span{
   <section id="gift">
     <div class="section-inner">
       <div class="gift-card beige-frame olive-frame">
-        <img class="decor left" src="olive.PNG" alt="" aria-hidden="true">
-        <img class="decor right" src="olive.PNG" alt="" aria-hidden="true">
+        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
 
         <p class="eyebrow">Une délicate attention</p>
         <h2 class="section-title">Cadeaux</h2>
@@ -1202,10 +1195,12 @@ footer span{
   <section id="rsvp">
     <div class="section-inner">
       <div class="rsvp-card beige-frame olive-frame">
-        <img class="decor left" src="olive.PNG" alt="" aria-hidden="true">
-        <img class="decor right" src="olive.PNG" alt="" aria-hidden="true">
+        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
 
-        <p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
+        <p class="eyebrow" style="text-align:center">
+          Nous serions ravis de vous accueillir
+        </p>
         <h2 class="section-title" style="text-align:center">RSVP</h2>
 
         <p class="rsvp-intro">
@@ -1254,7 +1249,8 @@ footer span{
         </form>
 
         <div class="guest-counter">
-          Réponses envoyées sur cet appareil : <strong id="guestTotal">0</strong>
+          Réponses envoyées sur cet appareil :
+          <strong id="guestTotal">0</strong>
         </div>
       </div>
     </div>
@@ -1269,7 +1265,7 @@ footer span{
 
 <script>
 /* ==========================================
-   OPENING: COVER → GREEN VIDEO → COUPLE VIDEO
+   COVER → GREEN VIDEO → COUPLE VIDEO
    ========================================== */
 
 const cover = document.getElementById("cover");
@@ -1277,133 +1273,178 @@ const openButton = document.getElementById("openInvitation");
 const openingLayer = document.getElementById("openingLayer");
 const openingVideo = document.getElementById("openingVideo");
 const openingHint = document.getElementById("openingHint");
+const coupleVideo = document.getElementById("coupleVideo");
 const backgroundMusic = document.getElementById("backgroundMusic");
 
 let invitationStarted = false;
 
 openButton.addEventListener("click", async () => {
-  if (invitationStarted) return;
+  if(invitationStarted) return;
   invitationStarted = true;
 
   document.body.classList.add("locked");
 
-  // Start the music directly from the user's tap.
   backgroundMusic.volume = 0.65;
   backgroundMusic.play().catch(() => {});
 
-  // Start the opening video directly from the user's tap.
   openingLayer.classList.add("show");
-
   cover.classList.add("hidden");
 
-  try {
+  try{
     await openingVideo.play();
-  } catch (error) {
-    // If playback is blocked, allow a second tap to start it.
-    openingHint.textContent = "Touchez la vidéo pour la lancer";
+  }catch(error){
+    openingHint.textContent = "Touchez pour lancer la vidéo";
     openingHint.classList.add("visible");
 
-    openingLayer.addEventListener("click", function retryVideo() {
+    openingLayer.addEventListener("click", function retryVideo(){
       openingVideo.play().catch(() => {});
-      openingLayer.removeEventListener("click", retryVideo);
-    }, { once:true });
+    }, {once:true});
   }
 });
 
 openingVideo.addEventListener("ended", () => {
   openingHint.classList.remove("visible");
-
   openingLayer.classList.add("fade");
 
-  window.setTimeout(() => {
+  window.setTimeout(async () => {
     openingLayer.classList.remove("show");
     openingLayer.style.display = "none";
 
-    // Unlock scrolling after the first video ends.
     document.body.classList.remove("locked");
 
-    // Smoothly bring the second video into view.
-    document.getElementById("coupleVideoSection").scrollIntoView({
+    const videoSection = document.getElementById("coupleVideoSection");
+
+    videoSection.scrollIntoView({
       behavior:"smooth",
       block:"start"
     });
+
+    // Attempt to start the second video automatically.
+    try{
+      await coupleVideo.play();
+    }catch(error){
+      // Browser settings can block autoplay with sound.
+      // The visible video controls remain available.
+    }
   }, 850);
 });
 
-// Show a small hint near the end without freezing the video.
 openingVideo.addEventListener("timeupdate", () => {
-  if (
+  if(
     Number.isFinite(openingVideo.duration) &&
     openingVideo.duration > 0 &&
-    openingVideo.currentTime >= openingVideo.duration - 2.5
-  ) {
+    openingVideo.currentTime >= openingVideo.duration - 2
+  ){
     openingHint.classList.add("visible");
   }
 });
 
 /* ==========================================
-   SCRATCH CARD
+   SCRATCH CARD + GOLD SPARKLES
    ========================================== */
 
 const scratchCanvas = document.getElementById("scratchCanvas");
 const scratchArea = document.getElementById("scratchArea");
-const scratchContext = scratchCanvas.getContext("2d", { willReadFrequently:true });
+const scratchContext = scratchCanvas.getContext("2d", {
+  willReadFrequently:true
+});
+
+const sparkleCanvas = document.getElementById("scratchSparkles");
+const sparkleContext = sparkleCanvas.getContext("2d");
 
 let scratching = false;
 let scratchRevealed = false;
 let lastScratchPoint = null;
+let sparkleParticles = [];
+let lastSparkleTime = 0;
 
 function setupScratchCanvas(){
+  if(scratchRevealed) return;
+
   const rect = scratchArea.getBoundingClientRect();
-  const ratio = Math.max(1, window.devicePixelRatio || 1);
+  const ratio = Math.min(window.devicePixelRatio || 1,2);
 
   scratchCanvas.width = Math.round(rect.width * ratio);
   scratchCanvas.height = Math.round(rect.height * ratio);
+  sparkleCanvas.width = Math.round(rect.width * ratio);
+  sparkleCanvas.height = Math.round(rect.height * ratio);
 
   scratchCanvas.style.width = rect.width + "px";
   scratchCanvas.style.height = rect.height + "px";
+  sparkleCanvas.style.width = rect.width + "px";
+  sparkleCanvas.style.height = rect.height + "px";
 
   scratchContext.setTransform(ratio,0,0,ratio,0,0);
+  sparkleContext.setTransform(ratio,0,0,ratio,0,0);
 
-  const gradient = scratchContext.createLinearGradient(0,0,rect.width,rect.height);
-  gradient.addColorStop(0,"#8a8d70");
-  gradient.addColorStop(.48,"#6d7554");
-  gradient.addColorStop(1,"#50583e");
+  const gradient = scratchContext.createLinearGradient(
+    0,0,rect.width,rect.height
+  );
+
+  gradient.addColorStop(0,"#858d65");
+  gradient.addColorStop(.45,"#657147");
+  gradient.addColorStop(1,"#414b30");
 
   scratchContext.globalCompositeOperation = "source-over";
   scratchContext.clearRect(0,0,rect.width,rect.height);
   scratchContext.fillStyle = gradient;
   scratchContext.fillRect(0,0,rect.width,rect.height);
 
-  // Subtle gold border-like details, not sparkles or stickers.
-  scratchContext.strokeStyle = "rgba(228,211,174,.75)";
+  scratchContext.strokeStyle = "rgba(232,211,165,.85)";
   scratchContext.lineWidth = 1;
   scratchContext.strokeRect(9,9,rect.width-18,rect.height-18);
 
-  scratchContext.fillStyle = "#f2e7d3";
+  scratchContext.fillStyle = "#fff3dc";
   scratchContext.textAlign = "center";
   scratchContext.textBaseline = "middle";
-
   scratchContext.font = "10px DM Sans, sans-serif";
-  scratchContext.fillText("GRATTEZ ICI",rect.width/2,rect.height/2 - 8);
+  scratchContext.fillText("GRATTEZ ICI",rect.width/2,rect.height/2-10);
 
-  scratchContext.font = "20px Georgia, serif";
-  scratchContext.fillText("✧",rect.width/2,rect.height/2 + 20);
+  scratchContext.font = "22px Georgia, serif";
+  scratchContext.fillText("✧",rect.width/2,rect.height/2+19);
 }
 
 function getScratchPosition(event){
   const rect = scratchCanvas.getBoundingClientRect();
   return {
-    x:event.clientX - rect.left,
-    y:event.clientY - rect.top
+    x:event.clientX-rect.left,
+    y:event.clientY-rect.top
   };
+}
+
+function createGoldSparkles(x,y){
+  const now = performance.now();
+
+  // Avoid creating too many particles on very fast pointer events.
+  if(now-lastSparkleTime < 18) return;
+  lastSparkleTime = now;
+
+  for(let i=0;i<5;i++){
+    const angle = Math.random()*Math.PI*2;
+    const speed = 0.6+Math.random()*2.2;
+
+    sparkleParticles.push({
+      x:x+(Math.random()-0.5)*8,
+      y:y+(Math.random()-0.5)*8,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed,
+      size:1.2+Math.random()*2.2,
+      life:1,
+      decay:.018+Math.random()*.025
+    });
+  }
+
+  if(sparkleParticles.length>160){
+    sparkleParticles=sparkleParticles.slice(-160);
+  }
 }
 
 function scratchAt(point){
   if(!point) return;
 
+  // Wider brush for easy scratching on a phone.
   scratchContext.globalCompositeOperation = "destination-out";
-  scratchContext.lineWidth = 27;
+  scratchContext.lineWidth = 42;
   scratchContext.lineCap = "round";
   scratchContext.lineJoin = "round";
 
@@ -1414,139 +1455,193 @@ function scratchAt(point){
     scratchContext.lineTo(point.x,point.y);
   }else{
     scratchContext.moveTo(point.x,point.y);
-    scratchContext.lineTo(point.x + 0.1,point.y + 0.1);
+    scratchContext.lineTo(point.x+0.1,point.y+0.1);
   }
 
   scratchContext.stroke();
+  createGoldSparkles(point.x,point.y);
   lastScratchPoint = point;
 }
 
 function checkScratchProgress(){
   if(scratchRevealed) return;
 
+  const rect = scratchArea.getBoundingClientRect();
+  const ratio = Math.min(window.devicePixelRatio || 1,2);
+
   const pixels = scratchContext.getImageData(
     0,0,scratchCanvas.width,scratchCanvas.height
   ).data;
 
-  let transparent = 0;
-  let total = 0;
-
-  // Sample pixels to keep the check lightweight on phones.
-  const step = 4 * 24;
+  let transparent=0;
+  let total=0;
+  const step=4*20;
 
   for(let i=3;i<pixels.length;i+=step){
     total++;
-    if(pixels[i] < 80) transparent++;
+    if(pixels[i]<80) transparent++;
   }
 
-  if(total && transparent / total > 0.43){
-    scratchRevealed = true;
+  if(total && transparent/total>.38){
+    scratchRevealed=true;
     scratchCanvas.classList.add("revealed");
-    scratchCanvas.style.display = "none";
+
+    window.setTimeout(() => {
+      scratchCanvas.style.display="none";
+    },250);
   }
 }
 
-scratchCanvas.addEventListener("pointerdown", event => {
+scratchCanvas.addEventListener("pointerdown",event=>{
   if(scratchRevealed) return;
-  scratching = true;
-  lastScratchPoint = getScratchPosition(event);
-  scratchCanvas.setPointerCapture?.(event.pointerId);
+
+  scratching=true;
+  lastScratchPoint=getScratchPosition(event);
+
+  try{
+    scratchCanvas.setPointerCapture(event.pointerId);
+  }catch(error){}
+
   scratchAt(lastScratchPoint);
 });
 
-scratchCanvas.addEventListener("pointermove", event => {
+scratchCanvas.addEventListener("pointermove",event=>{
   if(!scratching || scratchRevealed) return;
   scratchAt(getScratchPosition(event));
 });
 
 function endScratch(){
   if(!scratching) return;
-  scratching = false;
-  lastScratchPoint = null;
+  scratching=false;
+  lastScratchPoint=null;
   checkScratchProgress();
 }
 
-scratchCanvas.addEventListener("pointerup", endScratch);
-scratchCanvas.addEventListener("pointercancel", endScratch);
-scratchCanvas.addEventListener("lostpointercapture", endScratch);
+scratchCanvas.addEventListener("pointerup",endScratch);
+scratchCanvas.addEventListener("pointercancel",endScratch);
+scratchCanvas.addEventListener("lostpointercapture",endScratch);
+
+function animateGoldSparkles(){
+  const rect=scratchArea.getBoundingClientRect();
+  const ratio=Math.min(window.devicePixelRatio || 1,2);
+
+  sparkleContext.clearRect(
+    0,0,
+    sparkleCanvas.width/ratio,
+    sparkleCanvas.height/ratio
+  );
+
+  sparkleParticles=sparkleParticles.filter(p=>p.life>0);
+
+  for(const p of sparkleParticles){
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.vy+=.012;
+    p.life-=p.decay;
+
+    sparkleContext.save();
+    sparkleContext.globalAlpha=Math.max(0,p.life);
+    sparkleContext.fillStyle="#d7b45f";
+    sparkleContext.shadowColor="#f1d78d";
+    sparkleContext.shadowBlur=8;
+
+    sparkleContext.beginPath();
+    sparkleContext.arc(p.x,p.y,p.size,0,Math.PI*2);
+    sparkleContext.fill();
+
+    // Small cross-shaped glint
+    sparkleContext.strokeStyle="#fff0bd";
+    sparkleContext.lineWidth=.7;
+    sparkleContext.beginPath();
+    sparkleContext.moveTo(p.x-p.size*2.1,p.y);
+    sparkleContext.lineTo(p.x+p.size*2.1,p.y);
+    sparkleContext.moveTo(p.x,p.y-p.size*2.1);
+    sparkleContext.lineTo(p.x,p.y+p.size*2.1);
+    sparkleContext.stroke();
+
+    sparkleContext.restore();
+  }
+
+  requestAnimationFrame(animateGoldSparkles);
+}
 
 setupScratchCanvas();
+animateGoldSparkles();
 
-window.addEventListener("resize", () => {
-  // Keep the card revealed after it has been scratched.
+window.addEventListener("resize",()=>{
   if(!scratchRevealed) setupScratchCanvas();
 });
 
 /* ==========================================
    COUNTDOWN: 21 NOVEMBER 2026
+   Days display without a leading zero.
    ========================================== */
 
-// The target is set to noon in the browser's local timezone.
 const targetDate = new Date(2026,10,21,12,0,0);
 
 function updateCountdown(){
-  const now = new Date();
-  const remaining = targetDate.getTime() - now.getTime();
+  const now=new Date();
+  const remaining=targetDate.getTime()-now.getTime();
 
-  if(remaining <= 0){
-    document.getElementById("days").textContent = "000";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+  if(remaining<=0){
+    document.getElementById("days").textContent="0";
+    document.getElementById("hours").textContent="00";
+    document.getElementById("minutes").textContent="00";
+    document.getElementById("seconds").textContent="00";
     return;
   }
 
-  const secondsTotal = Math.floor(remaining / 1000);
-  const days = Math.floor(secondsTotal / 86400);
-  const hours = Math.floor((secondsTotal % 86400) / 3600);
-  const minutes = Math.floor((secondsTotal % 3600) / 60);
-  const seconds = secondsTotal % 60;
+  const secondsTotal=Math.floor(remaining/1000);
+  const days=Math.floor(secondsTotal/86400);
+  const hours=Math.floor((secondsTotal%86400)/3600);
+  const minutes=Math.floor((secondsTotal%3600)/60);
+  const seconds=secondsTotal%60;
 
-  document.getElementById("days").textContent = String(days).padStart(3,"0");
-  document.getElementById("hours").textContent = String(hours).padStart(2,"0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+  document.getElementById("days").textContent=String(days);
+  document.getElementById("hours").textContent=String(hours).padStart(2,"0");
+  document.getElementById("minutes").textContent=String(minutes).padStart(2,"0");
+  document.getElementById("seconds").textContent=String(seconds).padStart(2,"0");
 }
 
 updateCountdown();
 setInterval(updateCountdown,1000);
 
 /* ==========================================
-   TINY OLIVE PETALS
-   No gold sparkles or decorative stickers.
+   FALLING OLIVE PETALS
+   Slightly larger, still subtle.
    ========================================== */
 
-const petalCanvas = document.getElementById("petalCanvas");
-const petalContext = petalCanvas.getContext("2d");
+const petalCanvas=document.getElementById("petalCanvas");
+const petalContext=petalCanvas.getContext("2d");
 
-let petalWidth = 0;
-let petalHeight = 0;
-let petals = [];
+let petalWidth=0;
+let petalHeight=0;
+let petals=[];
 
 function resizePetals(){
-  const ratio = Math.min(window.devicePixelRatio || 1,2);
+  const ratio=Math.min(window.devicePixelRatio || 1,2);
 
-  petalWidth = window.innerWidth;
-  petalHeight = window.innerHeight;
+  petalWidth=window.innerWidth;
+  petalHeight=window.innerHeight;
 
-  petalCanvas.width = Math.round(petalWidth * ratio);
-  petalCanvas.height = Math.round(petalHeight * ratio);
-  petalCanvas.style.width = petalWidth + "px";
-  petalCanvas.style.height = petalHeight + "px";
+  petalCanvas.width=Math.round(petalWidth*ratio);
+  petalCanvas.height=Math.round(petalHeight*ratio);
+  petalCanvas.style.width=petalWidth+"px";
+  petalCanvas.style.height=petalHeight+"px";
 
   petalContext.setTransform(ratio,0,0,ratio,0,0);
 
-  const count = Math.min(18,Math.max(9,Math.round(petalWidth/28)));
+  const count=Math.min(24,Math.max(12,Math.round(petalWidth/22)));
 
-  petals = Array.from({length:count},() => ({
+  petals=Array.from({length:count},()=>({
     x:Math.random()*petalWidth,
     y:Math.random()*petalHeight,
-    size:1.1 + Math.random()*1.3,
-    speed:.18 + Math.random()*.42,
-    drift:(Math.random()-.5)*.25,
+    size:2+Math.random()*1.8,
+    speed:.2+Math.random()*.45,
+    drift:(Math.random()-.5)*.32,
     angle:Math.random()*Math.PI*2,
-    rotation:(Math.random()-.5)*.012,
-    opacity:.13 + Math.random()*.19
+    rotation:(Math.random()-.5)*.015,
+    opacity:.16+Math.random()*.2
   }));
 }
 
@@ -1554,26 +1649,26 @@ function drawPetals(){
   petalContext.clearRect(0,0,petalWidth,petalHeight);
 
   for(const p of petals){
-    p.y += p.speed;
-    p.x += p.drift;
-    p.angle += p.rotation;
+    p.y+=p.speed;
+    p.x+=p.drift;
+    p.angle+=p.rotation;
 
-    if(p.y > petalHeight + 8){
-      p.y = -8;
-      p.x = Math.random()*petalWidth;
+    if(p.y>petalHeight+10){
+      p.y=-10;
+      p.x=Math.random()*petalWidth;
     }
 
-    if(p.x < -8) p.x = petalWidth + 5;
-    if(p.x > petalWidth + 8) p.x = -5;
+    if(p.x < -10) p.x=petalWidth+5;
+    if(p.x > petalWidth+10) p.x=-5;
 
     petalContext.save();
     petalContext.translate(p.x,p.y);
     petalContext.rotate(p.angle);
-    petalContext.globalAlpha = p.opacity;
-    petalContext.fillStyle = "#626b46";
+    petalContext.globalAlpha=p.opacity;
+    petalContext.fillStyle="#626b46";
 
     petalContext.beginPath();
-    petalContext.ellipse(0,0,p.size*1.45,p.size*.7,0,0,Math.PI*2);
+    petalContext.ellipse(0,0,p.size*1.65,p.size*.78,0,0,Math.PI*2);
     petalContext.fill();
     petalContext.restore();
   }
@@ -1583,7 +1678,6 @@ function drawPetals(){
 
 resizePetals();
 drawPetals();
-
 window.addEventListener("resize",resizePetals);
 
 /* ==========================================
@@ -1591,32 +1685,32 @@ window.addEventListener("resize",resizePetals);
    This form does not submit to an online sheet.
    ========================================== */
 
-const rsvpForm = document.getElementById("rsvpForm");
-const rsvpStatus = document.getElementById("rsvpStatus");
-const guestTotal = document.getElementById("guestTotal");
+const rsvpForm=document.getElementById("rsvpForm");
+const rsvpStatus=document.getElementById("rsvpStatus");
+const guestTotal=document.getElementById("guestTotal");
 
-let totalResponses = 0;
+let totalResponses=0;
 
-rsvpForm.addEventListener("submit",event => {
+rsvpForm.addEventListener("submit",event=>{
   event.preventDefault();
 
-  const name = document.getElementById("guestName").value.trim();
-  const attendance = document.getElementById("attendance").value;
+  const name=document.getElementById("guestName").value.trim();
+  const attendance=document.getElementById("attendance").value;
 
   if(!name || !attendance){
-    rsvpStatus.textContent = "Veuillez remplir votre nom et votre réponse.";
+    rsvpStatus.textContent="Veuillez remplir votre nom et votre réponse.";
     return;
   }
 
   totalResponses++;
-  guestTotal.textContent = String(totalResponses);
+  guestTotal.textContent=String(totalResponses);
 
-  if(attendance === "yes"){
-    rsvpStatus.textContent =
-      "Merci, " + name + " ! Votre réponse de démonstration a été prise en compte sur cette page.";
+  if(attendance==="yes"){
+    rsvpStatus.textContent=
+      "Merci, "+name+" ! Votre réponse de démonstration a été prise en compte sur cette page.";
   }else{
-    rsvpStatus.textContent =
-      "Merci de nous avoir prévenus, " + name + ". Votre réponse de démonstration a été prise en compte sur cette page.";
+    rsvpStatus.textContent=
+      "Merci de nous avoir prévenus, "+name+". Votre réponse de démonstration a été prise en compte sur cette page.";
   }
 
   rsvpForm.reset();
