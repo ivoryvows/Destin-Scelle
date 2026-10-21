@@ -51,23 +51,23 @@ img,video{max-width:100%}
 section{
   position:relative;
   width:100%;
-  padding:43px 18px;
+  padding:37px 18px;
   overflow:hidden;
   isolation:isolate;
 }
 
-/* Subtle golden dots across every section */
+/* Tiny gold dust on every section */
 section::before{
   content:"";
   position:absolute;
   inset:0;
   z-index:0;
   pointer-events:none;
-  opacity:.24;
+  opacity:.23;
   background-image:
     radial-gradient(circle at 12% 23%,rgba(225,194,126,.85) 0 1px,transparent 1.8px),
     radial-gradient(circle at 82% 18%,rgba(242,220,171,.8) 0 1px,transparent 1.8px),
-    radial-gradient(circle at 72% 76%,rgba(210,177,104,.7) 0 1.2px,transparent 2px),
+    radial-gradient(circle at 72% 76%,rgba(210,177,104,.7) 0 1px,transparent 1.8px),
     radial-gradient(circle at 24% 84%,rgba(238,214,163,.8) 0 1px,transparent 1.8px),
     radial-gradient(circle at 91% 53%,rgba(232,204,147,.7) 0 1px,transparent 1.8px);
   background-size:230px 220px,280px 270px,250px 260px,300px 240px,210px 280px;
@@ -75,7 +75,7 @@ section::before{
 }
 @keyframes goldDust{
   from{opacity:.13;transform:translateY(0)}
-  to{opacity:.32;transform:translateY(-5px)}
+  to{opacity:.3;transform:translateY(-4px)}
 }
 
 .section-inner{position:relative;width:min(100%,510px);margin:auto;z-index:2}
@@ -107,9 +107,9 @@ section::before{
   color:var(--cream);border:1px solid var(--dark-beige);
   box-shadow:0 13px 34px rgba(42,46,31,.16);
 }
-.frame-padding{padding:30px 22px}
+.frame-padding{padding:28px 21px}
 
-/* Floating flowers */
+/* Flowers */
 .decor{
   position:absolute;width:65px;height:100px;object-fit:contain;
   pointer-events:none;user-select:none;
@@ -118,14 +118,55 @@ section::before{
 }
 .decor.left{left:-10px;top:15px}
 .decor.right{right:-10px;bottom:15px;animation-delay:-2.7s}
-.decor.corner-left{left:-8px;top:-8px;width:65px;height:82px}
-.decor.corner-right{right:-8px;bottom:-8px;width:65px;height:82px;animation-delay:-2s}
+.decor.corner-left{left:-15px;top:-13px;width:83px;height:105px}
+.decor.corner-right{right:-15px;bottom:-13px;width:83px;height:105px;animation-delay:-2s}
+.decor.chapter-top{left:-9px;top:-12px;width:58px;height:72px}
+.decor.chapter-bottom{right:-9px;bottom:-12px;width:58px;height:72px;animation-delay:-2.5s}
+.decor.medium-top{right:-8px;top:-10px;width:69px;height:87px}
+.decor.medium-bottom{left:-8px;bottom:-10px;width:69px;height:87px;animation-delay:-2.5s}
 @keyframes flowerFloat{
   0%,100%{transform:translateY(0) rotate(-3deg)}
-  50%{transform:translateY(-9px) rotate(4deg)}
+  50%{transform:translateY(-7px) rotate(4deg)}
 }
 
 #petalCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:20;pointer-events:none}
+
+/* Smooth section-to-section colour transitions */
+#coupleVideoSection{
+  padding:27px 18px 31px;
+  background:linear-gradient(180deg,#e5dac5 0%,#e9dfca 48%,#e3ddc6 100%);
+}
+#chapter{
+  background:linear-gradient(180deg,#e3ddc6 0%,#ded8c0 20%,#d8d5ba 48%,#d7ceb6 75%,#d9cdb5 100%);
+}
+#scratch{
+  background:linear-gradient(180deg,#d9cdb5 0%,#a7ae88 8%,#7c855b 20%,#737d50 35%,#626e43 66%,#515d3a 87%,#515a39 100%);
+  color:var(--cream);
+}
+#countdown{
+  background:linear-gradient(180deg,#515a39 0%,#737d52 8%,#a7ae88 19%,#c8cbb0 34%,#ded8c0 55%,#e8ddc8 78%,#eee3d0 100%);
+}
+#timeline{
+  background:linear-gradient(180deg,#eee3d0 0%,#a9b08b 8%,#788258 19%,#737d50 37%,#626e43 68%,#4e5937 88%,#4b5636 100%);
+  color:var(--cream);
+}
+#venue{
+  background:linear-gradient(180deg,#4b5636 0%,#768158 8%,#aeb494 21%,#c6c9ad 36%,#d2d2b7 56%,#ded8c0 77%,#e8dfcb 100%);
+}
+#pictures{
+  background:linear-gradient(180deg,#e8dfcb 0%,#eee3d0 18%,#e4dfc6 42%,#dcd8bd 68%,#c2c6a5 100%);
+}
+#dresscode{
+  background:linear-gradient(180deg,#c2c6a5 0%,#a2ac82 9%,#7a8457 22%,#747d52 43%,#626c43 70%,#4b5635 100%);
+  color:var(--cream);
+}
+#gift{
+  background:linear-gradient(180deg,#4b5635 0%,#657047 10%,#858e68 24%,#a6ae87 39%,#b8bd9b 53%,#dcd8bd 75%,#f0e4d0 100%);
+}
+#rsvp{
+  background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 32%,#e4d9c3 62%,#d0c9ae 100%);
+  padding-bottom:30px;
+}
 
 /* Cover */
 #cover{
@@ -158,11 +199,7 @@ section::before{
 #openingVideo{display:block;width:100%;height:100%;object-fit:contain;background:#d8ceb9}
 .video-hint{display:none}
 
-/* Couple video: no visible controls or play button */
-#coupleVideoSection{
-  padding:30px 18px 35px;
-  background:linear-gradient(180deg,#e5dac5 0%,#eae0ce 38%,#d9d7be 72%,#d6d2b8 100%);
-}
+/* Couple video */
 .video-card{
   padding:8px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);
   border:1px solid var(--olive);box-shadow:0 12px 35px rgba(53,54,36,.15);
@@ -176,16 +213,15 @@ section::before{
 }
 
 /* Chapter */
-#chapter{background:linear-gradient(180deg,#d6d2b8 0%,#d9d7be 25%,#d6cbb2 58%,#e7dac4 100%)}
-.chapter-card{padding:37px 25px;text-align:center}
+.chapter-card{padding:38px 25px;text-align:center}
 .chapter-card .chapter-message{font-size:22px;line-height:1.55;margin:17px 0}
-.chapter-names{font-family:"Great Vibes",cursive;font-size:45px;line-height:1.25;color:var(--olive-dark);margin-top:17px}
-
-/* Scratch */
-#scratch{
-  background:linear-gradient(145deg,#737d50 0%,#697449 22%,#626e43 44%,#4e5a36 72%,#414b2e 100%);
-  color:var(--cream);
+.chapter-names{
+  position:relative;z-index:3;
+  font-family:"Great Vibes",cursive;font-size:45px;line-height:1.25;
+  color:var(--olive-dark);margin-top:17px;
 }
+
+/* Scratch card */
 .scratch-card{
   position:relative;padding:32px 20px 27px;text-align:center;overflow:visible;
   background:linear-gradient(145deg,#fff6e7 0%,#f5e9d4 27%,#ecdfc8 52%,#dfccb0 100%);
@@ -210,15 +246,22 @@ section::before{
 #scratchSparkles{z-index:3;pointer-events:none}
 #scratchCanvas.revealed{opacity:0;pointer-events:none}
 .scratch-foot{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--brown)}
-.scratch-decor-outer{position:absolute;width:76px;height:100px;object-fit:contain;z-index:5;pointer-events:none;animation:flowerFloat 5s ease-in-out infinite}
-.scratch-decor-outer.top{top:-25px;left:-22px}
-.scratch-decor-outer.bottom{bottom:-22px;right:-20px;animation-delay:-2.4s}
-.scratch-decor-inner{position:absolute;width:56px;height:75px;object-fit:contain;z-index:1;pointer-events:none;opacity:.85;animation:flowerFloat 6s ease-in-out infinite}
+.scratch-decor-outer{
+  position:absolute;width:83px;height:108px;object-fit:contain;z-index:5;
+  pointer-events:none;animation:flowerFloat 5s ease-in-out infinite;
+  filter:drop-shadow(0 3px 5px rgba(54,49,33,.14));
+}
+.scratch-decor-outer.top{top:-25px;left:-23px}
+.scratch-decor-outer.bottom{bottom:-24px;right:-23px;animation-delay:-2.4s}
+.scratch-decor-inner{
+  position:absolute;width:55px;height:73px;object-fit:contain;
+  z-index:1;pointer-events:none;opacity:.85;
+  animation:flowerFloat 6s ease-in-out infinite;
+}
 .scratch-decor-inner.top{top:3px;right:3px}
 .scratch-decor-inner.bottom{bottom:4px;left:2px;animation-delay:-3s}
 
 /* Countdown */
-#countdown{background:linear-gradient(180deg,#d6cbb2 0%,#ded8c0 28%,#e8ddc8 58%,#f1e6d4 100%)}
 .countdown-card{text-align:center;padding:34px 20px}
 .countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:23px}
 .time-box{padding:15px 3px 12px;background:linear-gradient(145deg,rgba(255,251,242,.86),rgba(235,225,205,.72));border:1px solid rgba(101,109,71,.65)}
@@ -226,13 +269,12 @@ section::before{
 .time-label{display:block;margin-top:8px;font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:var(--brown)}
 .countdown-date{font-family:"Cormorant Garamond",serif;font-size:22px;margin-top:21px;color:var(--brown)}
 
-/* Timeline: original green outside, beige-green shading inside its frame */
-#timeline{background:linear-gradient(145deg,#737d50 0%,#697449 22%,#626e43 44%,#4e5937 72%,#424b30 100%);color:var(--cream)}
+/* Timeline: green with beige-green shading inside */
 .timeline-card{
-  padding:34px 20px;text-align:center;
+  position:relative;padding:34px 20px;text-align:center;
   background:linear-gradient(140deg,#75805a 0%,#6b7650 18%,#64704a 35%,#5b6744 54%,#626c48 72%,#747b55 100%);
   border:1px solid var(--dark-beige);
-  box-shadow:inset 0 0 0 5px rgba(238,227,207,.13),inset 0 0 35px rgba(238,227,207,.1),0 13px 34px rgba(42,46,31,.16);
+  box-shadow:inset 0 0 0 5px rgba(238,227,207,.18),inset 0 0 35px rgba(238,227,207,.12),0 13px 34px rgba(42,46,31,.16);
 }
 #timeline .section-title{color:#fff5e4}
 #timeline .eyebrow{color:#e8d7b7}
@@ -257,7 +299,6 @@ section::before{
 .timeline-event{grid-column:2;text-align:left;padding-left:7px;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.3;color:#fff9ed}
 
 /* Venue */
-#venue{background:linear-gradient(180deg,#c6c9ad 0%,#d2d2b7 24%,#ded8c0 54%,#eee3d0 100%)}
 .venue-card{padding:30px 20px;text-align:center}
 .venue-image{display:block;width:min(100%,330px);max-height:230px;object-fit:contain;margin:4px auto 18px}
 .venue-name{font-family:"Cormorant Garamond",serif;font-size:35px;line-height:1.15;color:var(--olive-dark);margin-bottom:12px}
@@ -265,7 +306,6 @@ section::before{
 .map-button{display:inline-block;padding:12px 20px;border:1px solid var(--olive);background:linear-gradient(135deg,#727b52,#4d5737);color:#fff8e9;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase}
 
 /* Photos */
-#pictures{background:linear-gradient(180deg,#eee3d0 0%,#e4dfc6 28%,#dcd8bd 53%,#c2c6a5 100%)}
 .photo-heading{text-align:center;margin-bottom:23px}
 .photo-window{overflow:hidden;width:100%;border:1px solid var(--olive);outline:1px solid rgba(182,154,100,.75);outline-offset:5px;background:#e8ddc8}
 .photo-track{display:flex;width:max-content;animation:photoScroll 38s linear infinite}
@@ -275,7 +315,6 @@ section::before{
 .photo-note{text-align:center;margin-top:20px;font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--brown)}
 
 /* Dress code */
-#dresscode{background:linear-gradient(145deg,#747d52 0%,#6a7449 22%,#626c43 46%,#4b5635 100%);color:var(--cream)}
 #dresscode .section-title{color:#fff4e2}
 #dresscode .eyebrow{color:#e7d6b8}
 .dress-card{position:relative;padding:34px 21px;text-align:center;background:linear-gradient(145deg,#fff5e4,#f0e2cb 52%,#e1d0b4);color:var(--ink)}
@@ -283,14 +322,12 @@ section::before{
 .dress-description{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;margin-bottom:5px}
 
 /* Gifts */
-#gift{background:linear-gradient(180deg,#4e5937 0%,#687249 17%,#858e68 31%,#a6ae87 43%,#b8bd9b 54%,#dcd8bd 73%,#f0e4d0 100%)}
 .gift-card{padding:34px 22px;text-align:center}
 .gift-message{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;margin:17px 0}
 .gift-signature{font-family:"Great Vibes",cursive;font-size:42px;color:var(--olive-dark);margin:16px 0}
 .gift-date{font-size:10px;letter-spacing:3px;color:var(--brown)}
 
 /* RSVP */
-#rsvp{background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 32%,#e4d9c3 62%,#d0c9ae 100%);padding-bottom:35px}
 .rsvp-card{padding:31px 20px}
 .rsvp-intro{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.5;text-align:center;margin-bottom:21px}
 .rsvp-form{display:grid;gap:12px}
@@ -309,8 +346,9 @@ footer{text-align:center;padding:20px 15px 25px;background:linear-gradient(180de
 footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
 
 @media(max-width:380px){
-  section{padding:37px 15px}
+  section{padding:33px 15px}
   .decor{width:49px;height:80px}
+  .decor.corner-left,.decor.corner-right{width:68px;height:88px}
   .countdown-grid{gap:5px}
   .time-box{padding:13px 2px 10px}
   .time-label{font-size:7px;letter-spacing:1px}
@@ -318,7 +356,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   .timeline-time{font-size:21px}
   .timeline-event{font-size:18px}
   .photo-track img{width:190px;height:260px}
-  .scratch-decor-outer{width:61px;height:82px}
+  .scratch-decor-outer{width:64px;height:86px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -346,7 +384,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
 
 <main id="invitationContent">
 
-  <!-- COUPLE VIDEO: automatically starts, no controls -->
+  <!-- COUPLE VIDEO -->
   <section id="coupleVideoSection">
     <div class="section-inner">
       <div class="video-card">
@@ -359,7 +397,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   <section id="chapter">
     <div class="section-inner">
       <div class="chapter-card beige-frame olive-frame">
-        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor chapter-top" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une histoire, un avenir, un amour</p>
         <h1 class="section-title">Un nouveau chapitre</h1>
         <p class="chapter-message section-copy">
@@ -368,7 +406,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
           avec vous le début de ce merveilleux nouveau chapitre.
         </p>
         <p class="chapter-names">Samuel &amp; Divine</p>
-        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="olive .png" alt="" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -377,7 +415,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   <section id="scratch">
     <div class="section-inner">
       <div class="scratch-card">
-        <img class="scratch-decor-outer top" src="brown.png" alt="" aria-hidden="true">
+        <img class="scratch-decor-outer top" src="dry.png" alt="" aria-hidden="true">
         <img class="scratch-decor-outer bottom" src="dry.png" alt="" aria-hidden="true">
         <img class="scratch-decor-inner top" src="olive.png" alt="" aria-hidden="true">
         <img class="scratch-decor-inner bottom" src="dry.png" alt="" aria-hidden="true">
@@ -404,8 +442,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   <section id="countdown">
     <div class="section-inner">
       <div class="countdown-card beige-frame olive-frame">
-        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor medium-top" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor medium-bottom" src="olive .png" alt="" aria-hidden="true">
         <p class="eyebrow">Le compte à rebours a commencé</p>
         <h2 class="section-title">Bientôt ensemble</h2>
         <div class="countdown-grid" aria-label="Compte à rebours">
@@ -423,7 +461,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   <section id="timeline">
     <div class="section-inner">
       <div class="timeline-card green-frame">
-        <img class="decor corner-left" src="brown.png" alt="" aria-hidden="true">
+        <img class="decor corner-left" src="dry.png" alt="" aria-hidden="true">
         <img class="decor corner-right" src="dry.png" alt="" aria-hidden="true">
         <p class="eyebrow">Le programme de la journée</p>
         <h2 class="section-title">Notre journée</h2>
@@ -485,11 +523,12 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- DRESS CODE -->
+  <!-- DRESS CODE: NO FLOWERS IN CORNERS -->
   <section id="dresscode">
     <div class="section-inner">
       <div class="dress-card olive-frame">
-        <img class="decor right" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="dry.png" alt="" aria-hidden="true">
         <p class="eyebrow">Pour notre belle journée</p>
         <h2 class="section-title">Code vestimentaire</h2>
         <p class="dress-main">Élégant &amp; Chic</p>
@@ -505,8 +544,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
   <section id="gift">
     <div class="section-inner">
       <div class="gift-card beige-frame olive-frame">
-        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
+        <img class="decor chapter-top" src="dry.png" alt="" aria-hidden="true">
+        <img class="decor chapter-bottom" src="dry.png" alt="" aria-hidden="true">
         <p class="eyebrow">Une délicate attention</p>
         <h2 class="section-title">Cadeaux</h2>
         <p class="gift-message">
@@ -519,12 +558,10 @@ footer span{font-family:"Great Vibes",cursive;font-size:22px;letter-spacing:0}
     </div>
   </section>
 
-  <!-- RSVP: LAST SECTION -->
+  <!-- RSVP: NO DECORATIONS IN CORNERS -->
   <section id="rsvp">
     <div class="section-inner">
       <div class="rsvp-card beige-frame olive-frame">
-        <img class="decor left" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor right" src="olive.png" alt="" aria-hidden="true">
         <p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
         <h2 class="section-title" style="text-align:center">RSVP</h2>
         <p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
@@ -585,13 +622,13 @@ async function startInvitation(){
   backgroundMusic.volume=.65;
   backgroundMusic.play().catch(()=>{});
 
+  openingLayer.style.display="flex";
   openingLayer.classList.add("show");
   cover.classList.add("hidden");
 
   try{
     await openingVideo.play();
   }catch(error){
-    /* If video playback is blocked, let the guest tap the video once. */
     openingLayer.style.cursor="pointer";
     openingLayer.addEventListener("click",()=>{
       openingVideo.play().catch(()=>{});
@@ -606,29 +643,25 @@ cover.addEventListener("keydown",event=>{
   }
 });
 
-/* Green video ends -> smooth fade -> couple video autoplays without controls */
+/* Green video ends -> fade into couple video */
 openingVideo.addEventListener("ended",async()=>{
-  openingLayer.classList.add("fade");
   videoSection.classList.add("video-ready");
+  coupleVideo.muted=true;
+  coupleVideo.currentTime=0;
 
-  window.setTimeout(async()=>{
+  try{await coupleVideo.play()}catch(error){}
+
+  openingLayer.classList.add("fade");
+
+  window.setTimeout(()=>{
     openingLayer.classList.remove("show","fade");
     openingLayer.style.display="none";
     document.body.classList.remove("locked");
-
     videoSection.scrollIntoView({behavior:"smooth",block:"start"});
-
-    coupleVideo.muted=true;
-    coupleVideo.currentTime=0;
-    try{
-      await coupleVideo.play();
-    }catch(error){
-      /* Autoplay with sound is restricted by some browsers. */
-    }
-  },800);
+  },850);
 });
 
-/* SCRATCH CARD AND GOLD SPARKLES */
+/* SCRATCH CARD AND SMALL GOLD DOTS */
 const scratchCanvas=document.getElementById("scratchCanvas");
 const scratchArea=document.getElementById("scratchArea");
 const scratchContext=scratchCanvas.getContext("2d",{willReadFrequently:true});
@@ -677,21 +710,29 @@ function getScratchPosition(event){
   const rect=scratchCanvas.getBoundingClientRect();
   return{x:event.clientX-rect.left,y:event.clientY-rect.top};
 }
+
 function createGoldSparkles(x,y){
   const now=performance.now();
-  if(now-lastSparkleTime<18)return;
+  if(now-lastSparkleTime<24)return;
   lastSparkleTime=now;
-  for(let i=0;i<5;i++){
+
+  /* Tiny gold dots, not large glowing particles */
+  for(let i=0;i<4;i++){
     const angle=Math.random()*Math.PI*2;
-    const speed=.6+Math.random()*2.2;
+    const speed=.25+Math.random()*.8;
     sparkleParticles.push({
-      x:x+(Math.random()-.5)*8,y:y+(Math.random()-.5)*8,
-      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,
-      size:1.2+Math.random()*2.2,life:1,decay:.018+Math.random()*.025
+      x:x+(Math.random()-.5)*5,
+      y:y+(Math.random()-.5)*5,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed,
+      size:.45+Math.random()*.85,
+      life:.65,
+      decay:.035+Math.random()*.025
     });
   }
-  if(sparkleParticles.length>160)sparkleParticles=sparkleParticles.slice(-160);
+  if(sparkleParticles.length>110)sparkleParticles=sparkleParticles.slice(-110);
 }
+
 function scratchAt(point){
   if(!point)return;
   scratchContext.globalCompositeOperation="destination-out";
@@ -699,6 +740,7 @@ function scratchAt(point){
   scratchContext.lineCap="round";
   scratchContext.lineJoin="round";
   scratchContext.beginPath();
+
   if(lastScratchPoint){
     scratchContext.moveTo(lastScratchPoint.x,lastScratchPoint.y);
     scratchContext.lineTo(point.x,point.y);
@@ -710,20 +752,24 @@ function scratchAt(point){
   createGoldSparkles(point.x,point.y);
   lastScratchPoint=point;
 }
+
 function checkScratchProgress(){
   if(scratchRevealed)return;
   const pixels=scratchContext.getImageData(0,0,scratchCanvas.width,scratchCanvas.height).data;
   let transparent=0,total=0;
+
   for(let i=3;i<pixels.length;i+=4*20){
     total++;
     if(pixels[i]<80)transparent++;
   }
+
   if(total&&transparent/total>.38){
     scratchRevealed=true;
     scratchCanvas.classList.add("revealed");
     setTimeout(()=>{scratchCanvas.style.display="none"},250);
   }
 }
+
 scratchCanvas.addEventListener("pointerdown",event=>{
   if(scratchRevealed)return;
   scratching=true;
@@ -731,10 +777,12 @@ scratchCanvas.addEventListener("pointerdown",event=>{
   try{scratchCanvas.setPointerCapture(event.pointerId)}catch(error){}
   scratchAt(lastScratchPoint);
 });
+
 scratchCanvas.addEventListener("pointermove",event=>{
   if(!scratching||scratchRevealed)return;
   scratchAt(getScratchPosition(event));
 });
+
 function endScratch(){
   if(!scratching)return;
   scratching=false;
@@ -749,28 +797,23 @@ function animateGoldSparkles(){
   const ratio=Math.min(window.devicePixelRatio||1,2);
   sparkleContext.clearRect(0,0,sparkleCanvas.width/ratio,sparkleCanvas.height/ratio);
   sparkleParticles=sparkleParticles.filter(p=>p.life>0);
+
   for(const p of sparkleParticles){
-    p.x+=p.vx;p.y+=p.vy;p.vy+=.012;p.life-=p.decay;
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.life-=p.decay;
+
     sparkleContext.save();
     sparkleContext.globalAlpha=Math.max(0,p.life);
     sparkleContext.fillStyle="#d7b45f";
-    sparkleContext.shadowColor="#f1d78d";
-    sparkleContext.shadowBlur=8;
     sparkleContext.beginPath();
     sparkleContext.arc(p.x,p.y,p.size,0,Math.PI*2);
     sparkleContext.fill();
-    sparkleContext.strokeStyle="#fff0bd";
-    sparkleContext.lineWidth=.7;
-    sparkleContext.beginPath();
-    sparkleContext.moveTo(p.x-p.size*2.1,p.y);
-    sparkleContext.lineTo(p.x+p.size*2.1,p.y);
-    sparkleContext.moveTo(p.x,p.y-p.size*2.1);
-    sparkleContext.lineTo(p.x,p.y+p.size*2.1);
-    sparkleContext.stroke();
     sparkleContext.restore();
   }
   requestAnimationFrame(animateGoldSparkles);
 }
+
 setupScratchCanvas();
 animateGoldSparkles();
 window.addEventListener("resize",()=>{if(!scratchRevealed)setupScratchCanvas()});
@@ -779,6 +822,7 @@ window.addEventListener("resize",()=>{if(!scratchRevealed)setupScratchCanvas()})
 const targetDate=new Date(2026,10,21,12,0,0);
 function updateCountdown(){
   const remaining=targetDate.getTime()-Date.now();
+
   if(remaining<=0){
     document.getElementById("days").textContent="0";
     document.getElementById("hours").textContent="00";
@@ -786,6 +830,7 @@ function updateCountdown(){
     document.getElementById("seconds").textContent="00";
     return;
   }
+
   const total=Math.floor(remaining/1000);
   document.getElementById("days").textContent=String(Math.floor(total/86400));
   document.getElementById("hours").textContent=String(Math.floor((total%86400)/3600)).padStart(2,"0");
@@ -799,29 +844,42 @@ setInterval(updateCountdown,1000);
 const petalCanvas=document.getElementById("petalCanvas");
 const petalContext=petalCanvas.getContext("2d");
 let petalWidth=0,petalHeight=0,petals=[];
+
 function resizePetals(){
   const ratio=Math.min(window.devicePixelRatio||1,2);
-  petalWidth=window.innerWidth;petalHeight=window.innerHeight;
+  petalWidth=window.innerWidth;
+  petalHeight=window.innerHeight;
   petalCanvas.width=Math.round(petalWidth*ratio);
   petalCanvas.height=Math.round(petalHeight*ratio);
   petalCanvas.style.width=petalWidth+"px";
   petalCanvas.style.height=petalHeight+"px";
   petalContext.setTransform(ratio,0,0,ratio,0,0);
+
   const count=Math.min(24,Math.max(12,Math.round(petalWidth/22)));
   petals=Array.from({length:count},()=>({
-    x:Math.random()*petalWidth,y:Math.random()*petalHeight,
-    size:2+Math.random()*1.8,speed:.2+Math.random()*.45,
-    drift:(Math.random()-.5)*.32,angle:Math.random()*Math.PI*2,
-    rotation:(Math.random()-.5)*.015,opacity:.16+Math.random()*.2
+    x:Math.random()*petalWidth,
+    y:Math.random()*petalHeight,
+    size:2+Math.random()*1.8,
+    speed:.2+Math.random()*.45,
+    drift:(Math.random()-.5)*.32,
+    angle:Math.random()*Math.PI*2,
+    rotation:(Math.random()-.5)*.015,
+    opacity:.16+Math.random()*.2
   }));
 }
+
 function drawPetals(){
   petalContext.clearRect(0,0,petalWidth,petalHeight);
+
   for(const p of petals){
-    p.y+=p.speed;p.x+=p.drift;p.angle+=p.rotation;
+    p.y+=p.speed;
+    p.x+=p.drift;
+    p.angle+=p.rotation;
+
     if(p.y>petalHeight+10){p.y=-10;p.x=Math.random()*petalWidth}
     if(p.x<-10)p.x=petalWidth+5;
     if(p.x>petalWidth+10)p.x=-5;
+
     petalContext.save();
     petalContext.translate(p.x,p.y);
     petalContext.rotate(p.angle);
@@ -834,6 +892,7 @@ function drawPetals(){
   }
   requestAnimationFrame(drawPetals);
 }
+
 resizePetals();
 drawPetals();
 window.addEventListener("resize",resizePetals);
@@ -843,19 +902,25 @@ const rsvpForm=document.getElementById("rsvpForm");
 const rsvpStatus=document.getElementById("rsvpStatus");
 const guestTotal=document.getElementById("guestTotal");
 let totalResponses=0;
+
 rsvpForm.addEventListener("submit",event=>{
   event.preventDefault();
+
   const name=document.getElementById("guestName").value.trim();
   const attendance=document.getElementById("attendance").value;
+
   if(!name||!attendance){
     rsvpStatus.textContent="Veuillez remplir votre nom et votre réponse.";
     return;
   }
+
   totalResponses++;
   guestTotal.textContent=String(totalResponses);
+
   rsvpStatus.textContent=attendance==="yes"
     ?"Merci, "+name+" ! Votre réponse de démonstration a été prise en compte sur cette page."
     :"Merci de nous avoir prévenus, "+name+". Votre réponse de démonstration a été prise en compte sur cette page.";
+
   rsvpForm.reset();
 });
 </script>
