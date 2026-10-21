@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -145,7 +146,7 @@ section::before{
 
 .frame-padding{padding:26px 20px}
 
-/* FLOWERS: top flowers slightly higher, bottom flowers slightly lower */
+/* FLOWERS */
 .decor{
   position:absolute;
   width:88px;
@@ -176,31 +177,34 @@ section::before{
   animation-delay:-2s;
 }
 
+/* Olive and dry flowers: adjusted positions */
 .decor.chapter-top{
-  left:-18px;
-  top:-36px;
+  left:-18px!important;
+  top:-27px!important;
   width:90px;
   height:112px;
 }
 
 .decor.chapter-bottom{
-  right:-18px;
-  bottom:-26px;
+  right:-18px!important;
+  bottom:-36px!important;
+  top:auto!important;
   width:90px;
   height:112px;
   animation-delay:-2.5s;
 }
 
 .decor.medium-top{
-  right:-15px;
-  top:-20px;
+  right:-15px!important;
+  top:-27px!important;
   width:90px;
   height:112px;
 }
 
 .decor.medium-bottom{
-  left:-15px;
-  bottom:-20px;
+  left:-15px!important;
+  bottom:-35px!important;
+  top:auto!important;
   width:90px;
   height:112px;
   animation-delay:-2.5s;
@@ -220,7 +224,7 @@ section::before{
   pointer-events:none;
 }
 
-/* FLOWING SECTION GRADIENTS */
+/* SECTION GRADIENTS */
 #coupleVideoSection{
   padding:25px 18px 29px;
   background:linear-gradient(180deg,#e5dac5,#e9dfca 55%,#e3ddc6);
@@ -356,21 +360,20 @@ section::before{
   background:#d8ceb9;
 }
 
+/* COUPLE VIDEO: ROUNDED FRAME */
 .video-card{
+  position:relative;
+  width:100%;
   padding:7px;
   background:linear-gradient(145deg,#fbf3e4,#d9c6a5);
   border:1px solid var(--emerald);
+  border-radius:20px;
+  overflow:hidden;
+  clip-path:inset(0 round 20px);
   box-shadow:0 12px 35px rgba(3,40,27,.17);
   opacity:0;
   transform:translateY(8px);
   transition:opacity 1s ease,transform 1s ease;
-}
-.video-card video{
-  border-radius:0;
-}
-#coupleVideoSection.video-ready .video-card{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .video-card video{
@@ -380,6 +383,13 @@ section::before{
   max-height:76vh;
   object-fit:contain;
   background:#d9d0bd;
+  border-radius:13px;
+  overflow:hidden;
+}
+
+#coupleVideoSection.video-ready .video-card{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* CHAPTER */
@@ -498,12 +508,12 @@ section::before{
 }
 
 .scratch-decor-outer.top{
-  top:-35px;
+  top:-40px;
   left:-25px;
 }
 
 .scratch-decor-outer.bottom{
-  bottom:-35px;
+  bottom:-42px;
   right:-25px;
   animation-delay:-2.4s;
 }
@@ -518,7 +528,7 @@ section::before{
 .scratch-decor-inner.top{top:2px;right:2px}
 .scratch-decor-inner.bottom{bottom:2px;left:2px;animation-delay:-3s}
 
-/* CONFETTI WHEN THE DATE IS REVEALED */
+/* CONFETTI: positioned relative to scratch card */
 #revealConfetti{
   position:absolute;
   inset:-35px -15px;
@@ -555,8 +565,7 @@ section::before{
     opacity:0;
     transform:translate3d(0,20px,0) rotate(0deg) scale(.6);
   }
-  12%{opacity:1}
-  45%{opacity:1}
+  12%,45%{opacity:1}
   100%{
     opacity:0;
     transform:translate3d(var(--fly-x),var(--fly-y),0) rotate(var(--fly-rotate)) scale(1);
@@ -733,33 +742,42 @@ section::before{
   text-transform:uppercase;
 }
 
-/* PHOTOS */
+/* PHOTOS: SMALL PICTURES, NO FRAME OR BOX */
 .photo-heading{text-align:center;margin-bottom:22px}
 
 .photo-window{
-  overflow:hidden;
   width:100%;
-  border:1px solid var(--emerald);
-  outline:1px solid rgba(182,154,100,.75);
-  outline-offset:5px;
-  background:#e8ddc8;
+  overflow:hidden;
+  border:0;
+  outline:0;
+  background:transparent;
+  box-shadow:none;
 }
 
 .photo-track{
   display:flex;
+  align-items:center;
+  gap:12px;
   width:max-content;
   animation:photoScroll 38s linear infinite;
+  will-change:transform;
 }
 
 .photo-track:hover{animation-play-state:paused}
 
 .photo-track img{
   display:block;
-  width:220px;
-  height:300px;
+  flex:0 0 auto;
+  width:105px;
+  height:135px;
   object-fit:cover;
-  margin-right:10px;
-  background:#d6c9b4;
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  border-radius:0;
+  box-shadow:none;
+  background:transparent;
 }
 
 @keyframes photoScroll{
@@ -929,7 +947,28 @@ footer span{
     height:103px;
   }
 
-  .decor.chapter-top,.decor.chapter-bottom{
+  .decor.chapter-top{
+    width:80px;
+    height:99px;
+    top:-27px!important;
+  }
+
+  .decor.chapter-bottom{
+    width:80px;
+    height:99px;
+    bottom:-36px!important;
+    top:auto!important;
+  }
+
+  .decor.medium-top{
+    top:-27px!important;
+    width:80px;
+    height:99px;
+  }
+
+  .decor.medium-bottom{
+    bottom:-35px!important;
+    top:auto!important;
     width:80px;
     height:99px;
   }
@@ -940,9 +979,15 @@ footer span{
   .timeline-item{gap:17px}
   .timeline-time{font-size:21px}
   .timeline-event{font-size:18px}
-  .photo-track img{width:190px;height:260px}
+
+  .photo-track{gap:9px}
+  .photo-track img{width:85px;height:112px}
+
   .scratch-decor-outer{width:85px;height:105px}
   .scratch-decor-inner{width:65px;height:82px}
+
+  .video-card{border-radius:18px;clip-path:inset(0 round 18px)}
+  .video-card video{border-radius:12px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -1023,10 +1068,10 @@ footer span{
         </div>
 
         <p class="scratch-foot">Faites glisser votre doigt pour révéler</p>
-      </div>
 
-      <!-- Confetti appears only after the scratch card is revealed -->
-      <div id="revealConfetti" aria-hidden="true"></div>
+        <!-- Confetti is attached to the scratch card -->
+        <div id="revealConfetti" aria-hidden="true"></div>
+      </div>
     </div>
   </section>
 
@@ -1088,20 +1133,23 @@ footer span{
         <h2 class="section-title">Nos plus beaux souvenirs</h2>
       </div>
 
+      <!-- No frame: small photos moving continuously from right to left -->
       <div class="photo-window">
         <div class="photo-track">
-          <img src="1.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
-          <img src="2.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
-          <img src="3.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
-          <img src="4.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
-          <img src="5.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
-          <img src="6.jpg" alt="Souvenir de Samuel et Divine" loading="lazy">
-          <img src="1.jpg" alt="" aria-hidden="true" loading="lazy">
-          <img src="2.jpg" alt="" aria-hidden="true" loading="lazy">
-          <img src="3.jpg" alt="" aria-hidden="true" loading="lazy">
-          <img src="4.jpg" alt="" aria-hidden="true" loading="lazy">
-          <img src="5.jpg" alt="" aria-hidden="true" loading="lazy">
-          <img src="6.jpg" alt="" aria-hidden="true" loading="lazy">
+          <img src="1.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+          <img src="2.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+          <img src="3.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+          <img src="4.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+          <img src="5.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+          <img src="6.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+
+          <!-- Duplicate row makes the slideshow loop smoothly -->
+          <img src="1.jpg" alt="" aria-hidden="true">
+          <img src="2.jpg" alt="" aria-hidden="true">
+          <img src="3.jpg" alt="" aria-hidden="true">
+          <img src="4.jpg" alt="" aria-hidden="true">
+          <img src="5.jpg" alt="" aria-hidden="true">
+          <img src="6.jpg" alt="" aria-hidden="true">
         </div>
       </div>
 
@@ -1229,7 +1277,9 @@ async function startInvitation(){
     await openingVideo.play();
   }catch(error){
     openingLayer.style.cursor="pointer";
-    openingLayer.addEventListener("click",()=>openingVideo.play().catch(()=>{}),{once:true});
+    openingLayer.addEventListener("click",()=>{
+      openingVideo.play().catch(()=>{});
+    },{once:true});
   }
 }
 
@@ -1262,7 +1312,7 @@ openingVideo.addEventListener("ended",async()=>{
   },850);
 });
 
-/* SCRATCH CARD: NO PRE-EXISTING GOLD DOTS */
+/* SCRATCH CARD */
 const scratchCanvas=document.getElementById("scratchCanvas");
 const scratchArea=document.getElementById("scratchArea");
 const scratchContext=scratchCanvas.getContext("2d",{willReadFrequently:true});
@@ -1309,15 +1359,13 @@ function setupScratchCanvas(){
   scratchContext.fillStyle=gradient;
   scratchContext.fillRect(0,0,w,h);
 
-  /* Only a fine gold border: no golden dots on the untouched coating */
+  /* Fine gold border only: no gold dots before scratching */
   scratchContext.strokeStyle="rgba(245,218,159,.95)";
   scratchContext.lineWidth=1.2;
   scratchContext.strokeRect(9,9,w-18,h-18);
 
-  /* Subtle decorative lines */
   scratchContext.strokeStyle="rgba(255,232,188,.45)";
   scratchContext.lineWidth=1;
-
   scratchContext.beginPath();
   scratchContext.moveTo(w/2-53,h/2-28);
   scratchContext.lineTo(w/2+53,h/2-28);
@@ -1336,7 +1384,6 @@ function setupScratchCanvas(){
 
 function getScratchPosition(event){
   const rect=scratchCanvas.getBoundingClientRect();
-
   return{
     x:event.clientX-rect.left,
     y:event.clientY-rect.top
@@ -1346,7 +1393,6 @@ function getScratchPosition(event){
 /* GOLD SPARKLES APPEAR ONLY WHILE SCRATCHING */
 function createGoldSparkles(x,y){
   const now=performance.now();
-
   if(now-lastSparkleTime<13)return;
   lastSparkleTime=now;
 
@@ -1389,34 +1435,25 @@ function scratchAt(point){
   }
 
   scratchContext.stroke();
-
-  /* Gold sparkles trail the finger or cursor */
   createGoldSparkles(point.x,point.y);
-
   lastScratchPoint=point;
 
   const now=performance.now();
-
   if(now-lastProgressCheck>100){
     lastProgressCheck=now;
     checkScratchProgress();
   }
 }
 
-/* EMERALD RIBBON CONFETTI BURSTS UP ON REVEAL */
+/* GREEN AND GOLD RIBBON CONFETTI */
 function launchRevealConfetti(){
   if(!revealConfetti)return;
 
   revealConfetti.innerHTML="";
 
   const colors=[
-    "#064b35",
-    "#0b6849",
-    "#267052",
-    "#b69a64",
-    "#d8bd83",
-    "#f2dfb4",
-    "#174f3a"
+    "#064b35","#0b6849","#267052",
+    "#b69a64","#d8bd83","#f2dfb4","#174f3a"
   ];
 
   for(let i=0;i<54;i++){
@@ -1454,7 +1491,6 @@ function revealScratchCard(){
   scratchCanvas.style.transition="opacity .45s ease";
   scratchCanvas.style.opacity="0";
 
-  /* Trigger green ribbon confetti as the date appears */
   launchRevealConfetti();
 
   window.setTimeout(()=>{
@@ -1471,18 +1507,13 @@ function checkScratchProgress(){
 
   let transparent=0;
   let total=0;
-
   const step=4*12;
 
   for(let i=3;i<pixels.length;i+=step){
     total++;
-
-    if(pixels[i]<80){
-      transparent++;
-    }
+    if(pixels[i]<80)transparent++;
   }
 
-  /* Reveal once 50% of the scratch coating is removed */
   if(total&&transparent/total>=.50){
     revealScratchCard();
   }
@@ -1521,10 +1552,9 @@ scratchCanvas.addEventListener("pointerup",endScratch);
 scratchCanvas.addEventListener("pointercancel",endScratch);
 scratchCanvas.addEventListener("lostpointercapture",endScratch);
 
-/* GOLD SPARKLES ANIMATE ONLY AROUND THE SCRATCHING ACTION */
+/* GOLD SPARKLE ANIMATION */
 function animateGoldSparkles(){
   const rect=sparkleCanvas.getBoundingClientRect();
-
   sparkleContext.clearRect(0,0,rect.width,rect.height);
   sparkleParticles=sparkleParticles.filter(p=>p.life>0);
 
@@ -1539,7 +1569,6 @@ function animateGoldSparkles(){
     sparkleContext.shadowBlur=8;
     sparkleContext.fillStyle=p.twinkle>.5?"#fff1bd":"#c7a25a";
 
-    /* Tiny four-point gold sparkle */
     sparkleContext.translate(p.x,p.y);
     sparkleContext.rotate(p.life*3);
     sparkleContext.beginPath();
@@ -1550,12 +1579,10 @@ function animateGoldSparkles(){
     sparkleContext.closePath();
     sparkleContext.fill();
 
-    /* Bright gold center */
     sparkleContext.beginPath();
     sparkleContext.arc(0,0,p.size*.45,0,Math.PI*2);
     sparkleContext.fillStyle="#fff8df";
     sparkleContext.fill();
-
     sparkleContext.restore();
   }
 
@@ -1566,9 +1593,7 @@ setupScratchCanvas();
 animateGoldSparkles();
 
 window.addEventListener("resize",()=>{
-  if(!scratchRevealed){
-    setupScratchCanvas();
-  }
+  if(!scratchRevealed)setupScratchCanvas();
 });
 
 /* COUNTDOWN */
@@ -1586,7 +1611,6 @@ function updateCountdown(){
   }
 
   const total=Math.floor(remaining/1000);
-
   document.getElementById("days").textContent=String(Math.floor(total/86400));
   document.getElementById("hours").textContent=String(Math.floor((total%86400)/3600)).padStart(2,"0");
   document.getElementById("minutes").textContent=String(Math.floor((total%3600)/60)).padStart(2,"0");
@@ -1614,7 +1638,6 @@ function resizePetals(){
   petalCanvas.height=Math.round(petalHeight*ratio);
   petalCanvas.style.width=petalWidth+"px";
   petalCanvas.style.height=petalHeight+"px";
-
   petalContext.setTransform(ratio,0,0,ratio,0,0);
 
   const count=Math.min(24,Math.max(12,Math.round(petalWidth/22)));
