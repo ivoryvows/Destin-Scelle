@@ -511,47 +511,96 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 </main>
 
 <script>
+
 /* COVER: TAP ANYWHERE TO START */
-const cover=document.getElementById("cover");
-const openingLayer=document.getElementById("openingLayer");
-const openingVideo=document.getElementById("openingVideo");
-const coupleVideo=document.getElementById("coupleVideo");
-const backgroundMusic=document.getElementById("backgroundMusic");
-const musicToggle=document.getElementById("musicToggle");
-const musicIcon=document.getElementById("musicIcon");
-const musicLabel=document.getElementById("musicLabel");
-const videoSection=document.getElementById("coupleVideoSection");
-let invitationStarted=false;
+const cover = document.getElementById("cover");
+const openingLayer = document.getElementById("openingLayer");
+const openingVideo = document.getElementById("openingVideo");
+const coupleVideo = document.getElementById("coupleVideo");
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicToggle = document.getElementById("musicToggle");
+const musicIcon = document.getElementById("musicIcon");
+const musicLabel = document.getElementById("musicLabel");
+const videoSection = document.getElementById("coupleVideoSection");
 
-function updateMusicButton(){
-  const playing=!backgroundMusic.paused;
-  musicIcon.textContent=playing?"♫":"♪";
-  musicLabel.textContent=playing?"Pause musique":"Écouter la musique";
-  musicToggle.setAttribute("aria-label",playing?"Mettre la musique en pause":"Lancer la musique");
-  musicToggle.setAttribute("aria-pressed",String(playing));
+let invitationStarted = false;
+
+function updateMusicButton() {
+  const playing = !backgroundMusic.paused;
+
+  musicIcon.textContent = playing ? "♫" : "♪";
+  musicLabel.textContent = playing
+    ? "Pause musique"
+    : "Écouter la musique";
+
+  musicToggle.setAttribute(
+    "aria-label",
+    playing ? "Mettre la musique en pause" : "Lancer la musique"
+  );
+
+  musicToggle.setAttribute("aria-pressed", String(playing));
 }
 
-async function startMusic(){
-  try{
+async function startMusic() {
+  try {
+    backgroundMusic.volume = 0.65;
     await backgroundMusic.play();
-  }catch(error){
-    /* Some browsers require another direct user tap to start audio. */
-  }
-  updateMusicButton();
-}
-
-musicToggle.addEventListener("click",async(event)=>{
-  event.stopPropagation();
-  if(backgroundMusic.paused){
-    await startMusic();
-  }else{
-    backgroundMusic.pause();
+  } catch (error) {
     updateMusicButton();
   }
+}
+
+musicToggle.addEventListener("click", async (event) => {
+  event.stopPropagation();
+
+  if (backgroundMusic.paused) {
+    await startMusic();
+  } else {
+    backgroundMusic.pause();
+  }
+
+  updateMusicButton();
 });
 
-backgroundMusic.addEventListener("play",updateMusicButton);
-backgroundMusic.addEventListener("pause",updateMusicButton);
+backgroundMusic.addEventListener("play", updateMusicButton);
+backgroundMusic.addEventListener("pause", updateMusicButton);
+backgroundMusic.addEventListener("ended", updateMusicButton);
+
+/* START INVITATION */
+async function startInvitation() {
+  if (invitationStarted) return;
+
+  invitationStarted = true;
+  document.body.classList.add("locked");
+
+  /* Start music directly from the user's tap */
+  startMusic();
+
+  openingLayer.style.display = "flex";
+  openingLayer.classList.add("show");
+  cover.classList.add("hidden");
+
+  try {
+    await openingVideo.play();
+  } catch (error) {
+    openingLayer.style.cursor = "pointer";
+
+    openingLayer.addEventListener(
+      "click",
+      () => openingVideo.play().catch(() => {}),
+      { once: true }
+    );
+  }
+}
+
+cover.addEventListener("click", startInvitation);
+
+cover.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    startInvitation();
+  }
+});
 
 async function startInvitation(){
   if(invitationStarted)return;
