@@ -129,13 +129,28 @@ section::before{
 #openingVideo{display:block;width:100%;height:100%;object-fit:contain;background:#d8ceb9}
 
 /* MUSIC BUTTON */
+
 #musicToggle{
-  position:fixed;right:15px;bottom:18px;z-index:80;
-  display:flex;align-items:center;gap:8px;padding:10px 14px;
-  border:1px solid #b69a64;border-radius:30px;
+  position:fixed;
+  right:15px;
+  bottom:18px;
+  z-index:110;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:1px solid #b69a64;
+  border-radius:50%;
   background:linear-gradient(135deg,#0b6043,#032f22);
-  color:#fff4df;font-family:"DM Sans",sans-serif;font-size:11px;
-  letter-spacing:.5px;box-shadow:0 4px 15px rgba(3,38,27,.25);
+  color:#fff4df;
+  font-size:22px;
+  box-shadow:0 4px 15px rgba(3,38,27,.25);
+}
+#musicLabel{display:none}
+#musicIcon{font-size:22px;line-height:1}
+
 }
 #musicIcon{font-size:17px;line-height:1}
 #musicToggle:focus-visible{outline:2px solid #b69a64;outline-offset:4px}
@@ -313,13 +328,13 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 </div>
 
 <div id="openingLayer" aria-label="Vidéo d'ouverture">
-  <video id="openingVideo" src="green.mp4" playsinline preload="auto" webkit-playsinline></video>
+  <video id="openingVideo" src="green.mp4" playsinline muted preload="auto" webkit-playsinline></video>
 </div>
 
 <audio id="backgroundMusic" src="falling.mp3" loop preload="auto"></audio>
-<button id="musicToggle" type="button" aria-label="Mettre la musique en pause" aria-pressed="true">
+<button id="musicToggle" type="button" aria-label="Lancer la musique" aria-pressed="false">
   <span id="musicIcon">♫</span>
-  <span id="musicLabel">Pause musique</span>
+  <span id="musicLabel" hidden</span>
 </button>
 
 <main id="invitationContent">
@@ -566,6 +581,7 @@ backgroundMusic.addEventListener("play", updateMusicButton);
 backgroundMusic.addEventListener("pause", updateMusicButton);
 backgroundMusic.addEventListener("ended", updateMusicButton);
 
+
 /* START INVITATION */
 async function startInvitation() {
   if (invitationStarted) return;
@@ -573,8 +589,22 @@ async function startInvitation() {
   invitationStarted = true;
   document.body.classList.add("locked");
 
-  /* Start music directly from the user's tap */
-  startMusic();
+  // Keep the opening video's own sound off
+  openingVideo.muted = true;
+  openingVideo.volume = 0;
+
+  // Start falling.mp3 directly from the cover tap
+  backgroundMusic.muted = false;
+  backgroundMusic.volume = 0.65;
+
+  backgroundMusic.play()
+    .then(() => {
+      updateMusicButton();
+    })
+    .catch((error) => {
+      console.log("falling.mp3 could not play:", error);
+      updateMusicButton();
+    });
 
   openingLayer.style.display = "flex";
   openingLayer.classList.add("show");
@@ -584,7 +614,6 @@ async function startInvitation() {
     await openingVideo.play();
   } catch (error) {
     openingLayer.style.cursor = "pointer";
-
     openingLayer.addEventListener(
       "click",
       () => openingVideo.play().catch(() => {}),
@@ -601,8 +630,6 @@ cover.addEventListener("keydown", (event) => {
     startInvitation();
   }
 });
-
-
 
 /* FADE INTO THE LOOPING COUPLE VIDEO */
 openingVideo.addEventListener("ended",async()=>{
