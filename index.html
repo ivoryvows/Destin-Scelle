@@ -60,22 +60,14 @@ section::before{
 
 /* FLOWER BASE */
 .decor{
-  position:absolute;
-  object-fit:contain;
-  pointer-events:none;
-  user-select:none;
-  z-index:4;
-  animation:flowerFloat 5.5s ease-in-out infinite;
+  position:absolute;object-fit:contain;pointer-events:none;user-select:none;
+  z-index:4;animation:flowerFloat 5.5s ease-in-out infinite;
   filter:drop-shadow(0 4px 5px rgba(30,36,22,.18));
 }
 .scratch-decor-outer{
-  position:absolute;
-  object-fit:contain;
-  pointer-events:none;
-  user-select:none;
+  position:absolute;object-fit:contain;pointer-events:none;user-select:none;
   animation:flowerFloat 5s ease-in-out infinite;
-  filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));
-  z-index:5;
+  filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));z-index:5;
 }
 @keyframes flowerFloat{
   0%,100%{transform:translateY(0) rotate(-3deg)}
@@ -83,77 +75,30 @@ section::before{
 }
 
 /* OLIVE.PNG — CHAPTER FRAME */
-.olive-chapter-top{
-  width:100px;height:120px;
-  left:-30px;top:-45px;
-}
-.olive-chapter-bottom{
-  width:100px;height:120px;
-  right:-30px;bottom:-45px;
-  animation-delay:-2.5s;
-}
+.olive-chapter-top{width:100px;height:120px;left:-30px;top:-45px}
+.olive-chapter-bottom{width:100px;height:120px;right:-30px;bottom:-45px;animation-delay:-2.5s}
 
 /* DRY.PNG — SCRATCH FRAME */
-.dry-scratch-top{
-  width:84px;height:100px;
-  left:-19px;top:-40px;
-}
-.dry-scratch-bottom{
-  width:84px;height:100px;
-  right:-19px;bottom:-40px;
-  animation-delay:-2.4s;
-}
+.dry-scratch-top{width:84px;height:100px;left:-19px;top:-40px}
+.dry-scratch-bottom{width:84px;height:100px;right:-19px;bottom:-40px;animation-delay:-2.4s}
 
 /* OLIVE.PNG — COUNTDOWN FRAME */
-.olive-countdown-top{
-  width:88px;height:108px;
-  right:-25px;top:-50px;
-}
-.olive-countdown-bottom{
-  width:88px;height:108px;
-  left:-25px;bottom:-50px;
-  animation-delay:-2.5s;
-}
+.olive-countdown-top{width:88px;height:108px;right:-25px;top:-50px}
+.olive-countdown-bottom{width:88px;height:108px;left:-25px;bottom:-50px;animation-delay:-2.5s}
 
 /* DRY.PNG — TIMELINE FRAME */
-.dry-timeline-left{
-  width:84px;height:100px;
-  left:-15px;top:-29px;
-}
-.dry-timeline-right{
-  width:84px;height:100px;
-  right:-15px;bottom:-29px;
-  animation-delay:-2s;
-}
+.dry-timeline-left{width:84px;height:100px;left:-15px;top:-29px}
+.dry-timeline-right{width:84px;height:100px;right:-15px;bottom:-29px;animation-delay:-2s}
 
 /* DRY.PNG — DRESS CODE FRAME */
-.dry-dress-top{
-  width:80px;height:95px;
-  left:-15px;top:-30px;
-}
-.dry-dress-bottom{
-  width:80px;height:95px;
-  right:-15px;bottom:-30px;
-  animation-delay:-2.5s;
-}
+.dry-dress-top{width:80px;height:95px;left:-15px;top:-30px}
+.dry-dress-bottom{width:80px;height:95px;right:-15px;bottom:-30px;animation-delay:-2.5s}
 
 /* OLIVE.PNG — GIFT FRAME */
-.olive-gift-top{
-  width:90px;height:100px;
-  left:-20px;top:-30px;
-}
-.olive-gift-bottom{
-  width:90px;height:100px;
-  right:-20px;bottom:-30px;
-  animation-delay:-2.5s;
-}
+.olive-gift-top{width:90px;height:100px;left:-20px;top:-30px}
+.olive-gift-bottom{width:90px;height:100px;right:-20px;bottom:-30px;animation-delay:-2.5s}
 
-#chapter .chapter-card,
-#countdown .countdown-card,
-#timeline .timeline-card,
-#dresscode .dress-card,
-#gift .gift-card{position:relative}
-
+#chapter .chapter-card,#countdown .countdown-card,#timeline .timeline-card,#dresscode .dress-card,#gift .gift-card{position:relative}
 #petalCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:20;pointer-events:none}
 
 /* SECTION GRADIENTS */
@@ -182,6 +127,18 @@ section::before{
 #openingLayer.show{display:flex}
 #openingLayer.fade{opacity:0;pointer-events:none}
 #openingVideo{display:block;width:100%;height:100%;object-fit:contain;background:#d8ceb9}
+
+/* MUSIC BUTTON */
+#musicToggle{
+  position:fixed;right:15px;bottom:18px;z-index:80;
+  display:flex;align-items:center;gap:8px;padding:10px 14px;
+  border:1px solid #b69a64;border-radius:30px;
+  background:linear-gradient(135deg,#0b6043,#032f22);
+  color:#fff4df;font-family:"DM Sans",sans-serif;font-size:11px;
+  letter-spacing:.5px;box-shadow:0 4px 15px rgba(3,38,27,.25);
+}
+#musicIcon{font-size:17px;line-height:1}
+#musicToggle:focus-visible{outline:2px solid #b69a64;outline-offset:4px}
 
 /* COUPLE VIDEO */
 .video-card{position:relative;width:100%;padding:7px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);border:1px solid var(--emerald);border-radius:20px;overflow:hidden;clip-path:inset(0 round 20px);box-shadow:0 12px 35px rgba(3,40,27,.17);opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease}
@@ -250,25 +207,43 @@ section::before{
 .venue-address{font-size:13px;line-height:1.8;margin:0 auto 18px;max-width:310px}
 .map-button{display:inline-block;padding:12px 20px;border:1px solid var(--emerald);background:linear-gradient(135deg,#0b6043,#032f22);color:#fff8e9;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase}
 
-/* BIGGER ROUNDED SLIDESHOW PHOTOS */
+/* SLIDESHOW */
 .photo-heading{text-align:center;margin-bottom:22px}
 .photo-window{width:100%;overflow:hidden;border:0;outline:0;background:transparent;box-shadow:none;border-radius:15px}
 .photo-track{display:flex;align-items:center;gap:13px;width:max-content;animation:photoScroll 38s linear infinite;will-change:transform}
 .photo-track:hover{animation-play-state:paused}
-.photo-track img{
-  display:block;flex:0 0 auto;width:120px;height:155px;object-fit:cover;
-  margin:0;padding:0;border:1px solid rgba(6,75,53,.24);outline:0;
-  border-radius:13px;box-shadow:0 5px 14px rgba(3,38,27,.13);background:transparent;
-}
+.photo-track img{display:block;flex:0 0 auto;width:120px;height:155px;object-fit:cover;margin:0;padding:0;border:1px solid rgba(6,75,53,.24);outline:0;border-radius:13px;box-shadow:0 5px 14px rgba(3,38,27,.13);background:transparent}
 @keyframes photoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .photo-note{text-align:center;margin-top:19px;font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--brown)}
 
 /* DRESS CODE */
 #dresscode .section-title{color:#fff4e2}
 #dresscode .eyebrow{color:#e7d6b8}
-.dress-card{position:relative;padding:32px 21px;text-align:center;background:linear-gradient(145deg,#fff5e4,#f0e2cb 52%,#e1d0b4);color:var(--ink)}
-.dress-main{font-family:"Cormorant Garamond",serif;font-size:clamp(35px,8vw,46px);color:var(--emerald-dark);line-height:1.15;margin:12px 0 18px}
-.dress-description{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;margin-bottom:5px}
+.dress-card{position:relative;padding:35px 21px;text-align:center;background:linear-gradient(145deg,#fff5e4,#f0e2cb 52%,#e1d0b4);color:var(--ink)}
+.dress-eyebrow{
+  font-family:"DM Sans",sans-serif;font-size:10px;letter-spacing:2.5px;
+  line-height:1.8;color:#786047;margin-bottom:13px;
+}
+.dress-heading{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(43px,10vw,57px);
+  line-height:1.05;font-weight:600;color:#064b35;margin-bottom:5px;
+}
+.dress-main{
+  font-family:"Cormorant Garamond",serif;font-size:clamp(36px,8vw,47px);
+  color:#064b35;line-height:1.15;margin:0 0 19px;font-weight:600;
+}
+.dress-gold-line{
+  width:86%;max-width:350px;height:1px;margin:0 auto 22px;
+  background:linear-gradient(90deg,transparent,#b69a64 12%,#b69a64 88%,transparent);
+}
+.dress-description{
+  font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.55;
+  color:#786047;margin-bottom:17px;
+}
+.dress-closing{
+  font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.5;
+  color:#064b35;font-weight:600;
+}
 
 /* GIFTS */
 .gift-card{position:relative;padding:32px 22px;text-align:center}
@@ -291,70 +266,21 @@ section::before{
 footer{text-align:center;padding:19px 15px 23px;background:linear-gradient(180deg,#d0c9ae,#e8ddc8);color:var(--brown);font-size:10px;letter-spacing:1.5px}
 footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 
-/* MOBILE — EACH FLOWER HAS ITS OWN SIZE AND POSITION */
+/* MOBILE */
 @media(max-width:380px){
   section{padding:28px 15px}
-
-  /* Chapter olive */
-  .olive-chapter-top{
-    width:84px;height:102px;
-    left:-11px;top:-13px;
-  }
-  .olive-chapter-bottom{
-    width:84px;height:102px;
-    right:-11px;bottom:-13px;
-  }
-
-  /* Scratch dry */
-  .dry-scratch-top{
-    width:90px;height:105px;
-    left:-12px;top:-13px;
-  }
-  .dry-scratch-bottom{
-    width:90px;height:105px;
-    right:-12px;bottom:-13px;
-  }
-
-  /* Countdown olive */
-  .olive-countdown-top{
-    width:72px;height:88px;
-    right:-9px;top:-11px;
-  }
-  .olive-countdown-bottom{
-    width:72px;height:88px;
-    left:-9px;bottom:-11px;
-  }
-
-  /* Timeline dry */
-  .dry-timeline-left{
-    width:78px;height:94px;
-    left:-10px;top:-11px;
-  }
-  .dry-timeline-right{
-    width:78px;height:94px;
-    right:-10px;bottom:-11px;
-  }
-
-  /* Dress code dry */
-  .dry-dress-top{
-    width:68px;height:83px;
-    left:-8px;top:-9px;
-  }
-  .dry-dress-bottom{
-    width:68px;height:83px;
-    right:-8px;bottom:-9px;
-  }
-
-  /* Gift olive */
-  .olive-gift-top{
-    width:76px;height:92px;
-    left:-10px;top:-12px;
-  }
-  .olive-gift-bottom{
-    width:76px;height:92px;
-    right:-10px;bottom:-12px;
-  }
-
+  .olive-chapter-top{width:84px;height:102px;left:-11px;top:-13px}
+  .olive-chapter-bottom{width:84px;height:102px;right:-11px;bottom:-13px}
+  .dry-scratch-top{width:90px;height:105px;left:-12px;top:-13px}
+  .dry-scratch-bottom{width:90px;height:105px;right:-12px;bottom:-13px}
+  .olive-countdown-top{width:72px;height:88px;right:-9px;top:-11px}
+  .olive-countdown-bottom{width:72px;height:88px;left:-9px;bottom:-11px}
+  .dry-timeline-left{width:78px;height:94px;left:-10px;top:-11px}
+  .dry-timeline-right{width:78px;height:94px;right:-10px;bottom:-11px}
+  .dry-dress-top{width:68px;height:83px;left:-8px;top:-9px}
+  .dry-dress-bottom{width:68px;height:83px;right:-8px;bottom:-9px}
+  .olive-gift-top{width:76px;height:92px;left:-10px;top:-12px}
+  .olive-gift-bottom{width:76px;height:92px;right:-10px;bottom:-12px}
   .countdown-grid{gap:5px}
   .time-box{padding:13px 2px 10px}
   .time-label{font-size:7px;letter-spacing:1px}
@@ -368,8 +294,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
   .scratch-decor-inner.bottom{bottom:2px;left:2px}
   .video-card{border-radius:18px;clip-path:inset(0 round 18px)}
   .video-card video{border-radius:12px}
+  #musicToggle{right:10px;bottom:12px;padding:9px 12px}
 }
-
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -389,7 +315,12 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 <div id="openingLayer" aria-label="Vidéo d'ouverture">
   <video id="openingVideo" src="green.mp4" playsinline preload="auto" webkit-playsinline></video>
 </div>
-<audio id="backgroundMusic" src="inwhite.mp3" loop preload="auto"></audio>
+
+<audio id="backgroundMusic" src="falling.mp3" loop preload="auto"></audio>
+<button id="musicToggle" type="button" aria-label="Mettre la musique en pause" aria-pressed="true">
+  <span id="musicIcon">♫</span>
+  <span id="musicLabel">Pause musique</span>
+</button>
 
 <main id="invitationContent">
   <section id="coupleVideoSection">
@@ -462,9 +393,10 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
         <p class="eyebrow">Le programme de la journée</p>
         <h2 class="section-title">Notre journée</h2>
         <div class="timeline-list">
-          <div class="timeline-item"><span class="timeline-time">14:00</span><span class="timeline-event">Accueil des invités</span></div>
-          <div class="timeline-item"><span class="timeline-time">16:00</span><span class="timeline-event">Cérémonie &amp; cocktail</span></div>
-          <div class="timeline-item"><span class="timeline-time">18:00</span><span class="timeline-event">Dîner &amp; célébration</span></div>
+          <div class="timeline-item"><span class="timeline-time">19:30</span><span class="timeline-event">Arrivée des invités</span></div>
+          <div class="timeline-item"><span class="timeline-time">20:30</span><span class="timeline-event">Entrée des mariés</span></div>
+          <div class="timeline-item"><span class="timeline-time">21:00</span><span class="timeline-event">Présentation</span></div>
+          <div class="timeline-item"><span class="timeline-time">21:30</span><span class="timeline-event">Ouverture du buffet</span></div>
         </div>
       </div>
     </div>
@@ -475,9 +407,9 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
       <div class="venue-card beige-frame olive-frame">
         <img class="venue-image" src="venue.png" alt="Lieu de célébration" loading="lazy">
         <p class="eyebrow">Le lieu de notre célébration</p>
-        <h2 class="venue-name">Finca El Olivar</h2>
-        <p class="venue-address">Camino de los Olivos s/n<br>Ronda / Málaga, 29400 – España</p>
-        <a class="map-button" href="https://maps.google.com/?q=Finca+El+Olivar+Ronda+Malaga" target="_blank" rel="noopener noreferrer">Voir l'itinéraire</a>
+        <h2 class="venue-name">Bluesky Le Chapiteau</h2>
+        <p class="venue-address">Sciacom SARL, N° 01, Avenue de la Paix,<br>C/Ngaliema, Kinshasa, RD Congo</p>
+        <a class="map-button" href="https://www.google.com/maps/search/?api=1&amp;query=Bluesky+Le+Chapiteau+Sciacom+SARL+N+01+Avenue+de+la+Paix+Ngaliema+Kinshasa+RD+Congo" target="_blank" rel="noopener noreferrer">Voir l'itinéraire</a>
       </div>
     </div>
   </section>
@@ -513,10 +445,15 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
       <div class="dress-card olive-frame">
         <img class="decor dry-dress-top" src="dry.png" alt="" aria-hidden="true">
         <img class="decor dry-dress-bottom" src="dry.png" alt="" aria-hidden="true">
-        <p class="eyebrow">Pour notre belle journée</p>
-        <h2 class="section-title">Code vestimentaire</h2>
-        <p class="dress-main">Élégant &amp; Chic</p>
-        <p class="dress-description">Nous vous invitons à célébrer avec nous dans une tenue élégante et raffinée, en harmonie avec l'esprit de cette journée. Une robe de cocktail ou une tenue de soirée raffinée, ou encore un costume sombre avec chemise et cravate, seront parfaitement adaptés.</p>
+
+        <p class="dress-eyebrow">POUR CÉLÉBRER NOTRE AMOUR</p>
+        <h2 class="dress-heading">Dress Code</h2>
+        <p class="dress-main">Chic &amp; Élégant</p>
+        <div class="dress-gold-line"></div>
+
+        <p class="dress-description">Parce que les plus beaux moments méritent d'être célébrés avec élégance, nous vous invitons à revêtir vos plus belles tenues pour partager avec nous cette journée exceptionnelle.</p>
+
+        <p class="dress-closing">Sortez vos plus belles silhouettes, votre élégance fera partie de la magie de notre journée</p>
       </div>
     </div>
   </section>
@@ -541,6 +478,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
         <p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
         <h2 class="section-title" style="text-align:center">RSVP</h2>
         <p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
+
         <form class="rsvp-form" id="rsvpForm">
           <div>
             <label for="guestName">Votre nom complet</label>
@@ -552,16 +490,6 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
               <option value="">Choisissez une réponse</option>
               <option value="yes">Oui, avec grand plaisir</option>
               <option value="no">Désolé, je ne pourrai pas venir</option>
-            </select>
-          </div>
-          <div>
-            <label for="guestCount">Nombre de personnes</label>
-            <select id="guestCount" name="guestCount">
-              <option value="1">1 personne</option><option value="2">2 personnes</option>
-              <option value="3">3 personnes</option><option value="4">4 personnes</option>
-              <option value="5">5 personnes</option><option value="6">6 personnes</option>
-              <option value="7">7 personnes</option><option value="8">8 personnes</option>
-              <option value="9">9 personnes</option><option value="10">10 personnes</option>
             </select>
           </div>
           <div>
@@ -589,27 +517,67 @@ const openingLayer=document.getElementById("openingLayer");
 const openingVideo=document.getElementById("openingVideo");
 const coupleVideo=document.getElementById("coupleVideo");
 const backgroundMusic=document.getElementById("backgroundMusic");
+const musicToggle=document.getElementById("musicToggle");
+const musicIcon=document.getElementById("musicIcon");
+const musicLabel=document.getElementById("musicLabel");
 const videoSection=document.getElementById("coupleVideoSection");
 let invitationStarted=false;
+
+function updateMusicButton(){
+  const playing=!backgroundMusic.paused;
+  musicIcon.textContent=playing?"♫":"♪";
+  musicLabel.textContent=playing?"Pause musique":"Écouter la musique";
+  musicToggle.setAttribute("aria-label",playing?"Mettre la musique en pause":"Lancer la musique");
+  musicToggle.setAttribute("aria-pressed",String(playing));
+}
+
+async function startMusic(){
+  try{
+    await backgroundMusic.play();
+  }catch(error){
+    /* Some browsers require another direct user tap to start audio. */
+  }
+  updateMusicButton();
+}
+
+musicToggle.addEventListener("click",async(event)=>{
+  event.stopPropagation();
+  if(backgroundMusic.paused){
+    await startMusic();
+  }else{
+    backgroundMusic.pause();
+    updateMusicButton();
+  }
+});
+
+backgroundMusic.addEventListener("play",updateMusicButton);
+backgroundMusic.addEventListener("pause",updateMusicButton);
 
 async function startInvitation(){
   if(invitationStarted)return;
   invitationStarted=true;
   document.body.classList.add("locked");
+
   backgroundMusic.volume=.65;
-  backgroundMusic.play().catch(()=>{});
+  startMusic();
+
   openingLayer.style.display="flex";
   openingLayer.classList.add("show");
   cover.classList.add("hidden");
-  try{await openingVideo.play()}
-  catch(error){
+
+  try{
+    await openingVideo.play();
+  }catch(error){
     openingLayer.style.cursor="pointer";
     openingLayer.addEventListener("click",()=>openingVideo.play().catch(()=>{}),{once:true});
   }
 }
 cover.addEventListener("click",startInvitation);
 cover.addEventListener("keydown",event=>{
-  if(event.key==="Enter"||event.key===" "){event.preventDefault();startInvitation()}
+  if(event.key==="Enter"||event.key===" "){
+    event.preventDefault();
+    startInvitation();
+  }
 });
 
 /* FADE INTO THE LOOPING COUPLE VIDEO */
@@ -716,7 +684,10 @@ function scratchAt(point){
   createGoldSparkles(point.x,point.y);
   lastScratchPoint=point;
   const now=performance.now();
-  if(now-lastProgressCheck>100){lastProgressCheck=now;checkScratchProgress()}
+  if(now-lastProgressCheck>100){
+    lastProgressCheck=now;
+    checkScratchProgress();
+  }
 }
 function launchRevealConfetti(){
   if(!revealConfetti)return;
