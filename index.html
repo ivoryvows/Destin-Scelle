@@ -514,7 +514,6 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
         <p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
 
         <form class="rsvp-form" id="rsvpForm">
-          <p id="rsvpGuestGreeting" style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:4px"></p>
           <div>
             <label for="attendance">Serez-vous parmi nous ?</label>
             <select id="attendance" name="attendance" required>
@@ -924,50 +923,50 @@ resizePetals();
 drawPetals();
 window.addEventListener("resize",resizePetals);
 
-/* RSVP — SEND RESPONSE TO SAMUEL & DIVINE GOOGLE SHEET */
-const RSVP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwz2DCfuXff7lP0fHcqyheoywUs7xQvbh9rEbexqbVSdXVXqCcU_YGw8ztwhAFK3sFN/exec";
+/* RSVP GOOGLE SHEETS — compatible with the current JSON Apps Script */
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpStatus = document.getElementById("rsvpStatus");
-const rsvpGuestGreeting = document.getElementById("rsvpGuestGreeting");
-const rsvpAttendance = document.getElementById("attendance");
-const rsvpMessage = document.getElementById("guestMessage");
-const rsvpSubmit = rsvpForm.querySelector('button[type="submit"]');
+const RSVP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwz2DCfuXff7lP0fHcqyheoywUs7xQvbh9rEbexqbVSdXVXqCcU_YGw8ztwhAFK3sFN/exec";
 const rsvpGuestName = (new URLSearchParams(window.location.search).get("guest") || "").trim();
-rsvpGuestGreeting.textContent = rsvpGuestName ? "Réponse pour : " + rsvpGuestName : "Veuillez utiliser votre invitation personnelle pour confirmer votre présence.";
+
 rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const response = rsvpAttendance.value;
-  const msg = rsvpMessage.value.trim();
+  const attendance = document.getElementById("attendance").value;
+  const msg = document.getElementById("guestMessage").value.trim();
+
   if (!rsvpGuestName) {
-    rsvpStatus.textContent = "Le nom de l’invité manque dans ce lien. Merci de contacter les mariés pour recevoir votre invitation personnelle.";
+    rsvpStatus.textContent = "Ce lien d’invitation ne contient pas le nom de l’invité. Veuillez contacter les mariés.";
     return;
   }
-  if (!response) {
-    rsvpStatus.textContent = "Veuillez choisir Oui ou Non.";
+  if (!attendance) {
+    rsvpStatus.textContent = "Veuillez choisir une réponse.";
     return;
   }
-  rsvpSubmit.disabled = true;
-  rsvpSubmit.textContent = "Envoi en cours…";
-  rsvpStatus.textContent = "Envoi de votre réponse…";
+
+  const payload = {
+    name: rsvpGuestName,
+    response: attendance === "yes" ? "Yes" : "No",
+    msg: msg
+  };
+
+  const submitButton = rsvpForm.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  rsvpStatus.textContent = "Envoi de votre réponse...";
+
   try {
+    // text/plain avoids a CORS preflight; Apps Script parses the JSON body.
     await fetch(RSVP_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({
-        name: rsvpGuestName,
-        response: response === "yes" ? "Yes" : "No",
-        msg: msg
-      })
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify(payload)
     });
-    rsvpStatus.textContent = "Merci, " + rsvpGuestName + " ! Votre réponse a été envoyée. ✨";
-    rsvpAttendance.value = "";
-    rsvpMessage.value = "";
+    rsvpStatus.textContent = "Merci ! Votre réponse a été envoyée.";
+    rsvpForm.reset();
   } catch (error) {
-    rsvpStatus.textContent = "Une erreur est survenue. Merci de réessayer ou de contacter les mariés.";
+    rsvpStatus.textContent = "L’envoi a échoué. Veuillez réessayer.";
   } finally {
-    rsvpSubmit.disabled = false;
-    rsvpSubmit.textContent = "Envoyer ma réponse";
+    submitButton.disabled = false;
   }
 });
 </script>
