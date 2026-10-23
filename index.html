@@ -117,9 +117,7 @@ section::before{
 #cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,21,.04),rgba(20,30,21,.1) 50%,rgba(20,30,21,.3))}
-.cover-warm-line{font-family:"Cormorant Garamond",serif;
-font-size:clamp(23px,6vw,30px);
-font-weight:500;}
+.cover-warm-line{position:absolute;bottom:24%;left:50%;transform:translateX(-50%);width:92%;text-align:center;color:#f1dfc2;font-family:"Cormorant Garamond",serif;font-size:clamp(25px,6.5vw,33px);font-weight:500;font-style:normal;line-height:1.2;letter-spacing:.2px;text-shadow:0 2px 10px rgba(15,25,15,.85);z-index:3;pointer-events:none}
 .cover-open{position:absolute;bottom:7%;left:50%;transform:translateX(-50%);border:1px solid rgba(128,100,67,.24);border-radius:12px;background:rgba(242,229,207,.94);color:#4a3a2b;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(14px,3.8vw,18px);letter-spacing:1px;text-shadow:none;padding:7px 16px;white-space:nowrap;box-shadow:0 4px 18px rgba(20,20,12,.12);animation:openText 2.5s ease-in-out infinite;pointer-events:none}
 .cover-open::after{content:"";display:block;width:38px;height:1px;margin:7px auto 0;background:#b39a75}
 /* PERSONALIZED GUEST NAME: centered between greeting and beige open-invitation overlay */
