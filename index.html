@@ -113,15 +113,32 @@ section::before{
 #rsvp{background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 45%,#d0c9ae 100%);padding-bottom:25px}
 
 /* COVER */
-#cover{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#ddd1bb;transition:opacity .9s ease,visibility .9s ease;cursor:pointer;overflow:hidden}
+#cover{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#ddd1bb;transition:opacity .9s ease,visibility .9s ease;cursor:pointer}
 #cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,21,.08),rgba(20,30,21,.18) 50%,rgba(20,30,21,.42))}
-.cover-text-group{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:min(90%,420px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:13px;z-index:3;pointer-events:none}
-.guest-invitation-line{color:#fff8e9;font-family:"Cormorant Garamond",serif;font-size:clamp(20px,5.2vw,28px);font-weight:500;line-height:1.3;letter-spacing:1px;text-shadow:0 2px 12px rgba(15,25,15,.9);animation:openText 2.5s ease-in-out infinite}
-.guest-personalized-name{position:relative;width:100%;text-align:center;color:#fff8e9;font-family:"Cormorant Garamond",serif;font-size:clamp(17px,4.5vw,24px);font-weight:600;letter-spacing:2px;line-height:1.4;text-transform:uppercase;text-shadow:0 2px 12px rgba(15,25,15,.9);overflow-wrap:anywhere}
-.cover-open{position:relative;display:inline-flex;align-items:center;justify-content:center;margin-top:5px;padding:13px 25px;min-height:46px;border:1px solid rgba(182,154,100,.9);background:linear-gradient(135deg,rgba(251,245,233,.97),rgba(238,227,207,.94));color:#063b2b;font-family:"Cormorant Garamond",serif;font-size:clamp(17px,4.5vw,21px);font-weight:600;letter-spacing:1.2px;line-height:1.3;white-space:nowrap;box-shadow:0 5px 18px rgba(15,25,15,.22);animation:openText 2.5s ease-in-out infinite}
-@keyframes openText{0%,100%{opacity:.88}50%{opacity:1}}
+.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,21,.04),rgba(20,30,21,.1) 50%,rgba(20,30,21,.3))}
+.cover-open{position:absolute;bottom:11%;left:50%;transform:translateX(-50%);border:0;background:transparent;color:#fff8e9;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(25px,6vw,32px);letter-spacing:2px;text-shadow:0 2px 14px rgba(15,25,15,.8);padding:14px 10px;white-space:nowrap;animation:openText 2.5s ease-in-out infinite;pointer-events:none}
+.cover-open::after{content:"";display:block;width:46px;height:1px;margin:9px auto 0;background:#eee0bf}
+/* PERSONALIZED GUEST NAME: appears beneath "Touchez pour ouvrir" */
+.guest-personalized-name{
+  position:absolute;
+  bottom:7%;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  text-align:center;
+  color:#fff8e9;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(15px,4vw,21px);
+  font-weight:600;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  text-shadow:0 2px 12px rgba(15,25,15,.9);
+  overflow-wrap:anywhere;
+  z-index:2;
+  pointer-events:none;
+}
+@keyframes openText{0%,100%{opacity:.82}50%{opacity:1}}
 
 /* OPENING VIDEO */
 #openingLayer{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:#d8ceb9;opacity:1;transition:opacity .9s ease}
@@ -324,11 +341,8 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 <div id="cover" role="button" aria-label="Ouvrir l'invitation" tabindex="0">
   <img class="cover-image" src="enve.jpg" alt="Invitation" fetchpriority="high">
   <div class="cover-shade"></div>
-  <div class="cover-text-group">
-    <div class="guest-invitation-line">Vous êtes chaleureusement invité(e)</div>
-    <div class="guest-personalized-name" id="guestDisplay">COUPLE KATENDA</div>
-    <div class="cover-open" id="openInvitation">Ouvrir l’invitation</div>
-  </div>
+  <div class="cover-open" id="openInvitation">Touchez pour ouvrir</div>
+  <div class="guest-personalized-name" id="guestDisplay">COUPLE KATENDA</div>
 </div>
 
 <div id="openingLayer" aria-label="Vidéo d'ouverture">
@@ -500,10 +514,7 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
         <p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
 
         <form class="rsvp-form" id="rsvpForm">
-          <div>
-            <label for="guestName">Votre nom complet</label>
-            <input id="guestName" name="guestName" type="text" autocomplete="name" required placeholder="Nom et prénom">
-          </div>
+          <p id="rsvpGuestGreeting" style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:4px"></p>
           <div>
             <label for="attendance">Serez-vous parmi nous ?</label>
             <select id="attendance" name="attendance" required>
@@ -519,7 +530,6 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
           <button class="rsvp-submit" type="submit">Envoyer ma réponse</button>
           <p class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite"></p>
         </form>
-        <div class="guest-counter">Réponses envoyées sur cet appareil : <strong id="guestTotal">0</strong></div>
       </div>
     </div>
   </section>
@@ -914,25 +924,51 @@ resizePetals();
 drawPetals();
 window.addEventListener("resize",resizePetals);
 
-/* RSVP DEMO: RESPONSES STAY ON THIS PAGE ONLY */
-const rsvpForm=document.getElementById("rsvpForm");
-const rsvpStatus=document.getElementById("rsvpStatus");
-const guestTotal=document.getElementById("guestTotal");
-let totalResponses=0;
-rsvpForm.addEventListener("submit",event=>{
+/* RSVP — SEND RESPONSE TO SAMUEL & DIVINE GOOGLE SHEET */
+const RSVP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwz2DCfuXff7lP0fHcqyheoywUs7xQvbh9rEbexqbVSdXVXqCcU_YGw8ztwhAFK3sFN/exec";
+const rsvpForm = document.getElementById("rsvpForm");
+const rsvpStatus = document.getElementById("rsvpStatus");
+const rsvpGuestGreeting = document.getElementById("rsvpGuestGreeting");
+const rsvpAttendance = document.getElementById("attendance");
+const rsvpMessage = document.getElementById("guestMessage");
+const rsvpSubmit = rsvpForm.querySelector('button[type="submit"]');
+const rsvpGuestName = (new URLSearchParams(window.location.search).get("guest") || "").trim();
+rsvpGuestGreeting.textContent = rsvpGuestName ? "Réponse pour : " + rsvpGuestName : "Veuillez utiliser votre invitation personnelle pour confirmer votre présence.";
+rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const name=document.getElementById("guestName").value.trim();
-  const attendance=document.getElementById("attendance").value;
-  if(!name||!attendance){
-    rsvpStatus.textContent="Veuillez remplir votre nom et votre réponse.";
+  const response = rsvpAttendance.value;
+  const msg = rsvpMessage.value.trim();
+  if (!rsvpGuestName) {
+    rsvpStatus.textContent = "Le nom de l’invité manque dans ce lien. Merci de contacter les mariés pour recevoir votre invitation personnelle.";
     return;
   }
-  totalResponses++;
-  guestTotal.textContent=String(totalResponses);
-  rsvpStatus.textContent=attendance==="yes"
-    ?"Merci, "+name+" ! Votre réponse de démonstration a été prise en compte sur cette page."
-    :"Merci de nous avoir prévenus, "+name+". Votre réponse de démonstration a été prise en compte sur cette page.";
-  rsvpForm.reset();
+  if (!response) {
+    rsvpStatus.textContent = "Veuillez choisir Oui ou Non.";
+    return;
+  }
+  rsvpSubmit.disabled = true;
+  rsvpSubmit.textContent = "Envoi en cours…";
+  rsvpStatus.textContent = "Envoi de votre réponse…";
+  try {
+    await fetch(RSVP_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        name: rsvpGuestName,
+        response: response === "yes" ? "Yes" : "No",
+        msg: msg
+      })
+    });
+    rsvpStatus.textContent = "Merci, " + rsvpGuestName + " ! Votre réponse a été envoyée. ✨";
+    rsvpAttendance.value = "";
+    rsvpMessage.value = "";
+  } catch (error) {
+    rsvpStatus.textContent = "Une erreur est survenue. Merci de réessayer ou de contacter les mariés.";
+  } finally {
+    rsvpSubmit.disabled = false;
+    rsvpSubmit.textContent = "Envoyer ma réponse";
+  }
 });
 </script>
 </body>
