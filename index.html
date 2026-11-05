@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +8,6 @@
 <title>Samuel &amp; Divine | Invitation</title>
 <meta name="description" content="Samuel & Divine — célébrons ensemble un nouveau chapitre.">
 
-<!-- WHATSAPP LINK PREVIEW -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Samuel & Divine">
 <meta property="og:description" content="Vous êtes cordialement invités à célébrer avec Samuel & Divine.">
@@ -21,38 +21,18 @@
 
 <style>
 :root{
-  --emerald:#064b35;
-  --emerald-dark:#032f22;
-  --emerald-deep:#042b20;
-  --emerald-mid:#0b5b40;
-  --emerald-light:#267052;
-  --beige:#eee3cf;
-  --beige-light:#fbf5e9;
-  --dark-beige:#cfb996;
-  --brown:#786047;
-  --gold:#b69a64;
-  --ink:#494638;
-  --cream:#fff8eb;
+--emerald:#064b35;--emerald-dark:#032f22;--emerald-deep:#042b20;--emerald-mid:#0b5b40;--emerald-light:#267052;
+--beige:#eee3cf;--beige-light:#fbf5e9;--dark-beige:#cfb996;--brown:#786047;--gold:#b69a64;--ink:#494638;--cream:#fff8eb;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:#e9deca}
-body{
-  font-family:"DM Sans",sans-serif;color:var(--ink);
-  background:linear-gradient(180deg,#f2e8d7 0%,#e8ddc8 12%,#d9d7bd 22%,#b5c0a0 32%,#537c60 43%,#0d553b 55%,#063d2c 67%,#075039 78%,#8fa187 89%,#e9deca 100%);
-  background-attachment:fixed;background-size:100% 100%;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:linear-gradient(180deg,#f2e8d7 0%,#e8ddc8 12%,#d9d7bd 22%,#b5c0a0 32%,#537c60 43%,#0d553b 55%,#063d2c 67%,#075039 78%,#8fa187 89%,#e9deca 100%);background-attachment:fixed;background-size:100% 100%;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden;height:100%}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 img,video{max-width:100%}
 section{position:relative;width:100%;padding:31px 18px;overflow:hidden;isolation:isolate}
-section::before{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.2;
-  background-image:radial-gradient(circle at 12% 23%,rgba(225,194,126,.9) 0 1px,transparent 1.8px),radial-gradient(circle at 82% 18%,rgba(242,220,171,.85) 0 1px,transparent 1.8px),radial-gradient(circle at 72% 76%,rgba(210,177,104,.8) 0 1px,transparent 1.8px),radial-gradient(circle at 24% 84%,rgba(238,214,163,.8) 0 1px,transparent 1.8px),radial-gradient(circle at 91% 53%,rgba(232,204,147,.7) 0 1px,transparent 1.8px);
-  background-size:230px 220px,280px 270px,250px 260px,300px 240px,210px 280px;
-  animation:goldDust 8s ease-in-out infinite alternate;
-}
+section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.2;background-image:radial-gradient(circle at 12% 23%,rgba(225,194,126,.9) 0 1px,transparent 1.8px),radial-gradient(circle at 82% 18%,rgba(242,220,171,.85) 0 1px,transparent 1.8px),radial-gradient(circle at 72% 76%,rgba(210,177,104,.8) 0 1px,transparent 1.8px),radial-gradient(circle at 24% 84%,rgba(238,214,163,.8) 0 1px,transparent 1.8px),radial-gradient(circle at 91% 53%,rgba(232,204,147,.7) 0 1px,transparent 1.8px);background-size:230px 220px,280px 270px,250px 260px,300px 240px,210px 280px;animation:goldDust 8s ease-in-out infinite alternate}
 @keyframes goldDust{from{opacity:.1}to{opacity:.27}}
 .section-inner{position:relative;width:min(100%,510px);margin:auto;z-index:2}
 .serif{font-family:"Cormorant Garamond",serif}
@@ -64,51 +44,24 @@ section::before{
 .beige-frame{background:linear-gradient(135deg,#fff8eb 0%,#f5ead7 30%,#eee0c8 58%,#e1cfb1 100%);border:1px solid var(--emerald);box-shadow:0 13px 34px rgba(3,38,27,.13)}
 .green-frame{background:linear-gradient(135deg,#0b6043 0%,#084c36 28%,#063e2d 58%,#032f22 82%,#06412e 100%);color:var(--cream);border:1px solid var(--dark-beige);box-shadow:0 13px 34px rgba(3,25,18,.22)}
 .frame-padding{padding:26px 20px}
-
-/* FLOWER BASE */
-.decor{
-  position:absolute;object-fit:contain;pointer-events:none;user-select:none;
-  z-index:4;animation:flowerFloat 5.5s ease-in-out infinite;
-  filter:drop-shadow(0 4px 5px rgba(30,36,22,.18));
-}
-.scratch-decor-outer{
-  position:absolute;object-fit:contain;pointer-events:none;user-select:none;
-  animation:flowerFloat 5s ease-in-out infinite;
-  filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));z-index:5;
-}
-@keyframes flowerFloat{
-  0%,100%{transform:translateY(0) rotate(-3deg)}
-  50%{transform:translateY(-5px) rotate(3deg)}
-}
-
-/* OLIVE.PNG — CHAPTER FRAME */
+.decor,.scratch-decor-outer{position:absolute;object-fit:contain;pointer-events:none;user-select:none;z-index:4;animation:flowerFloat 5.5s ease-in-out infinite;filter:drop-shadow(0 4px 5px rgba(30,36,22,.18))}
+.scratch-decor-outer{animation:flowerFloat 5s ease-in-out infinite;filter:drop-shadow(0 3px 5px rgba(54,49,33,.15));z-index:5}
+@keyframes flowerFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(3deg)}}
 .olive-chapter-top{width:100px;height:120px;left:-30px;top:-45px}
 .olive-chapter-bottom{width:100px;height:120px;right:-30px;bottom:-45px;animation-delay:-2.5s}
-
-/* DRY.PNG — SCRATCH FRAME */
 .dry-scratch-top{width:84px;height:100px;left:-19px;top:-40px}
 .dry-scratch-bottom{width:84px;height:100px;right:-19px;bottom:-40px;animation-delay:-2.4s}
-
-/* OLIVE.PNG — COUNTDOWN FRAME */
 .olive-countdown-top{width:88px;height:108px;right:-25px;top:-50px}
 .olive-countdown-bottom{width:88px;height:108px;left:-25px;bottom:-50px;animation-delay:-2.5s}
-
-/* DRY.PNG — TIMELINE FRAME */
 .dry-timeline-left{width:84px;height:100px;left:-15px;top:-29px}
 .dry-timeline-right{width:84px;height:100px;right:-15px;bottom:-29px;animation-delay:-2s}
-
-/* DRY.PNG — DRESS CODE FRAME */
 .dry-dress-top{width:80px;height:95px;left:-15px;top:-30px}
 .dry-dress-bottom{width:80px;height:95px;right:-15px;bottom:-30px;animation-delay:-2.5s}
-
-/* OLIVE.PNG — GIFT FRAME */
 .olive-gift-top{width:90px;height:100px;left:-20px;top:-30px}
 .olive-gift-bottom{width:90px;height:100px;right:-20px;bottom:-30px;animation-delay:-2.5s}
-
 #chapter .chapter-card,#countdown .countdown-card,#timeline .timeline-card,#dresscode .dress-card,#gift .gift-card{position:relative}
 #petalCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:20;pointer-events:none}
 
-/* SECTION GRADIENTS */
 #coupleVideoSection{padding:25px 18px 29px;background:linear-gradient(180deg,#e5dac5,#e9dfca 55%,#e3ddc6)}
 #chapter{background:linear-gradient(180deg,#e3ddc6 0%,#ded8c0 45%,#c9ceb0 100%)}
 #scratch{background:linear-gradient(180deg,#c9ceb0 0%,#4c7857 23%,#075039 58%,#063b2b 100%);color:var(--cream)}
@@ -120,75 +73,34 @@ section::before{
 #gift{background:linear-gradient(180deg,#032f22 0%,#356a4b 19%,#85977a 42%,#c4c9ab 70%,#f0e4d0 100%)}
 #rsvp{background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 45%,#d0c9ae 100%);padding-bottom:25px}
 
-/* COVER */
 #cover{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#ddd1bb;transition:opacity .9s ease,visibility .9s ease;cursor:pointer}
 #cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,21,.04),rgba(20,30,21,.1) 50%,rgba(20,30,21,.3))}
-
-/* GREETING */
-.cover-warm-line{
-  position:absolute;bottom:26%;left:50%;transform:translateX(-50%);
-  width:92%;text-align:center;color:#f1dfc2;
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(25px,6.5vw,33px);font-weight:500;
-  line-height:1.2;letter-spacing:.2px;
-  text-shadow:0 2px 10px rgba(15,25,15,.85);
-  z-index:3;pointer-events:none;
-}
-.cover-open{
-  position:absolute;bottom:4%;left:50%;transform:translateX(-50%);
-  border:1px solid rgba(128,100,67,.24);border-radius:12px;
-  background:rgba(242,229,207,.94);color:#4a3a2b;
-  font-family:"Cormorant Garamond",serif;font-weight:600;
-  font-size:clamp(14px,3.8vw,18px);letter-spacing:1px;
-  text-shadow:none;padding:7px 16px;white-space:nowrap;
-  box-shadow:0 4px 18px rgba(20,20,12,.12);
-  animation:openText 2.5s ease-in-out infinite;pointer-events:none;
-}
+.cover-warm-line{position:absolute;bottom:26%;left:50%;transform:translateX(-50%);width:92%;text-align:center;color:#f1dfc2;font-family:"Cormorant Garamond",serif;font-size:clamp(25px,6.5vw,33px);font-weight:500;line-height:1.2;letter-spacing:.2px;text-shadow:0 2px 10px rgba(15,25,15,.85);z-index:3;pointer-events:none}
+.cover-open{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);border:1px solid rgba(128,100,67,.24);border-radius:12px;background:rgba(242,229,207,.94);color:#4a3a2b;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(14px,3.8vw,18px);letter-spacing:1px;text-shadow:none;padding:7px 16px;white-space:nowrap;box-shadow:0 4px 18px rgba(20,20,12,.12);animation:openText 2.5s ease-in-out infinite;pointer-events:none}
 .cover-open::after{content:"";display:block;width:38px;height:1px;margin:7px auto 0;background:#b39a75}
-
-/* PERSONALIZED GUEST NAME */
-.guest-personalized-name{
-  position:absolute;bottom:11%;left:50%;transform:translateX(-50%);
-  width:94%;text-align:center;color:#e8d4ad;
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(19px,5.5vw,30px);font-weight:600;
-  line-height:1.2;letter-spacing:1.5px;text-transform:uppercase;
-  text-shadow:0 2px 8px rgba(0,0,0,.45);
-  overflow-wrap:anywhere;z-index:2;pointer-events:none;
-}
+.guest-personalized-name{position:absolute;bottom:11%;left:50%;transform:translateX(-50%);width:94%;text-align:center;color:#e8d4ad;font-family:"Cormorant Garamond",serif;font-size:clamp(19px,5.5vw,30px);font-weight:600;line-height:1.2;letter-spacing:1.5px;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.45);overflow-wrap:anywhere;z-index:2;pointer-events:none}
 @keyframes openText{0%,100%{opacity:.82}50%{opacity:1}}
 
-/* OPENING VIDEO */
 #openingLayer{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:#d8ceb9;opacity:1;transition:opacity .9s ease}
 #openingLayer.show{display:flex}
 #openingLayer.fade{opacity:0;pointer-events:none}
 #openingVideo{display:block;width:100%;height:100%;object-fit:contain;background:#d8ceb9}
 
-/* MUSIC BUTTON */
-#musicToggle{
-  position:fixed;right:15px;bottom:18px;z-index:110;
-  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-  padding:0;border:1px solid #b69a64;border-radius:50%;
-  background:linear-gradient(135deg,#0b6043,#032f22);
-  color:#fff4df;font-size:22px;box-shadow:0 4px 15px rgba(3,38,27,.25);
-}
+#musicToggle{position:fixed;right:15px;bottom:18px;z-index:110;width:44px;height:44px;display:flex;align-items:center;justify-content:center;padding:0;border:1px solid #b69a64;border-radius:50%;background:linear-gradient(135deg,#0b6043,#032f22);color:#fff4df;font-size:22px;box-shadow:0 4px 15px rgba(3,38,27,.25)}
 #musicLabel{display:none}
 #musicIcon{font-size:17px;line-height:1}
 #musicToggle:focus-visible{outline:2px solid #b69a64;outline-offset:4}
 
-/* COUPLE VIDEO */
 .video-card{position:relative;width:100%;padding:7px;background:linear-gradient(145deg,#fbf3e4,#d9c6a5);border:1px solid var(--emerald);border-radius:20px;overflow:hidden;clip-path:inset(0 round 20px);box-shadow:0 12px 35px rgba(3,40,27,.17);opacity:0;transform:translateY(8px);transition:opacity 1s ease,transform 1s ease}
 .video-card video{display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;background:#d9d0bd;border-radius:13px;overflow:hidden}
 #coupleVideoSection.video-ready .video-card{opacity:1;transform:translateY(0)}
 
-/* CHAPTER */
 .chapter-card{position:relative;padding:37px 24px;text-align:center}
 .chapter-card .chapter-message{font-size:22px;line-height:1.55;margin:16px 0}
 .chapter-names{position:relative;z-index:3;font-family:"Great Vibes",cursive;font-size:49px;line-height:1.25;color:var(--emerald-dark);margin-top:17px}
 
-/* SCRATCH */
 .scratch-card{position:relative;padding:31px 20px 26px;text-align:center;overflow:visible;background:linear-gradient(145deg,#fff6e7 0%,#f5e9d4 30%,#ecdfc8 60%,#dfccb0 100%);color:var(--ink);border:1px solid var(--gold);outline:1px solid rgba(248,237,215,.7);outline-offset:5px}
 .scratch-card .section-title{font-size:37px}
 .scratch-instruction{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.4;margin:8px 0 18px}
@@ -205,18 +117,12 @@ section::before{
 .scratch-decor-inner.top{top:2px;right:2px}
 .scratch-decor-inner.bottom{bottom:2px;left:2px;animation-delay:-3s}
 
-/* CONFETTI */
 #revealConfetti{position:absolute;inset:-35px -15px;z-index:15;overflow:visible;pointer-events:none}
 .confetti-ribbon{position:absolute;bottom:30%;left:50%;width:6px;height:19px;border-radius:2px;opacity:0;transform-origin:center;animation:emeraldConfettiFly 1.8s cubic-bezier(.15,.7,.25,1) forwards}
 .confetti-ribbon:nth-child(3n){width:4px;height:25px}
 .confetti-ribbon:nth-child(4n){width:7px;height:13px;border-radius:50%}
-@keyframes emeraldConfettiFly{
-  0%{opacity:0;transform:translate3d(0,20px,0) rotate(0deg) scale(.6)}
-  12%,45%{opacity:1}
-  100%{opacity:0;transform:translate3d(var(--fly-x),var(--fly-y),0) rotate(var(--fly-rotate)) scale(1)}
-}
+@keyframes emeraldConfettiFly{0%{opacity:0;transform:translate3d(0,20px,0) rotate(0deg) scale(.6)}12%,45%{opacity:1}100%{opacity:0;transform:translate3d(var(--fly-x),var(--fly-y),0) rotate(var(--fly-rotate)) scale(1)}}
 
-/* COUNTDOWN */
 .countdown-card{text-align:center;padding:32px 20px}
 .countdown-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:22px}
 .time-box{padding:15px 3px 12px;background:linear-gradient(145deg,rgba(255,251,242,.9),rgba(235,225,205,.76));border:1px solid rgba(6,75,53,.55)}
@@ -224,139 +130,29 @@ section::before{
 .time-label{display:block;margin-top:8px;font-size:8px;letter-spacing:1.3px;text-transform:uppercase;color:var(--brown)}
 .countdown-date{font-family:"Cormorant Garamond",serif;font-size:22px;margin-top:20px;color:var(--brown)}
 
-/* TIMELINE — LEFT SIDE */
-.timeline-card{
-  position:relative;
-  padding:32px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,#0a563d 0%,#0a4935 23%,#164f38 42%,#0a3e2d 63%,#17533b 82%,#063724 100%);
-  border:1px solid var(--dark-beige);
-  box-shadow:inset 0 0 0 5px rgba(238,227,207,.22),inset 0 0 34px rgba(238,227,207,.13),0 13px 34px rgba(3,25,18,.2)
-}
+.timeline-card{position:relative;padding:32px 20px;text-align:center;background:linear-gradient(135deg,#0a563d 0%,#0a4935 23%,#164f38 42%,#0a3e2d 63%,#17533b 82%,#063724 100%);border:1px solid var(--dark-beige);box-shadow:inset 0 0 0 5px rgba(238,227,207,.22),inset 0 0 34px rgba(238,227,207,.13),0 13px 34px rgba(3,25,18,.2)}
 #timeline .section-title{color:#fff5e4}
 #timeline .eyebrow{color:#e8d7b7}
-
-.timeline-list{
-  position:relative;
-  margin-top:25px;
-  padding:5px 0;
-  text-align:left;
-}
-
-/* VERTICAL LINE ON LEFT */
-.timeline-list::before{
-  content:"";
-  position:absolute;
-  top:12px;
-  bottom:12px;
-  left:7px;
-  width:1px;
-  background:linear-gradient(180deg,transparent,#dfc99e 7%,#dfc99e 93%,transparent);
-}
-
-/* TIMELINE ITEM */
-.timeline-item{
-  position:relative;
-  display:grid;
-  grid-template-columns:20px 1fr;
-  grid-template-rows:auto auto;
-  align-items:start;
-  column-gap:10px;
-  min-height:75px;
-  padding:10px 0 20px;
-  text-align:left;
-}
-
-/* DOT */
-.timeline-item::before{
-  content:"";
-  position:absolute;
-  left:3px;
-  top:17px;
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:#f1dfb9;
-  border:2px solid #8a9368;
-  box-shadow:0 0 0 3px rgba(230,210,169,.16);
-  z-index:2;
-  animation:timelinePulse 2.4s ease-in-out infinite;
-}
+.timeline-list{position:relative;margin-top:25px;padding:5px 0;text-align:left}
+.timeline-list::before{content:"";position:absolute;top:12px;bottom:12px;left:7px;width:1px;background:linear-gradient(180deg,transparent,#dfc99e 7%,#dfc99e 93%,transparent)}
+.timeline-item{position:relative;display:grid;grid-template-columns:20px 1fr;grid-template-rows:auto auto;align-items:start;column-gap:10px;min-height:75px;padding:10px 0 20px;text-align:left}
+.timeline-item::before{content:"";position:absolute;left:3px;top:17px;width:9px;height:9px;border-radius:50%;background:#f1dfb9;border:2px solid #8a9368;box-shadow:0 0 0 3px rgba(230,210,169,.16);z-index:2;animation:timelinePulse 2.4s ease-in-out infinite}
 .timeline-item:nth-child(2)::before{animation-delay:.5s}
 .timeline-item:nth-child(3)::before{animation-delay:1s}
 .timeline-item:nth-child(4)::before{animation-delay:1.5s}
 .timeline-item:nth-child(5)::before{animation-delay:2s}
+@keyframes timelinePulse{0%,100%{box-shadow:0 0 0 3px rgba(230,210,169,.12);transform:scale(1)}50%{box-shadow:0 0 0 7px rgba(230,210,169,.2);transform:scale(1.13)}}
+.timeline-time{grid-column:2;grid-row:1;display:block;text-align:left;padding:0;font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:600;line-height:1.2;color:#e9d6b0}
+.timeline-event{grid-column:2;grid-row:2;display:block;text-align:left;padding:3px 0 0;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.35;color:#fff9ed}
+.timeline-church{display:block;margin-top:6px;font-family:"DM Sans",sans-serif;font-size:10px;font-weight:500;line-height:1.6;letter-spacing:.2px;color:#e8d7b7}
+.timeline-address{display:block;margin-top:4px;font-family:"DM Sans",sans-serif;font-size:9px;font-weight:300;line-height:1.65;letter-spacing:.2px;color:#f4e8d2}
 
-@keyframes timelinePulse{
-  0%,100%{
-    box-shadow:0 0 0 3px rgba(230,210,169,.12);
-    transform:scale(1)
-  }
-  50%{
-    box-shadow:0 0 0 7px rgba(230,210,169,.2);
-    transform:scale(1.13)
-  }
-}
-
-/* TIME UNDER DOT */
-.timeline-time{
-  grid-column:2;
-  grid-row:1;
-  display:block;
-  text-align:left;
-  padding:0;
-  font-family:"Cormorant Garamond",serif;
-  font-size:23px;
-  font-weight:600;
-  line-height:1.2;
-  color:#e9d6b0;
-}
-
-/* EVENT UNDER TIME */
-.timeline-event{
-  grid-column:2;
-  grid-row:2;
-  display:block;
-  text-align:left;
-  padding:3px 0 0;
-  font-family:"Cormorant Garamond",serif;
-  font-size:20px;
-  line-height:1.35;
-  color:#fff9ed;
-}
-
-/* CHURCH NAME */
-.timeline-church{
-  display:block;
-  margin-top:6px;
-  font-family:"DM Sans",sans-serif;
-  font-size:10px;
-  font-weight:500;
-  line-height:1.6;
-  letter-spacing:.2px;
-  color:#e8d7b7;
-}
-
-/* CHURCH ADDRESS */
-.timeline-address{
-  display:block;
-  margin-top:4px;
-  font-family:"DM Sans",sans-serif;
-  font-size:9px;
-  font-weight:300;
-  line-height:1.65;
-  letter-spacing:.2px;
-  color:#f4e8d2;
-}
-
-/* VENUE */
 .venue-card{padding:28px 20px;text-align:center}
 .venue-image{display:block;width:min(100%,330px);max-height:230px;object-fit:contain;margin:4px auto 17px}
 .venue-name{font-family:"Cormorant Garamond",serif;font-size:35px;line-height:1.15;color:var(--emerald-dark);margin-bottom:12px}
 .venue-address{font-size:13px;line-height:1.8;margin:0 auto 18px;max-width:310px}
 .map-button{display:inline-block;padding:12px 20px;border:1px solid var(--emerald);background:linear-gradient(135deg,#0b6043,#032f22);color:#fff8e9;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase}
 
-/* SLIDESHOW */
 .photo-heading{text-align:center;margin-bottom:22px}
 .photo-window{width:100%;overflow:hidden;border:0;outline:0;background:transparent;box-shadow:none;border-radius:15px}
 .photo-track{display:flex;align-items:center;gap:13px;width:max-content;animation:photoScroll 38s linear infinite;will-change:transform}
@@ -365,7 +161,6 @@ section::before{
 @keyframes photoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .photo-note{text-align:center;margin-top:19px;font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--brown)}
 
-/* DRESS CODE */
 #dresscode .section-title{color:#fff4e2}
 #dresscode .eyebrow{color:#e7d6b8}
 .dress-card{position:relative;padding:35px 21px;text-align:center;background:linear-gradient(145deg,#fff5e4,#f0e2cb 52%,#e1d0b4);color:var(--ink)}
@@ -376,13 +171,11 @@ section::before{
 .dress-description{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.55;color:#786047;margin-bottom:17px}
 .dress-closing{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.5;color:#064b35;font-weight:600}
 
-/* GIFTS */
 .gift-card{position:relative;padding:32px 22px;text-align:center}
 .gift-message{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;margin:16px 0}
 .gift-signature{font-family:"Great Vibes",cursive;font-size:46px;color:var(--emerald-dark);margin:15px 0}
 .gift-date{font-size:10px;letter-spacing:3px;color:var(--brown)}
 
-/* RSVP */
 .rsvp-card{padding:29px 20px}
 .rsvp-intro{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.5;text-align:center;margin-bottom:20px}
 .rsvp-form{display:grid;gap:12px}
@@ -391,50 +184,50 @@ section::before{
 .rsvp-form input:focus,.rsvp-form select:focus,.rsvp-form textarea:focus{border-color:var(--emerald)}
 .rsvp-form textarea{min-height:80px;resize:vertical}
 .rsvp-submit{padding:14px 18px;background:linear-gradient(135deg,#0b6043,#032f22);border:1px solid var(--emerald);color:#fff7e8;font-size:11px;letter-spacing:2px;text-transform:uppercase}
-.rsvp-status{min-height:18px;text-align:center;font-size:12px;line-height:1.5;margin-top:11px}
+.rsvp-submit:disabled{opacity:.55;cursor:not-allowed}
+.rsvp-form :disabled{cursor:not-allowed;opacity:.65}
+.rsvp-status{min-height:18px;text-align:center;font-size:12px;line-height:1.6;margin-top:11px}
+.rsvp-status.success{color:#17623e;font-weight:600}
+.rsvp-status.error{color:#9b342b}
 .guest-counter{margin-top:19px;text-align:center;padding-top:15px;border-top:1px solid rgba(6,75,53,.35);color:var(--brown);font-family:"Cormorant Garamond",serif;font-size:19px}
 .guest-counter strong{font-size:26px;color:var(--emerald-dark)}
 footer{text-align:center;padding:19px 15px 23px;background:linear-gradient(180deg,#d0c9ae,#e8ddc8);color:var(--brown);font-size:10px;letter-spacing:1.5px}
 footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 
-/* MOBILE */
 @media(max-width:380px){
-  section{padding:28px 15px}
-  .olive-chapter-top{width:84px;height:102px;left:-11px;top:-13px}
-  .olive-chapter-bottom{width:84px;height:102px;right:-11px;bottom:-13px}
-  .dry-scratch-top{width:90px;height:105px;left:-12px;top:-13px}
-  .dry-scratch-bottom{width:90px;height:105px;right:-12px;bottom:-13px}
-  .olive-countdown-top{width:72px;height:88px;right:-9px;top:-11px}
-  .olive-countdown-bottom{width:72px;height:88px;left:-9px;bottom:-11px}
-  .dry-timeline-left{width:78px;height:94px;left:-10px;top:-11px}
-  .dry-timeline-right{width:78px;height:94px;right:-10px;bottom:-11px}
-  .dry-dress-top{width:68px;height:83px;left:-8px;top:-9px}
-  .dry-dress-bottom{width:68px;height:83px;right:-8px;bottom:-9px}
-  .olive-gift-top{width:76px;height:92px;left:-10px;top:-12px}
-  .olive-gift-bottom{width:76px;height:92px;right:-10px;bottom:-12px}
-  .countdown-grid{gap:5px}
-  .time-box{padding:13px 2px 10px}
-  .time-label{font-size:7px;letter-spacing:1px}
-
-  /* LEFT TIMELINE MOBILE */
-  .timeline-item{column-gap:9px}
-  .timeline-time{font-size:21px}
-  .timeline-event{font-size:18px}
-  .timeline-church{font-size:9px}
-  .timeline-address{font-size:8px}
-
-  .photo-track{gap:10px}
-  .photo-track img{width:100px;height:130px;border-radius:11px}
-  .scratch-decor-inner{width:65px;height:82px}
-  .scratch-decor-inner.top{top:2px;right:2px}
-  .scratch-decor-inner.bottom{bottom:2px;left:2px}
-  .video-card{border-radius:18px;clip-path:inset(0 round 18px)}
-  .video-card video{border-radius:12px}
-  #musicToggle{right:10px;bottom:12px;padding:9px 12px}
+section{padding:28px 15px}
+.olive-chapter-top{width:84px;height:102px;left:-11px;top:-13px}
+.olive-chapter-bottom{width:84px;height:102px;right:-11px;bottom:-13px}
+.dry-scratch-top{width:90px;height:105px;left:-12px;top:-13px}
+.dry-scratch-bottom{width:90px;height:105px;right:-12px;bottom:-13px}
+.olive-countdown-top{width:72px;height:88px;right:-9px;top:-11px}
+.olive-countdown-bottom{width:72px;height:88px;left:-9px;bottom:-11px}
+.dry-timeline-left{width:78px;height:94px;left:-10px;top:-11px}
+.dry-timeline-right{width:78px;height:94px;right:-10px;bottom:-11px}
+.dry-dress-top{width:68px;height:83px;left:-8px;top:-9px}
+.dry-dress-bottom{width:68px;height:83px;right:-8px;bottom:-9px}
+.olive-gift-top{width:76px;height:92px;left:-10px;top:-12px}
+.olive-gift-bottom{width:76px;height:92px;right:-10px;bottom:-12px}
+.countdown-grid{gap:5px}
+.time-box{padding:13px 2px 10px}
+.time-label{font-size:7px;letter-spacing:1px}
+.timeline-item{column-gap:9px}
+.timeline-time{font-size:21px}
+.timeline-event{font-size:18px}
+.timeline-church{font-size:9px}
+.timeline-address{font-size:8px}
+.photo-track{gap:10px}
+.photo-track img{width:100px;height:130px;border-radius:11px}
+.scratch-decor-inner{width:65px;height:82px}
+.scratch-decor-inner.top{top:2px;right:2px}
+.scratch-decor-inner.bottom{bottom:2px;left:2px}
+.video-card{border-radius:18px;clip-path:inset(0 round 18px)}
+.video-card video{border-radius:12px}
+#musicToggle{right:10px;bottom:12px;padding:9px 12px}
 }
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+html{scroll-behavior:auto}
+*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
@@ -443,234 +236,210 @@ footer span{font-family:"Great Vibes",cursive;font-size:24px;letter-spacing:0}
 <canvas id="petalCanvas" aria-hidden="true"></canvas>
 
 <div id="cover" role="button" aria-label="Ouvrir l'invitation" tabindex="0">
-  <img class="cover-image" src="enve.jpg" alt="Invitation" fetchpriority="high">
-  <div class="cover-shade"></div>
-  <div class="cover-warm-line">Vous êtes chaleureusement invité(e)</div>
-  <div class="cover-open" id="openInvitation">Ouvrir l’invitation</div>
-  <div class="guest-personalized-name" id="guestDisplay">COUPLE KATENDA</div>
+<img class="cover-image" src="enve.jpg" alt="Invitation" fetchpriority="high">
+<div class="cover-shade"></div>
+<div class="cover-warm-line">Vous êtes chaleureusement invité(e)</div>
+<div class="cover-open" id="openInvitation">Ouvrir l’invitation</div>
+<div class="guest-personalized-name" id="guestDisplay">COUPLE KATENDA</div>
 </div>
 
 <div id="openingLayer" aria-label="Vidéo d'ouverture">
-  <video id="openingVideo" src="green.mp4" playsinline muted preload="auto" webkit-playsinline></video>
+<video id="openingVideo" src="green.mp4" playsinline muted preload="auto" webkit-playsinline></video>
 </div>
 
 <audio id="backgroundMusic" src="falling.mp3" loop preload="auto"></audio>
 <button id="musicToggle" type="button" aria-label="Lancer la musique" aria-pressed="false">
-  <span id="musicIcon">♫</span>
-  <span id="musicLabel" hidden></span>
+<span id="musicIcon">♫</span>
+<span id="musicLabel" hidden></span>
 </button>
 
 <main id="invitationContent">
-  <section id="coupleVideoSection">
-    <div class="section-inner">
-      <div class="video-card">
-        <video id="coupleVideo" src="couple.mp4" playsinline webkit-playsinline preload="auto" loop autoplay muted></video>
-      </div>
-    </div>
-  </section>
 
-  <section id="chapter">
-    <div class="section-inner">
-      <div class="chapter-card beige-frame olive-frame">
-        <img class="decor olive-chapter-top" src="olive.png" alt="" aria-hidden="true">
-        <p class="eyebrow">Une histoire, un avenir, un amour</p>
-        <h1 class="section-title">Un nouveau chapitre</h1>
-        <p class="chapter-message section-copy">Un chemin, une belle histoire qui continue. Avec amour et gratitude, nous serons heureux de partager avec vous le début de ce merveilleux nouveau chapitre.</p>
-        <p class="chapter-names">Samuel &amp; Divine</p>
-        <img class="decor olive-chapter-bottom" src="olive.png" alt="" aria-hidden="true">
-      </div>
-    </div>
-  </section>
+<section id="coupleVideoSection">
+<div class="section-inner">
+<div class="video-card">
+<video id="coupleVideo" src="couple.mp4" playsinline webkit-playsinline preload="auto" loop autoplay muted></video>
+</div>
+</div>
+</section>
 
-  <section id="scratch">
-    <div class="section-inner">
-      <div class="scratch-card">
-        <img class="scratch-decor-outer dry-scratch-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="scratch-decor-outer dry-scratch-bottom" src="dry.png" alt="" aria-hidden="true">
-        <p class="eyebrow">Gardez cette date précieusement</p>
-        <h2 class="section-title">Une date à découvrir</h2>
-        <p class="scratch-instruction">Grattez délicatement la carte<br>pour découvrir notre date spéciale.</p>
-        <div class="scratch-area" id="scratchArea">
-          <div class="scratch-reveal">
-            <span class="small">LE GRAND JOUR</span>
-            <span class="date">21 novembre 2026</span>
-            <span class="small">SAMUEL &amp; DIVINE</span>
-          </div>
-          <canvas id="scratchCanvas" aria-label="Grattez pour révéler la date"></canvas>
-          <canvas id="scratchSparkles" aria-hidden="true"></canvas>
-        </div>
-        <p class="scratch-foot">Faites glisser votre doigt pour révéler</p>
-        <div id="revealConfetti" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
+<section id="chapter">
+<div class="section-inner">
+<div class="chapter-card beige-frame olive-frame">
+<img class="decor olive-chapter-top" src="olive.png" alt="" aria-hidden="true">
+<p class="eyebrow">Une histoire, un avenir, un amour</p>
+<h1 class="section-title">Un nouveau chapitre</h1>
+<p class="chapter-message section-copy">Un chemin, une belle histoire qui continue. Avec amour et gratitude, nous serons heureux de partager avec vous le début de ce merveilleux nouveau chapitre.</p>
+<p class="chapter-names">Samuel &amp; Divine</p>
+<img class="decor olive-chapter-bottom" src="olive.png" alt="" aria-hidden="true">
+</div>
+</div>
+</section>
 
-  <section id="countdown">
-    <div class="section-inner">
-      <div class="countdown-card beige-frame olive-frame">
-        <img class="decor olive-countdown-top" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor olive-countdown-bottom" src="olive.png" alt="" aria-hidden="true">
-        <p class="eyebrow">Le compte à rebours a commencé</p>
-        <h2 class="section-title">Bientôt ensemble</h2>
-        <div class="countdown-grid" aria-label="Compte à rebours">
-          <div class="time-box"><span class="time-number" id="days">0</span><span class="time-label">Jours</span></div>
-          <div class="time-box"><span class="time-number" id="hours">00</span><span class="time-label">Heures</span></div>
-          <div class="time-box"><span class="time-number" id="minutes">00</span><span class="time-label">Minutes</span></div>
-          <div class="time-box"><span class="time-number" id="seconds">00</span><span class="time-label">Secondes</span></div>
-        </div>
-        <p class="countdown-date">21 novembre 2026</p>
-      </div>
-    </div>
-  </section>
+<section id="scratch">
+<div class="section-inner">
+<div class="scratch-card">
+<img class="scratch-decor-outer dry-scratch-top" src="dry.png" alt="" aria-hidden="true">
+<img class="scratch-decor-outer dry-scratch-bottom" src="dry.png" alt="" aria-hidden="true">
+<p class="eyebrow">Gardez cette date précieusement</p>
+<h2 class="section-title">Une date à découvrir</h2>
+<p class="scratch-instruction">Grattez délicatement la carte<br>pour découvrir notre date spéciale.</p>
+<div class="scratch-area" id="scratchArea">
+<div class="scratch-reveal">
+<span class="small">LE GRAND JOUR</span>
+<span class="date">21 novembre 2026</span>
+<span class="small">SAMUEL &amp; DIVINE</span>
+</div>
+<canvas id="scratchCanvas" aria-label="Grattez pour révéler la date"></canvas>
+<canvas id="scratchSparkles" aria-hidden="true"></canvas>
+</div>
+<p class="scratch-foot">Faites glisser votre doigt pour révéler</p>
+<div id="revealConfetti" aria-hidden="true"></div>
+</div>
+</div>
+</section>
 
-  <section id="timeline">
-    <div class="section-inner">
-      <div class="timeline-card">
-        <img class="decor dry-timeline-left" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor dry-timeline-right" src="dry.png" alt="" aria-hidden="true">
-        <p class="eyebrow">Le programme de la journée</p>
-        <h2 class="section-title">Notre journée</h2>
+<section id="countdown">
+<div class="section-inner">
+<div class="countdown-card beige-frame olive-frame">
+<img class="decor olive-countdown-top" src="olive.png" alt="" aria-hidden="true">
+<img class="decor olive-countdown-bottom" src="olive.png" alt="" aria-hidden="true">
+<p class="eyebrow">Le compte à rebours a commencé</p>
+<h2 class="section-title">Bientôt ensemble</h2>
+<div class="countdown-grid" aria-label="Compte à rebours">
+<div class="time-box"><span class="time-number" id="days">0</span><span class="time-label">Jours</span></div>
+<div class="time-box"><span class="time-number" id="hours">00</span><span class="time-label">Heures</span></div>
+<div class="time-box"><span class="time-number" id="minutes">00</span><span class="time-label">Minutes</span></div>
+<div class="time-box"><span class="time-number" id="seconds">00</span><span class="time-label">Secondes</span></div>
+</div>
+<p class="countdown-date">21 novembre 2026</p>
+</div>
+</div>
+</section>
 
-        <div class="timeline-list">
+<section id="timeline">
+<div class="section-inner">
+<div class="timeline-card">
+<img class="decor dry-timeline-left" src="dry.png" alt="" aria-hidden="true">
+<img class="decor dry-timeline-right" src="dry.png" alt="" aria-hidden="true">
+<p class="eyebrow">Le programme de la journée</p>
+<h2 class="section-title">Notre journée</h2>
+<div class="timeline-list">
+<div class="timeline-item">
+<span class="timeline-time">11:00</span>
+<span class="timeline-event">
+Bénédiction nuptiale
+<small class="timeline-church">Church : Ministères chrétiens Logos Rhema<br>Centre de Gloire La fidélité de Dieu</small>
+<small class="timeline-address">68, Avenue Mangay,<br>Croisement Shaba,<br>Kasa-Vubu, Kinshasa</small>
+</span>
+</div>
+<div class="timeline-item"><span class="timeline-time">19:30</span><span class="timeline-event">Arrivée des invités</span></div>
+<div class="timeline-item"><span class="timeline-time">20:30</span><span class="timeline-event">Entrée des mariés</span></div>
+<div class="timeline-item"><span class="timeline-time">21:00</span><span class="timeline-event">Présentation</span></div>
+<div class="timeline-item"><span class="timeline-time">21:30</span><span class="timeline-event">Ouverture du buffet</span></div>
+</div>
+</div>
+</div>
+</section>
 
-          <div class="timeline-item">
-            <span class="timeline-time">11:00</span>
-            <span class="timeline-event">
-              Bénédiction nuptiale
-              <small class="timeline-church">
-                Church : Ministères chrétiens Logos Rhema<br>
-                Centre de Gloire La fidélité de Dieu
-              </small>
-              <small class="timeline-address">
-                68, Avenue Mangay,<br>
-                Croisement Shaba,<br>
-                Kasa-Vubu, Kinshasa
-              </small>
-            </span>
-          </div>
+<section id="venue">
+<div class="section-inner">
+<div class="venue-card beige-frame olive-frame">
+<img class="venue-image" src="venue.png" alt="Lieu de célébration" loading="lazy">
+<p class="eyebrow">Le lieu de notre célébration</p>
+<h2 class="venue-name">Bluesky Le Chapiteau</h2>
+<p class="venue-address">Sciacom SARL, N° 01, Avenue de la Paix,<br>C/Ngaliema, Kinshasa, RD Congo</p>
+<a class="map-button" href="https://www.google.com/maps/search/?api=1&amp;query=Bluesky+Le+Chapiteau+Sciacom+SARL+N+01+Avenue+de+la+Paix+Ngaliema+Kinshasa+RD+Congo" target="_blank" rel="noopener noreferrer">Voir l'itinéraire</a>
+</div>
+</div>
+</section>
 
-          <div class="timeline-item">
-            <span class="timeline-time">19:30</span>
-            <span class="timeline-event">Arrivée des invités</span>
-          </div>
+<section id="pictures">
+<div class="section-inner">
+<div class="photo-heading">
+<p class="eyebrow">Quelques instants précieux</p>
+<h2 class="section-title">Nos plus beaux souvenirs</h2>
+</div>
+<div class="photo-window">
+<div class="photo-track">
+<img src="1.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+<img src="2.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+<img src="3.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+<img src="4.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+<img src="5.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+<img src="6.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
+<img src="1.jpg" alt="" aria-hidden="true">
+<img src="2.jpg" alt="" aria-hidden="true">
+<img src="3.jpg" alt="" aria-hidden="true">
+<img src="4.jpg" alt="" aria-hidden="true">
+<img src="5.jpg" alt="" aria-hidden="true">
+<img src="6.jpg" alt="" aria-hidden="true">
+</div>
+</div>
+<p class="photo-note">Chaque instant est plus beau à deux.</p>
+</div>
+</section>
 
-          <div class="timeline-item">
-            <span class="timeline-time">20:30</span>
-            <span class="timeline-event">Entrée des mariés</span>
-          </div>
+<section id="dresscode">
+<div class="section-inner">
+<div class="dress-card olive-frame">
+<img class="decor dry-dress-top" src="dry.png" alt="" aria-hidden="true">
+<img class="decor dry-dress-bottom" src="dry.png" alt="" aria-hidden="true">
+<p class="dress-eyebrow">POUR CÉLÉBRER NOTRE AMOUR</p>
+<h2 class="dress-heading">Dress Code</h2>
+<p class="dress-main">Chic &amp; Élégant</p>
+<div class="dress-gold-line"></div>
+<p class="dress-description">Parce que les plus beaux moments méritent d'être célébrés avec élégance, nous vous invitons à revêtir vos plus belles tenues pour partager avec nous cette journée exceptionnelle.</p>
+<p class="dress-closing">Sortez vos plus belles silhouettes, votre élégance fera partie de la magie de notre journée</p>
+</div>
+</div>
+</section>
 
-          <div class="timeline-item">
-            <span class="timeline-time">21:00</span>
-            <span class="timeline-event">Présentation</span>
-          </div>
+<section id="gift">
+<div class="section-inner">
+<div class="gift-card beige-frame olive-frame">
+<img class="decor olive-gift-top" src="olive.png" alt="" aria-hidden="true">
+<img class="decor olive-gift-bottom" src="olive.png" alt="" aria-hidden="true">
+<p class="eyebrow">Une délicate attention</p>
+<h2 class="section-title">Cadeaux</h2>
+<p class="gift-message">Pour tous ceux qui souhaitent nous offrir un cadeau,<br>une participation en espèces sera appréciée.</p>
+<p class="gift-signature">Samuel &amp; Divine</p>
+<p class="gift-date">NOVEMBER 21, 2026</p>
+</div>
+</div>
+</section>
 
-          <div class="timeline-item">
-            <span class="timeline-time">21:30</span>
-            <span class="timeline-event">Ouverture du buffet</span>
-          </div>
+<section id="rsvp">
+<div class="section-inner">
+<div class="rsvp-card beige-frame olive-frame">
+<p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
+<h2 class="section-title" style="text-align:center">RSVP</h2>
+<p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
 
-        </div>
-      </div>
-    </div>
-  </section>
+<form class="rsvp-form" id="rsvpForm">
+<div>
+<label for="attendance">Serez-vous parmi nous ?</label>
+<select id="attendance" name="attendance" required>
+<option value="">Choisissez une réponse</option>
+<option value="yes">Oui, avec grand plaisir</option>
+<option value="no">Désolé, je ne pourrai pas venir</option>
+</select>
+</div>
+<div>
+<label for="guestMessage">Un petit mot (facultatif)</label>
+<textarea id="guestMessage" name="guestMessage" placeholder="Votre message pour les mariés..."></textarea>
+</div>
+<button class="rsvp-submit" type="submit" disabled>Vérification en cours...</button>
+<p class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite">Vérification de votre réponse...</p>
+</form>
+</div>
+</div>
+</section>
 
-  <section id="venue">
-    <div class="section-inner">
-      <div class="venue-card beige-frame olive-frame">
-        <img class="venue-image" src="venue.png" alt="Lieu de célébration" loading="lazy">
-        <p class="eyebrow">Le lieu de notre célébration</p>
-        <h2 class="venue-name">Bluesky Le Chapiteau</h2>
-        <p class="venue-address">Sciacom SARL, N° 01, Avenue de la Paix,<br>C/Ngaliema, Kinshasa, RD Congo</p>
-        <a class="map-button" href="https://www.google.com/maps/search/?api=1&amp;query=Bluesky+Le+Chapiteau+Sciacom+SARL+N+01+Avenue+de+la+Paix+Ngaliema+Kinshasa+RD+Congo" target="_blank" rel="noopener noreferrer">Voir l'itinéraire</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="pictures">
-    <div class="section-inner">
-      <div class="photo-heading">
-        <p class="eyebrow">Quelques instants précieux</p>
-        <h2 class="section-title">Nos plus beaux souvenirs</h2>
-      </div>
-      <div class="photo-window">
-        <div class="photo-track">
-          <img src="1.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
-          <img src="2.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
-          <img src="3.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
-          <img src="4.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
-          <img src="5.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
-          <img src="6.jpg" alt="Souvenir de Samuel et Divine" loading="eager">
-          <img src="1.jpg" alt="" aria-hidden="true">
-          <img src="2.jpg" alt="" aria-hidden="true">
-          <img src="3.jpg" alt="" aria-hidden="true">
-          <img src="4.jpg" alt="" aria-hidden="true">
-          <img src="5.jpg" alt="" aria-hidden="true">
-          <img src="6.jpg" alt="" aria-hidden="true">
-        </div>
-      </div>
-      <p class="photo-note">Chaque instant est plus beau à deux.</p>
-    </div>
-  </section>
-
-  <section id="dresscode">
-    <div class="section-inner">
-      <div class="dress-card olive-frame">
-        <img class="decor dry-dress-top" src="dry.png" alt="" aria-hidden="true">
-        <img class="decor dry-dress-bottom" src="dry.png" alt="" aria-hidden="true">
-        <p class="dress-eyebrow">POUR CÉLÉBRER NOTRE AMOUR</p>
-        <h2 class="dress-heading">Dress Code</h2>
-        <p class="dress-main">Chic &amp; Élégant</p>
-        <div class="dress-gold-line"></div>
-        <p class="dress-description">Parce que les plus beaux moments méritent d'être célébrés avec élégance, nous vous invitons à revêtir vos plus belles tenues pour partager avec nous cette journée exceptionnelle.</p>
-        <p class="dress-closing">Sortez vos plus belles silhouettes, votre élégance fera partie de la magie de notre journée</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gift">
-    <div class="section-inner">
-      <div class="gift-card beige-frame olive-frame">
-        <img class="decor olive-gift-top" src="olive.png" alt="" aria-hidden="true">
-        <img class="decor olive-gift-bottom" src="olive.png" alt="" aria-hidden="true">
-        <p class="eyebrow">Une délicate attention</p>
-        <h2 class="section-title">Cadeaux</h2>
-        <p class="gift-message">Pour tous ceux qui souhaitent nous offrir un cadeau,<br>une participation en espèces sera appréciée.</p>
-        <p class="gift-signature">Samuel &amp; Divine</p>
-        <p class="gift-date">NOVEMBER 21, 2026</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="rsvp">
-    <div class="section-inner">
-      <div class="rsvp-card beige-frame olive-frame">
-        <p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
-        <h2 class="section-title" style="text-align:center">RSVP</h2>
-        <p class="rsvp-intro">Votre présence rendra cette journée encore plus spéciale. Merci de confirmer votre venue.</p>
-        <form class="rsvp-form" id="rsvpForm">
-          <div>
-            <label for="attendance">Serez-vous parmi nous ?</label>
-            <select id="attendance" name="attendance" required>
-              <option value="">Choisissez une réponse</option>
-              <option value="yes">Oui, avec grand plaisir</option>
-              <option value="no">Désolé, je ne pourrai pas venir</option>
-            </select>
-          </div>
-          <div>
-            <label for="guestMessage">Un petit mot (facultatif)</label>
-            <textarea id="guestMessage" name="guestMessage" placeholder="Votre message pour les mariés..."></textarea>
-          </div>
-          <button class="rsvp-submit" type="submit">Envoyer ma réponse</button>
-          <p class="rsvp-status" id="rsvpStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span>Samuel &amp; Divine</span>
-    <p style="margin-top:7px">21 NOVEMBRE 2026</p>
-  </footer>
+<footer>
+<span>Samuel &amp; Divine</span>
+<p style="margin-top:7px">21 NOVEMBRE 2026</p>
+</footer>
 </main>
 
 <script>
@@ -680,7 +449,7 @@ const guestParams = new URLSearchParams(window.location.search);
 const personalizedGuestName = guestParams.get("guest")?.trim() || "COUPLE KATENDA";
 guestDisplay.textContent = personalizedGuestName;
 
-/* COVER: TAP ANYWHERE TO START */
+/* COVER AND MUSIC */
 const cover = document.getElementById("cover");
 const openingLayer = document.getElementById("openingLayer");
 const openingVideo = document.getElementById("openingVideo");
@@ -697,9 +466,10 @@ function updateMusicButton() {
   const playing = !backgroundMusic.paused;
   musicIcon.textContent = playing ? "♫" : "♪";
   musicLabel.textContent = playing ? "Pause musique" : "Écouter la musique";
-  musicToggle.setAttribute("aria-label",playing ? "Mettre la musique en pause" : "Lancer la musique");
-  musicToggle.setAttribute("aria-pressed",String(playing));
+  musicToggle.setAttribute("aria-label", playing ? "Mettre la musique en pause" : "Lancer la musique");
+  musicToggle.setAttribute("aria-pressed", String(playing));
 }
+
 async function startMusic() {
   try {
     backgroundMusic.volume = 0.65;
@@ -708,357 +478,655 @@ async function startMusic() {
     updateMusicButton();
   }
 }
-musicToggle.addEventListener("click",async(event)=>{
+
+musicToggle.addEventListener("click", async (event) => {
   event.stopPropagation();
-  if(backgroundMusic.paused){await startMusic();}
-  else{backgroundMusic.pause();}
+  if (backgroundMusic.paused) await startMusic();
+  else backgroundMusic.pause();
   updateMusicButton();
 });
-backgroundMusic.addEventListener("play",updateMusicButton);
-backgroundMusic.addEventListener("pause",updateMusicButton);
-backgroundMusic.addEventListener("ended",updateMusicButton);
 
-/* START INVITATION */
+backgroundMusic.addEventListener("play", updateMusicButton);
+backgroundMusic.addEventListener("pause", updateMusicButton);
+backgroundMusic.addEventListener("ended", updateMusicButton);
+
 async function startInvitation() {
-  if(invitationStarted)return;
-  invitationStarted=true;
+  if (invitationStarted) return;
+  invitationStarted = true;
   document.body.classList.add("locked");
-  openingVideo.muted=true;
-  openingVideo.volume=0;
-  backgroundMusic.muted=false;
-  backgroundMusic.volume=0.65;
-  backgroundMusic.play().then(updateMusicButton).catch((error)=>{
-    console.log("falling.mp3 could not play:",error);
+
+  openingVideo.muted = true;
+  openingVideo.volume = 0;
+  backgroundMusic.muted = false;
+  backgroundMusic.volume = 0.65;
+
+  backgroundMusic.play().then(updateMusicButton).catch((error) => {
+    console.log("falling.mp3 could not play:", error);
     updateMusicButton();
   });
-  openingLayer.style.display="flex";
+
+  openingLayer.style.display = "flex";
   openingLayer.classList.add("show");
   cover.classList.add("hidden");
-  try{await openingVideo.play();}
-  catch(error){
-    openingLayer.style.cursor="pointer";
-    openingLayer.addEventListener("click",()=>openingVideo.play().catch(()=>{}),{once:true});
+
+  try {
+    await openingVideo.play();
+  } catch (error) {
+    openingLayer.style.cursor = "pointer";
+    openingLayer.addEventListener("click", () => openingVideo.play().catch(() => {}), { once: true });
   }
 }
-cover.addEventListener("click",startInvitation);
-cover.addEventListener("keydown",(event)=>{
-  if(event.key==="Enter"||event.key===" "){
+
+cover.addEventListener("click", startInvitation);
+cover.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
     startInvitation();
   }
 });
 
-/* FADE INTO THE LOOPING COUPLE VIDEO */
-openingVideo.addEventListener("ended",async()=>{
-  coupleVideo.muted=true;
-  coupleVideo.currentTime=0;
+openingVideo.addEventListener("ended", async () => {
+  coupleVideo.muted = true;
+  coupleVideo.currentTime = 0;
   videoSection.classList.add("video-ready");
-  try{await coupleVideo.play();}catch(error){}
+
+  try { await coupleVideo.play(); } catch (error) {}
+
   openingLayer.classList.add("fade");
-  window.setTimeout(()=>{
-    openingLayer.classList.remove("show","fade");
-    openingLayer.style.display="none";
+
+  window.setTimeout(() => {
+    openingLayer.classList.remove("show", "fade");
+    openingLayer.style.display = "none";
     document.body.classList.remove("locked");
-    videoSection.scrollIntoView({behavior:"smooth",block:"start"});
-  },850);
+    videoSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 850);
 });
 
 /* SCRATCH CARD */
-const scratchCanvas=document.getElementById("scratchCanvas");
-const scratchArea=document.getElementById("scratchArea");
-const scratchContext=scratchCanvas.getContext("2d",{willReadFrequently:true});
-const sparkleCanvas=document.getElementById("scratchSparkles");
-const sparkleContext=sparkleCanvas.getContext("2d");
-const revealConfetti=document.getElementById("revealConfetti");
-let scratching=false,scratchRevealed=false,lastScratchPoint=null;
-let sparkleParticles=[],lastSparkleTime=0,lastProgressCheck=0;
+const scratchCanvas = document.getElementById("scratchCanvas");
+const scratchArea = document.getElementById("scratchArea");
+const scratchContext = scratchCanvas.getContext("2d", { willReadFrequently: true });
+const sparkleCanvas = document.getElementById("scratchSparkles");
+const sparkleContext = sparkleCanvas.getContext("2d");
+const revealConfetti = document.getElementById("revealConfetti");
 
-function setupScratchCanvas(){
-  if(scratchRevealed)return;
-  const rect=scratchArea.getBoundingClientRect();
-  const ratio=Math.min(window.devicePixelRatio||1,2);
-  scratchCanvas.width=Math.round(rect.width*ratio);
-  scratchCanvas.height=Math.round(rect.height*ratio);
-  sparkleCanvas.width=Math.round(rect.width*ratio);
-  sparkleCanvas.height=Math.round(rect.height*ratio);
-  scratchCanvas.style.width=rect.width+"px";
-  scratchCanvas.style.height=rect.height+"px";
-  sparkleCanvas.style.width=rect.width+"px";
-  sparkleCanvas.style.height=rect.height+"px";
-  scratchContext.setTransform(ratio,0,0,ratio,0,0);
-  sparkleContext.setTransform(ratio,0,0,ratio,0,0);
-  const w=rect.width,h=rect.height;
-  const gradient=scratchContext.createLinearGradient(0,0,w,h);
-  gradient.addColorStop(0,"#126448");
-  gradient.addColorStop(.45,"#075039");
-  gradient.addColorStop(1,"#032f22");
-  scratchContext.globalCompositeOperation="source-over";
-  scratchContext.clearRect(0,0,w,h);
-  scratchContext.fillStyle=gradient;
-  scratchContext.fillRect(0,0,w,h);
-  scratchContext.strokeStyle="rgba(245,218,159,.95)";
-  scratchContext.lineWidth=1.2;
-  scratchContext.strokeRect(9,9,w-18,h-18);
-  scratchContext.strokeStyle="rgba(255,232,188,.45)";
-  scratchContext.lineWidth=1;
+let scratching = false;
+let scratchRevealed = false;
+let lastScratchPoint = null;
+let sparkleParticles = [];
+let lastSparkleTime = 0;
+let lastProgressCheck = 0;
+
+function setupScratchCanvas() {
+  if (scratchRevealed) return;
+
+  const rect = scratchArea.getBoundingClientRect();
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+  scratchCanvas.width = Math.round(rect.width * ratio);
+  scratchCanvas.height = Math.round(rect.height * ratio);
+  sparkleCanvas.width = Math.round(rect.width * ratio);
+  sparkleCanvas.height = Math.round(rect.height * ratio);
+
+  scratchCanvas.style.width = rect.width + "px";
+  scratchCanvas.style.height = rect.height + "px";
+  sparkleCanvas.style.width = rect.width + "px";
+  sparkleCanvas.style.height = rect.height + "px";
+
+  scratchContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+  sparkleContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+  const w = rect.width;
+  const h = rect.height;
+  const gradient = scratchContext.createLinearGradient(0, 0, w, h);
+
+  gradient.addColorStop(0, "#126448");
+  gradient.addColorStop(.45, "#075039");
+  gradient.addColorStop(1, "#032f22");
+
+  scratchContext.globalCompositeOperation = "source-over";
+  scratchContext.clearRect(0, 0, w, h);
+  scratchContext.fillStyle = gradient;
+  scratchContext.fillRect(0, 0, w, h);
+
+  scratchContext.strokeStyle = "rgba(245,218,159,.95)";
+  scratchContext.lineWidth = 1.2;
+  scratchContext.strokeRect(9, 9, w - 18, h - 18);
+
+  scratchContext.strokeStyle = "rgba(255,232,188,.45)";
+  scratchContext.lineWidth = 1;
   scratchContext.beginPath();
-  scratchContext.moveTo(w/2-53,h/2-28);
-  scratchContext.lineTo(w/2+53,h/2-28);
-  scratchContext.moveTo(w/2-53,h/2+31);
-  scratchContext.lineTo(w/2+53,h/2+31);
+  scratchContext.moveTo(w / 2 - 53, h / 2 - 28);
+  scratchContext.lineTo(w / 2 + 53, h / 2 - 28);
+  scratchContext.moveTo(w / 2 - 53, h / 2 + 31);
+  scratchContext.lineTo(w / 2 + 53, h / 2 + 31);
   scratchContext.stroke();
-  scratchContext.fillStyle="#fff4d9";
-  scratchContext.textAlign="center";
-  scratchContext.textBaseline="middle";
-  scratchContext.font="10px DM Sans, sans-serif";
-  scratchContext.fillText("GRATTEZ ICI",w/2,h/2-9);
-  scratchContext.font="24px Georgia, serif";
-  scratchContext.fillText("✧",w/2,h/2+16);
+
+  scratchContext.fillStyle = "#fff4d9";
+  scratchContext.textAlign = "center";
+  scratchContext.textBaseline = "middle";
+  scratchContext.font = "10px DM Sans, sans-serif";
+  scratchContext.fillText("GRATTEZ ICI", w / 2, h / 2 - 9);
+  scratchContext.font = "24px Georgia, serif";
+  scratchContext.fillText("✧", w / 2, h / 2 + 16);
 }
-function getScratchPosition(event){
-  const rect=scratchCanvas.getBoundingClientRect();
-  return{x:event.clientX-rect.left,y:event.clientY-rect.top};
+
+function getScratchPosition(event) {
+  const rect = scratchCanvas.getBoundingClientRect();
+  return { x: event.clientX - rect.left, y: event.clientY - rect.top };
 }
-function createGoldSparkles(x,y){
-  const now=performance.now();
-  if(now-lastSparkleTime<13)return;
-  lastSparkleTime=now;
-  for(let i=0;i<7;i++){
-    const angle=Math.random()*Math.PI*2,speed=.35+Math.random()*1.35;
+
+function createGoldSparkles(x, y) {
+  const now = performance.now();
+  if (now - lastSparkleTime < 13) return;
+  lastSparkleTime = now;
+
+  for (let i = 0; i < 7; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = .35 + Math.random() * 1.35;
     sparkleParticles.push({
-      x:x+(Math.random()-.5)*9,y:y+(Math.random()-.5)*9,
-      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-.15,
-      size:1+Math.random()*2,life:.7+Math.random()*.3,
-      decay:.018+Math.random()*.018,twinkle:Math.random()
+      x: x + (Math.random() - .5) * 9,
+      y: y + (Math.random() - .5) * 9,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - .15,
+      size: 1 + Math.random() * 2,
+      life: .7 + Math.random() * .3,
+      decay: .018 + Math.random() * .018,
+      twinkle: Math.random()
     });
   }
-  if(sparkleParticles.length>180)sparkleParticles=sparkleParticles.slice(-180);
+
+  if (sparkleParticles.length > 180) sparkleParticles = sparkleParticles.slice(-180);
 }
-function scratchAt(point){
-  if(!point||scratchRevealed)return;
-  scratchContext.globalCompositeOperation="destination-out";
-  scratchContext.lineWidth=42;
-  scratchContext.lineCap="round";
-  scratchContext.lineJoin="round";
+
+function scratchAt(point) {
+  if (!point || scratchRevealed) return;
+
+  scratchContext.globalCompositeOperation = "destination-out";
+  scratchContext.lineWidth = 42;
+  scratchContext.lineCap = "round";
+  scratchContext.lineJoin = "round";
   scratchContext.beginPath();
-  if(lastScratchPoint){
-    scratchContext.moveTo(lastScratchPoint.x,lastScratchPoint.y);
-    scratchContext.lineTo(point.x,point.y);
-  }else{
-    scratchContext.moveTo(point.x,point.y);
-    scratchContext.lineTo(point.x+.1,point.y+.1);
+
+  if (lastScratchPoint) {
+    scratchContext.moveTo(lastScratchPoint.x, lastScratchPoint.y);
+    scratchContext.lineTo(point.x, point.y);
+  } else {
+    scratchContext.moveTo(point.x, point.y);
+    scratchContext.lineTo(point.x + .1, point.y + .1);
   }
+
   scratchContext.stroke();
-  createGoldSparkles(point.x,point.y);
-  lastScratchPoint=point;
-  const now=performance.now();
-  if(now-lastProgressCheck>100){
-    lastProgressCheck=now;
+  createGoldSparkles(point.x, point.y);
+  lastScratchPoint = point;
+
+  const now = performance.now();
+  if (now - lastProgressCheck > 100) {
+    lastProgressCheck = now;
     checkScratchProgress();
   }
 }
-function launchRevealConfetti(){
-  if(!revealConfetti)return;
-  revealConfetti.innerHTML="";
-  const colors=["#064b35","#0b6849","#267052","#b69a64","#d8bd83","#f2dfb4","#174f3a"];
-  for(let i=0;i<54;i++){
-    const ribbon=document.createElement("span");
-    ribbon.className="confetti-ribbon";
-    const spread=(Math.random()-.5)*300;
-    const rise=-(90+Math.random()*190);
-    const rotate=(Math.random()-.5)*1000;
-    ribbon.style.left=(50+(Math.random()-.5)*24)+"%";
-    ribbon.style.bottom=(15+Math.random()*35)+"%";
-    ribbon.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
-    ribbon.style.setProperty("--fly-x",spread+"px");
-    ribbon.style.setProperty("--fly-y",rise+"px");
-    ribbon.style.setProperty("--fly-rotate",rotate+"deg");
-    ribbon.style.animationDelay=(Math.random()*.28)+"s";
+
+function launchRevealConfetti() {
+  if (!revealConfetti) return;
+  revealConfetti.innerHTML = "";
+
+  const colors = ["#064b35", "#0b6849", "#267052", "#b69a64", "#d8bd83", "#f2dfb4", "#174f3a"];
+
+  for (let i = 0; i < 54; i++) {
+    const ribbon = document.createElement("span");
+    ribbon.className = "confetti-ribbon";
+
+    ribbon.style.left = (50 + (Math.random() - .5) * 24) + "%";
+    ribbon.style.bottom = (15 + Math.random() * 35) + "%";
+    ribbon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    ribbon.style.setProperty("--fly-x", ((Math.random() - .5) * 300) + "px");
+    ribbon.style.setProperty("--fly-y", (-(90 + Math.random() * 190)) + "px");
+    ribbon.style.setProperty("--fly-rotate", ((Math.random() - .5) * 1000) + "deg");
+    ribbon.style.animationDelay = (Math.random() * .28) + "s";
+
     revealConfetti.appendChild(ribbon);
   }
-  window.setTimeout(()=>{revealConfetti.innerHTML="";},2600);
+
+  window.setTimeout(() => { revealConfetti.innerHTML = ""; }, 2600);
 }
-function revealScratchCard(){
-  if(scratchRevealed)return;
-  scratchRevealed=true;
-  scratching=false;
-  lastScratchPoint=null;
+
+function revealScratchCard() {
+  if (scratchRevealed) return;
+
+  scratchRevealed = true;
+  scratching = false;
+  lastScratchPoint = null;
   scratchCanvas.classList.add("revealed");
-  scratchCanvas.style.transition="opacity .45s ease";
-  scratchCanvas.style.opacity="0";
+  scratchCanvas.style.transition = "opacity .45s ease";
+  scratchCanvas.style.opacity = "0";
+
   launchRevealConfetti();
-  window.setTimeout(()=>{scratchCanvas.style.display="none";},500);
+
+  window.setTimeout(() => { scratchCanvas.style.display = "none"; }, 500);
 }
-function checkScratchProgress(){
-  if(scratchRevealed)return;
-  const width=scratchCanvas.width,height=scratchCanvas.height;
-  const pixels=scratchContext.getImageData(0,0,width,height).data;
-  let transparent=0,total=0;
-  const step=4*12;
-  for(let i=3;i<pixels.length;i+=step){
+
+function checkScratchProgress() {
+  if (scratchRevealed) return;
+
+  const width = scratchCanvas.width;
+  const height = scratchCanvas.height;
+  const pixels = scratchContext.getImageData(0, 0, width, height).data;
+
+  let transparent = 0;
+  let total = 0;
+
+  for (let i = 3; i < pixels.length; i += 4 * 12) {
     total++;
-    if(pixels[i]<80)transparent++;
+    if (pixels[i] < 80) transparent++;
   }
-  if(total&&transparent/total>=.50)revealScratchCard();
+
+  if (total && transparent / total >= .50) revealScratchCard();
 }
-scratchCanvas.addEventListener("pointerdown",event=>{
-  if(scratchRevealed)return;
+
+scratchCanvas.addEventListener("pointerdown", (event) => {
+  if (scratchRevealed) return;
   event.preventDefault();
-  scratching=true;
-  lastScratchPoint=getScratchPosition(event);
-  try{scratchCanvas.setPointerCapture(event.pointerId);}catch(error){}
+  scratching = true;
+  lastScratchPoint = getScratchPosition(event);
+  try { scratchCanvas.setPointerCapture(event.pointerId); } catch (error) {}
   scratchAt(lastScratchPoint);
 });
-scratchCanvas.addEventListener("pointermove",event=>{
-  if(!scratching||scratchRevealed)return;
+
+scratchCanvas.addEventListener("pointermove", (event) => {
+  if (!scratching || scratchRevealed) return;
   event.preventDefault();
   scratchAt(getScratchPosition(event));
 });
-function endScratch(){
-  if(!scratching)return;
-  scratching=false;
-  lastScratchPoint=null;
+
+function endScratch() {
+  if (!scratching) return;
+  scratching = false;
+  lastScratchPoint = null;
   checkScratchProgress();
 }
-scratchCanvas.addEventListener("pointerup",endScratch);
-scratchCanvas.addEventListener("pointercancel",endScratch);
-scratchCanvas.addEventListener("lostpointercapture",endScratch);
 
-function animateGoldSparkles(){
-  const rect=sparkleCanvas.getBoundingClientRect();
-  sparkleContext.clearRect(0,0,rect.width,rect.height);
-  sparkleParticles=sparkleParticles.filter(p=>p.life>0);
-  for(const p of sparkleParticles){
-    p.x+=p.vx;p.y+=p.vy;p.life-=p.decay;
+scratchCanvas.addEventListener("pointerup", endScratch);
+scratchCanvas.addEventListener("pointercancel", endScratch);
+scratchCanvas.addEventListener("lostpointercapture", endScratch);
+
+function animateGoldSparkles() {
+  const rect = sparkleCanvas.getBoundingClientRect();
+  sparkleContext.clearRect(0, 0, rect.width, rect.height);
+
+  sparkleParticles = sparkleParticles.filter(p => p.life > 0);
+
+  for (const p of sparkleParticles) {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= p.decay;
+
     sparkleContext.save();
-    sparkleContext.globalAlpha=Math.min(1,Math.max(0,p.life));
-    sparkleContext.shadowColor="#e8c77d";
-    sparkleContext.shadowBlur=8;
-    sparkleContext.fillStyle=p.twinkle>.5?"#fff1bd":"#c7a25a";
-    sparkleContext.translate(p.x,p.y);
-    sparkleContext.rotate(p.life*3);
+    sparkleContext.globalAlpha = Math.min(1, Math.max(0, p.life));
+    sparkleContext.shadowColor = "#e8c77d";
+    sparkleContext.shadowBlur = 8;
+    sparkleContext.fillStyle = p.twinkle > .5 ? "#fff1bd" : "#c7a25a";
+    sparkleContext.translate(p.x, p.y);
+    sparkleContext.rotate(p.life * 3);
     sparkleContext.beginPath();
-    sparkleContext.moveTo(0,-p.size*2.2);
-    sparkleContext.lineTo(p.size*.55,0);
-    sparkleContext.lineTo(0,p.size*2.2);
-    sparkleContext.lineTo(-p.size*.55,0);
+    sparkleContext.moveTo(0, -p.size * 2.2);
+    sparkleContext.lineTo(p.size * .55, 0);
+    sparkleContext.lineTo(0, p.size * 2.2);
+    sparkleContext.lineTo(-p.size * .55, 0);
     sparkleContext.closePath();
     sparkleContext.fill();
     sparkleContext.beginPath();
-    sparkleContext.arc(0,0,p.size*.45,0,Math.PI*2);
-    sparkleContext.fillStyle="#fff8df";
+    sparkleContext.arc(0, 0, p.size * .45, 0, Math.PI * 2);
+    sparkleContext.fillStyle = "#fff8df";
     sparkleContext.fill();
     sparkleContext.restore();
   }
+
   requestAnimationFrame(animateGoldSparkles);
 }
+
 setupScratchCanvas();
 animateGoldSparkles();
-window.addEventListener("resize",()=>{if(!scratchRevealed)setupScratchCanvas();});
+window.addEventListener("resize", () => {
+  if (!scratchRevealed) setupScratchCanvas();
+});
 
 /* COUNTDOWN */
-const targetDate=new Date(2026,10,21,12,0,0);
-function updateCountdown(){
-  const remaining=targetDate.getTime()-Date.now();
-  if(remaining<=0){
-    document.getElementById("days").textContent="0";
-    document.getElementById("hours").textContent="00";
-    document.getElementById("minutes").textContent="00";
-    document.getElementById("seconds").textContent="00";
+const targetDate = new Date(2026, 10, 21, 12, 0, 0);
+
+function updateCountdown() {
+  const remaining = targetDate.getTime() - Date.now();
+
+  if (remaining <= 0) {
+    document.getElementById("days").textContent = "0";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
     return;
   }
-  const total=Math.floor(remaining/1000);
-  document.getElementById("days").textContent=String(Math.floor(total/86400));
-  document.getElementById("hours").textContent=String(Math.floor((total%86400)/3600)).padStart(2,"0");
-  document.getElementById("minutes").textContent=String(Math.floor((total%3600)/60)).padStart(2,"0");
-  document.getElementById("seconds").textContent=String(total%60).padStart(2,"0");
-}
-updateCountdown();
-setInterval(updateCountdown,1000);
 
-/* SUBTLE FALLING OLIVE PETALS */
-const petalCanvas=document.getElementById("petalCanvas");
-const petalContext=petalCanvas.getContext("2d");
-let petalWidth=0,petalHeight=0,petals=[];
-function resizePetals(){
-  const ratio=Math.min(window.devicePixelRatio||1,2);
-  petalWidth=window.innerWidth;
-  petalHeight=window.innerHeight;
-  petalCanvas.width=Math.round(petalWidth*ratio);
-  petalCanvas.height=Math.round(petalHeight*ratio);
-  petalCanvas.style.width=petalWidth+"px";
-  petalCanvas.style.height=petalHeight+"px";
-  petalContext.setTransform(ratio,0,0,ratio,0,0);
-  const count=Math.min(24,Math.max(12,Math.round(petalWidth/22)));
-  petals=Array.from({length:count},()=>({
-    x:Math.random()*petalWidth,y:Math.random()*petalHeight,
-    size:2+Math.random()*1.8,speed:.2+Math.random()*.45,
-    drift:(Math.random()-.5)*.32,angle:Math.random()*Math.PI*2,
-    rotation:(Math.random()-.5)*.015,opacity:.16+Math.random()*.2
+  const total = Math.floor(remaining / 1000);
+  document.getElementById("days").textContent = String(Math.floor(total / 86400));
+  document.getElementById("hours").textContent = String(Math.floor((total % 86400) / 3600)).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(Math.floor((total % 3600) / 60)).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(total % 60).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* FALLING OLIVE PETALS */
+const petalCanvas = document.getElementById("petalCanvas");
+const petalContext = petalCanvas.getContext("2d");
+let petalWidth = 0;
+let petalHeight = 0;
+let petals = [];
+
+function resizePetals() {
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  petalWidth = window.innerWidth;
+  petalHeight = window.innerHeight;
+
+  petalCanvas.width = Math.round(petalWidth * ratio);
+  petalCanvas.height = Math.round(petalHeight * ratio);
+  petalCanvas.style.width = petalWidth + "px";
+  petalCanvas.style.height = petalHeight + "px";
+  petalContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+  const count = Math.min(24, Math.max(12, Math.round(petalWidth / 22)));
+
+  petals = Array.from({ length: count }, () => ({
+    x: Math.random() * petalWidth,
+    y: Math.random() * petalHeight,
+    size: 2 + Math.random() * 1.8,
+    speed: .2 + Math.random() * .45,
+    drift: (Math.random() - .5) * .32,
+    angle: Math.random() * Math.PI * 2,
+    rotation: (Math.random() - .5) * .015,
+    opacity: .16 + Math.random() * .2
   }));
 }
-function drawPetals(){
-  petalContext.clearRect(0,0,petalWidth,petalHeight);
-  for(const p of petals){
-    p.y+=p.speed;p.x+=p.drift;p.angle+=p.rotation;
-    if(p.y>petalHeight+10){p.y=-10;p.x=Math.random()*petalWidth;}
-    if(p.x<-10)p.x=petalWidth+5;
-    if(p.x>petalWidth+10)p.x=-5;
+
+function drawPetals() {
+  petalContext.clearRect(0, 0, petalWidth, petalHeight);
+
+  for (const p of petals) {
+    p.y += p.speed;
+    p.x += p.drift;
+    p.angle += p.rotation;
+
+    if (p.y > petalHeight + 10) {
+      p.y = -10;
+      p.x = Math.random() * petalWidth;
+    }
+    if (p.x < -10) p.x = petalWidth + 5;
+    if (p.x > petalWidth + 10) p.x = -5;
+
     petalContext.save();
-    petalContext.translate(p.x,p.y);
+    petalContext.translate(p.x, p.y);
     petalContext.rotate(p.angle);
-    petalContext.globalAlpha=p.opacity;
-    petalContext.fillStyle="#286044";
+    petalContext.globalAlpha = p.opacity;
+    petalContext.fillStyle = "#286044";
     petalContext.beginPath();
-    petalContext.ellipse(0,0,p.size*1.65,p.size*.78,0,0,Math.PI*2);
+    petalContext.ellipse(0, 0, p.size * 1.65, p.size * .78, 0, 0, Math.PI * 2);
     petalContext.fill();
     petalContext.restore();
   }
+
   requestAnimationFrame(drawPetals);
 }
+
 resizePetals();
 drawPetals();
-window.addEventListener("resize",resizePetals);
+window.addEventListener("resize", resizePetals);
 
-/* RSVP GOOGLE SHEETS */
-const rsvpForm=document.getElementById("rsvpForm");
-const rsvpStatus=document.getElementById("rsvpStatus");
-const RSVP_SCRIPT_URL="https://script.google.com/macros/s/AKfycbwz2DCfuXff7lP0fHcqyheoywUs7xQvbh9rEbexqbVSdXVXqCcU_YGw8ztwhAFK3sFN/exec";
-const rsvpGuestName=(new URLSearchParams(window.location.search).get("guest")||"").trim();
+/* ===================================================
+   ONE-TIME RSVP SYSTEM
+   Google Apps Script JSONP status check + POST submit
+=================================================== */
 
-rsvpForm.addEventListener("submit",async(event)=>{
+const rsvpForm = document.getElementById("rsvpForm");
+const rsvpStatus = document.getElementById("rsvpStatus");
+const RSVP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwz2DCfuXff7lP0fHcqyheoywUs7xQvbh9rEbexqbVSdXVXqCcU_YGw8ztwhAFK3sFN/exec";
+
+const rsvpGuestName = (new URLSearchParams(window.location.search).get("guest") || "").trim();
+
+const attendanceInput = document.getElementById("attendance");
+const messageInput = document.getElementById("guestMessage");
+const submitButton = rsvpForm.querySelector('button[type="submit"]');
+
+let guestAlreadyResponded = false;
+let rsvpCheckComplete = false;
+let rsvpSubmitting = false;
+
+/* LOCK OR UNLOCK RSVP FORM */
+function setRSVPFormDisabled(disabled) {
+  attendanceInput.disabled = disabled;
+  messageInput.disabled = disabled;
+  submitButton.disabled = disabled;
+}
+
+/* SHOW ALREADY RESPONDED MESSAGE */
+function showAlreadyResponded() {
+  guestAlreadyResponded = true;
+  rsvpCheckComplete = true;
+  rsvpSubmitting = false;
+
+  setRSVPFormDisabled(true);
+
+  attendanceInput.value = "";
+  messageInput.value = "";
+
+  submitButton.textContent = "Réponse déjà envoyée";
+  rsvpStatus.textContent = "Vous avez déjà confirmé votre réponse. Merci !";
+  rsvpStatus.className = "rsvp-status success";
+}
+
+/* SHOW AVAILABLE RSVP FORM */
+function showRSVPAvailable() {
+  guestAlreadyResponded = false;
+  rsvpCheckComplete = true;
+
+  setRSVPFormDisabled(false);
+
+  submitButton.textContent = "Envoyer ma réponse";
+  rsvpStatus.textContent = "";
+  rsvpStatus.className = "rsvp-status";
+}
+
+/* JSONP CHECK: READ RSVP STATUS FROM GOOGLE SHEET */
+function checkRSVPStatus(name) {
+  return new Promise((resolve, reject) => {
+    const callbackName = "rsvpCallback_" + Date.now() + "_" + Math.floor(Math.random() * 100000);
+    const script = document.createElement("script");
+    let finished = false;
+
+    const cleanup = () => {
+      if (script.parentNode) script.parentNode.removeChild(script);
+      try { delete window[callbackName]; } catch (error) {
+        window[callbackName] = undefined;
+      }
+    };
+
+    const timeout = window.setTimeout(() => {
+      if (finished) return;
+      finished = true;
+      cleanup();
+      reject(new Error("Status check timed out"));
+    }, 15000);
+
+    window[callbackName] = (data) => {
+      if (finished) return;
+      finished = true;
+      window.clearTimeout(timeout);
+      cleanup();
+      resolve(data);
+    };
+
+    script.onerror = () => {
+      if (finished) return;
+      finished = true;
+      window.clearTimeout(timeout);
+      cleanup();
+      reject(new Error("Could not check RSVP status"));
+    };
+
+    const url = new URL(RSVP_SCRIPT_URL);
+    url.searchParams.set("action", "check");
+    url.searchParams.set("name", name);
+    url.searchParams.set("callback", callbackName);
+    url.searchParams.set("_", String(Date.now()));
+
+    script.src = url.toString();
+    document.head.appendChild(script);
+  });
+}
+
+/* CHECK STATUS WHEN INVITATION PAGE LOADS */
+async function initializeRSVP() {
+  setRSVPFormDisabled(true);
+
+  if (!rsvpGuestName) {
+    rsvpCheckComplete = true;
+    submitButton.textContent = "Lien invalide";
+    rsvpStatus.textContent = "Ce lien d’invitation ne contient pas le nom de l’invité. Veuillez contacter les mariés.";
+    rsvpStatus.className = "rsvp-status error";
+    return;
+  }
+
+  rsvpStatus.textContent = "Vérification de votre réponse...";
+  rsvpStatus.className = "rsvp-status";
+
+  try {
+    const result = await checkRSVPStatus(rsvpGuestName);
+
+    if (result && result.alreadyResponded === true) {
+      showAlreadyResponded();
+    } else if (result && result.alreadyResponded === false) {
+      showRSVPAvailable();
+    } else {
+      throw new Error("Invalid status response");
+    }
+
+  } catch (error) {
+    console.error("RSVP status check failed:", error);
+
+    rsvpCheckComplete = false;
+    setRSVPFormDisabled(true);
+
+    submitButton.textContent = "Vérification indisponible";
+    rsvpStatus.textContent = "Impossible de vérifier votre réponse pour le moment. Veuillez actualiser cette page.";
+    rsvpStatus.className = "rsvp-status error";
+  }
+}
+
+/* CHECK AGAIN AFTER SUBMISSION TO CONFIRM THE SHEET ENTRY */
+async function confirmRSVPSaved() {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    await new Promise(resolve => window.setTimeout(resolve, 1200));
+
+    try {
+      const result = await checkRSVPStatus(rsvpGuestName);
+
+      if (result && result.alreadyResponded === true) {
+        showAlreadyResponded();
+        rsvpStatus.textContent = "Merci ! Votre réponse a bien été enregistrée.";
+        return true;
+      }
+    } catch (error) {
+      console.log("RSVP confirmation check attempt:", attempt + 1);
+    }
+  }
+
+  return false;
+}
+
+/* SUBMIT RSVP */
+rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const attendance=document.getElementById("attendance").value;
-  const msg=document.getElementById("guestMessage").value.trim();
 
-  if(!rsvpGuestName){
-    rsvpStatus.textContent="Ce lien d’invitation ne contient pas le nom de l’invité. Veuillez contacter les mariés.";
-    return;
-  }
-  if(!attendance){
-    rsvpStatus.textContent="Veuillez choisir une réponse.";
+  if (rsvpSubmitting || guestAlreadyResponded) return;
+
+  if (!rsvpGuestName) {
+    rsvpStatus.textContent = "Ce lien d’invitation ne contient pas le nom de l’invité. Veuillez contacter les mariés.";
+    rsvpStatus.className = "rsvp-status error";
     return;
   }
 
-  const payload=new URLSearchParams();
-  payload.append("name",rsvpGuestName);
-  payload.append("response",attendance==="yes"?"yes":"no");
-  payload.append("msg",msg);
+  if (!rsvpCheckComplete) {
+    rsvpStatus.textContent = "Veuillez attendre la vérification de votre invitation.";
+    rsvpStatus.className = "rsvp-status error";
+    return;
+  }
 
-  const submitButton=rsvpForm.querySelector('button[type="submit"]');
-  submitButton.disabled=true;
-  rsvpStatus.textContent="Envoi de votre réponse...";
+  const attendance = attendanceInput.value;
+  const msg = messageInput.value.trim();
 
-  try{
-    await fetch(RSVP_SCRIPT_URL,{method:"POST",mode:"no-cors",body:payload});
-    rsvpStatus.textContent="Merci ! Votre réponse a été envoyée.";
-    rsvpForm.reset();
-  }catch(error){
-    rsvpStatus.textContent="L’envoi a échoué. Veuillez réessayer.";
-  }finally{
-    submitButton.disabled=false;
+  if (!attendance) {
+    rsvpStatus.textContent = "Veuillez choisir une réponse.";
+    rsvpStatus.className = "rsvp-status error";
+    return;
+  }
+
+  rsvpSubmitting = true;
+  setRSVPFormDisabled(true);
+
+  submitButton.textContent = "Envoi en cours...";
+  rsvpStatus.textContent = "Envoi de votre réponse...";
+  rsvpStatus.className = "rsvp-status";
+
+  const payload = new URLSearchParams();
+  payload.append("name", rsvpGuestName);
+  payload.append("response", attendance === "yes" ? "yes" : "no");
+  payload.append("msg", msg);
+
+  try {
+    /*
+      no-cors is used because Google Apps Script does not provide
+      a readable cross-origin POST response to this page.
+      We verify the saved entry afterward using JSONP.
+    */
+    await fetch(RSVP_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: payload
+    });
+
+    const saved = await confirmRSVPSaved();
+
+    if (saved) {
+      rsvpForm.reset();
+      return;
+    }
+
+    /* If no saved response appears, check whether it was a duplicate */
+    const latestStatus = await checkRSVPStatus(rsvpGuestName);
+
+    if (latestStatus && latestStatus.alreadyResponded === true) {
+      showAlreadyResponded();
+      return;
+    }
+
+    rsvpSubmitting = false;
+    setRSVPFormDisabled(false);
+    submitButton.textContent = "Réessayer";
+    rsvpStatus.textContent = "Votre réponse n’a pas pu être confirmée. Veuillez réessayer.";
+    rsvpStatus.className = "rsvp-status error";
+
+  } catch (error) {
+    console.error("RSVP submission error:", error);
+
+    rsvpSubmitting = false;
+    setRSVPFormDisabled(false);
+    submitButton.textContent = "Réessayer";
+    rsvpStatus.textContent = "L’envoi a échoué. Veuillez vérifier votre connexion et réessayer.";
+    rsvpStatus.className = "rsvp-status error";
   }
 });
+
+/* START STATUS CHECK */
+initializeRSVP();
+
 </script>
 </body>
 </html>
