@@ -72,7 +72,7 @@ section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:no
 #gift{background:linear-gradient(180deg,#032f22 0%,#356a4b 19%,#85977a 42%,#c4c9ab 70%,#f0e4d0 100%)}
 #rsvp{background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 45%,#d0c9ae 100%);padding-bottom:25px}
 
-/* MESSAGE SHOWN AFTER RSVP HAS ALREADY BEEN SENT */
+/* RSVP THANK-YOU MESSAGE */
 #alreadyRespondedMessage{
 display:none;
 background:linear-gradient(180deg,#f0e4d0 0%,#e9dfca 45%,#d0c9ae 100%);
@@ -80,42 +80,17 @@ padding:65px 20px;
 text-align:center;
 }
 .already-responded-card{
-max-width:480px;
-margin:auto;
-padding:42px 22px;
+max-width:480px;margin:auto;padding:42px 22px;
 background:linear-gradient(135deg,#fff8eb,#eee0c8);
 border:1px solid #064b35;
 outline:1px solid rgba(182,154,100,.75);
 outline-offset:5px;
 box-shadow:0 13px 34px rgba(3,38,27,.13);
 }
-.already-responded-eyebrow{
-font-size:11px;
-letter-spacing:3px;
-color:#786047;
-margin-bottom:20px;
-text-transform:uppercase;
-}
-.already-responded-title{
-font-family:"Cormorant Garamond",serif;
-font-size:36px;
-font-weight:500;
-line-height:1.2;
-color:#064b35;
-margin-bottom:16px;
-}
-.already-responded-copy{
-font-family:"Cormorant Garamond",serif;
-font-size:22px;
-line-height:1.6;
-color:#494638;
-}
-.already-responded-signature{
-font-family:"Great Vibes",cursive;
-font-size:35px;
-color:#064b35;
-margin-top:22px;
-}
+.already-responded-eyebrow{font-size:11px;letter-spacing:3px;color:#786047;margin-bottom:20px;text-transform:uppercase}
+.already-responded-title{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:500;line-height:1.2;color:#064b35;margin-bottom:16px}
+.already-responded-copy{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.6;color:#494638}
+.already-responded-signature{font-family:"Great Vibes",cursive;font-size:35px;color:#064b35;margin-top:22px}
 
 #cover{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:#ddd1bb;transition:opacity .9s ease,visibility .9s ease;cursor:pointer}
 #cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
@@ -453,8 +428,8 @@ Bénédiction nuptiale
 </div>
 </section>
 
-<!-- RSVP SECTION: VISIBLE ONLY IF THE GUEST HAS NOT RESPONDED -->
-<section id="rsvp">
+<!-- RSVP: hidden until the Google Sheet check finishes -->
+<section id="rsvp" style="display:none">
 <div class="section-inner">
 <div class="rsvp-card beige-frame olive-frame">
 <p class="eyebrow" style="text-align:center">Nous serions ravis de vous accueillir</p>
@@ -481,8 +456,8 @@ Bénédiction nuptiale
 </div>
 </section>
 
-<!-- THIS MESSAGE REPLACES THE RSVP SECTION AFTER A RESPONSE IS FOUND -->
-<section id="alreadyRespondedMessage" aria-live="polite">
+<!-- SHOW THIS INSTEAD OF RSVP IF THE GUEST HAS ALREADY RESPONDED -->
+<section id="alreadyRespondedMessage" aria-live="polite" style="display:none">
 <div class="already-responded-card">
 <p class="already-responded-eyebrow">Samuel &amp; Divine</p>
 <h2 class="already-responded-title">Merci beaucoup !</h2>
@@ -939,10 +914,10 @@ resizePetals();
 drawPetals();
 window.addEventListener("resize", resizePetals);
 
-/* ===================================================
+/* =====================================================
    ONE-TIME RSVP SYSTEM
-   Google Apps Script JSONP status check + POST submit
-=================================================== */
+   Google Apps Script JSONP + POST
+===================================================== */
 
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpStatus = document.getElementById("rsvpStatus");
@@ -961,14 +936,18 @@ let guestAlreadyResponded = false;
 let rsvpCheckComplete = false;
 let rsvpSubmitting = false;
 
-/* LOCK OR UNLOCK RSVP FORM */
+/* KEEP BOTH SECTIONS HIDDEN UNTIL THE STATUS IS VERIFIED */
+rsvpSection.style.display = "none";
+alreadyRespondedMessage.style.display = "none";
+
+/* DISABLE OR ENABLE THE FORM */
 function setRSVPFormDisabled(disabled) {
   attendanceInput.disabled = disabled;
   messageInput.disabled = disabled;
   submitButton.disabled = disabled;
 }
 
-/* HIDE RSVP SECTION AND SHOW THE THANK-YOU MESSAGE */
+/* SHOW THANK-YOU MESSAGE FOR ALREADY RESPONDED GUEST */
 function showAlreadyResponded() {
   guestAlreadyResponded = true;
   rsvpCheckComplete = true;
@@ -976,21 +955,18 @@ function showAlreadyResponded() {
 
   setRSVPFormDisabled(true);
 
-  /* Hide the complete RSVP section */
   rsvpSection.style.display = "none";
-
-  /* Show the separate thank-you section */
   alreadyRespondedMessage.style.display = "block";
 }
 
-/* SHOW AVAILABLE RSVP FORM */
+/* SHOW FORM ONLY IF NO RESPONSE EXISTS */
 function showRSVPAvailable() {
   guestAlreadyResponded = false;
   rsvpCheckComplete = true;
+  rsvpSubmitting = false;
 
-  /* Show RSVP and keep the thank-you message hidden */
-  rsvpSection.style.display = "block";
   alreadyRespondedMessage.style.display = "none";
+  rsvpSection.style.display = "block";
 
   setRSVPFormDisabled(false);
 
@@ -999,7 +975,7 @@ function showRSVPAvailable() {
   rsvpStatus.className = "rsvp-status";
 }
 
-/* JSONP CHECK: READ RSVP STATUS FROM GOOGLE SHEET */
+/* JSONP STATUS CHECK */
 function checkRSVPStatus(name) {
   return new Promise((resolve, reject) => {
     const callbackName = "rsvpCallback_" + Date.now() + "_" + Math.floor(Math.random() * 100000);
@@ -1007,21 +983,28 @@ function checkRSVPStatus(name) {
     let finished = false;
 
     const cleanup = () => {
-      if (script.parentNode) script.parentNode.removeChild(script);
-      try { delete window[callbackName]; } catch (error) {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+
+      try {
+        delete window[callbackName];
+      } catch (error) {
         window[callbackName] = undefined;
       }
     };
 
     const timeout = window.setTimeout(() => {
       if (finished) return;
+
       finished = true;
       cleanup();
-      reject(new Error("Status check timed out"));
+      reject(new Error("RSVP status check timed out"));
     }, 15000);
 
     window[callbackName] = (data) => {
       if (finished) return;
+
       finished = true;
       window.clearTimeout(timeout);
       cleanup();
@@ -1030,13 +1013,15 @@ function checkRSVPStatus(name) {
 
     script.onerror = () => {
       if (finished) return;
+
       finished = true;
       window.clearTimeout(timeout);
       cleanup();
-      reject(new Error("Could not check RSVP status"));
+      reject(new Error("Could not load RSVP status"));
     };
 
     const url = new URL(RSVP_SCRIPT_URL);
+
     url.searchParams.set("action", "check");
     url.searchParams.set("name", name);
     url.searchParams.set("callback", callbackName);
@@ -1047,36 +1032,43 @@ function checkRSVPStatus(name) {
   });
 }
 
-/* CHECK STATUS WHEN INVITATION PAGE LOADS */
+/* INITIAL CHECK WHEN PAGE LOADS */
 async function initializeRSVP() {
   setRSVPFormDisabled(true);
 
+  /* No guest name in the URL */
   if (!rsvpGuestName) {
-    rsvpCheckComplete = true;
+    rsvpSection.style.display = "block";
+    rsvpCheckComplete = false;
+
     submitButton.textContent = "Lien invalide";
     rsvpStatus.textContent = "Ce lien d’invitation ne contient pas le nom de l’invité. Veuillez contacter les mariés.";
     rsvpStatus.className = "rsvp-status error";
     return;
   }
 
-  rsvpStatus.textContent = "Vérification de votre réponse...";
-  rsvpStatus.className = "rsvp-status";
-
   try {
     const result = await checkRSVPStatus(rsvpGuestName);
 
     if (result && result.alreadyResponded === true) {
       showAlreadyResponded();
-    } else if (result && result.alreadyResponded === false) {
-      showRSVPAvailable();
-    } else {
-      throw new Error("Invalid status response");
+      return;
     }
+
+    if (result && result.alreadyResponded === false) {
+      showRSVPAvailable();
+      return;
+    }
+
+    throw new Error("Invalid response from RSVP server");
 
   } catch (error) {
     console.error("RSVP status check failed:", error);
 
+    /* Show the form only as a disabled error state */
+    rsvpSection.style.display = "block";
     rsvpCheckComplete = false;
+
     setRSVPFormDisabled(true);
 
     submitButton.textContent = "Vérification indisponible";
@@ -1085,9 +1077,9 @@ async function initializeRSVP() {
   }
 }
 
-/* CHECK AGAIN AFTER SUBMISSION TO CONFIRM THE SHEET ENTRY */
+/* VERIFY THAT GOOGLE SHEET HAS RECEIVED THE RESPONSE */
 async function confirmRSVPSaved() {
-  for (let attempt = 0; attempt < 5; attempt++) {
+  for (let attempt = 0; attempt < 6; attempt++) {
     await new Promise(resolve => window.setTimeout(resolve, 1200));
 
     try {
@@ -1098,7 +1090,7 @@ async function confirmRSVPSaved() {
         return true;
       }
     } catch (error) {
-      console.log("RSVP confirmation check attempt:", attempt + 1);
+      console.log("RSVP confirmation attempt:", attempt + 1);
     }
   }
 
@@ -1145,11 +1137,6 @@ rsvpForm.addEventListener("submit", async (event) => {
   payload.append("msg", msg);
 
   try {
-    /*
-      no-cors is used because Google Apps Script does not provide
-      a readable cross-origin POST response to this page.
-      We verify the saved entry afterward using JSONP.
-    */
     await fetch(RSVP_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
@@ -1163,7 +1150,7 @@ rsvpForm.addEventListener("submit", async (event) => {
       return;
     }
 
-    /* If no saved response appears, check whether it was a duplicate */
+    /* Final status check */
     const latestStatus = await checkRSVPStatus(rsvpGuestName);
 
     if (latestStatus && latestStatus.alreadyResponded === true) {
@@ -1173,6 +1160,7 @@ rsvpForm.addEventListener("submit", async (event) => {
 
     rsvpSubmitting = false;
     setRSVPFormDisabled(false);
+
     submitButton.textContent = "Réessayer";
     rsvpStatus.textContent = "Votre réponse n’a pas pu être confirmée. Veuillez réessayer.";
     rsvpStatus.className = "rsvp-status error";
@@ -1182,13 +1170,14 @@ rsvpForm.addEventListener("submit", async (event) => {
 
     rsvpSubmitting = false;
     setRSVPFormDisabled(false);
+
     submitButton.textContent = "Réessayer";
     rsvpStatus.textContent = "L’envoi a échoué. Veuillez vérifier votre connexion et réessayer.";
     rsvpStatus.className = "rsvp-status error";
   }
 });
 
-/* START STATUS CHECK */
+/* RUN RSVP CHECK */
 initializeRSVP();
 
 </script>
